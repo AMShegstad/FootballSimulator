@@ -8,7 +8,7 @@ import com.alexshegstad.footballsimulator.data.NameGenerator;
 import com.alexshegstad.footballsimulator.data.LocationGenerator;
 import com.alexshegstad.footballsimulator.data.CollegeGenerator;
 
-public class PlayerGenerator3D4L {
+public class PlayerGenerator {
 
     private static final Random rand = new Random();
 
@@ -26,9 +26,11 @@ public class PlayerGenerator3D4L {
         map.put(Position.RG, 2);
         map.put(Position.RT, 2);
         map.put(Position.MLB, 3);
-        map.put(Position.LOLB, 3);
-        map.put(Position.ROLB, 3);
-        map.put(Position.DT, 4);
+        map.put(Position.LOLB, 2);
+        map.put(Position.ROLB, 2);
+        map.put(Position.LE, 2);
+        map.put(Position.DT, 2);
+        map.put(Position.RE, 2);
         map.put(Position.SS, 2);
         map.put(Position.FS, 3);
         map.put(Position.CB, 5);
@@ -649,6 +651,51 @@ public class PlayerGenerator3D4L {
                 kickPower = randBetween(1, 20);
                 break;
             }
+            case LE: {
+                number = getUniqueNumberFromRanges(Arrays.asList(
+                        new int[] { 90, 99 },
+                        new int[] { 50, 70 }), usedNumbers);
+                height = randBetween(71, 78);
+                weight = randBetween(230, 265);
+                awareness = randBetween(55, 80);
+                strength = randBetween(65, 80);
+                speed = randBetween(75, 83);
+                acceleration = randBetween(75, 80);
+                passBlock = randBetween(12, 25);
+                runBlock = randBetween(5, 25);
+                impactBlock = randBetween(15, 30);
+                carrying = randBetween(20, 50);
+                catching = randBetween(10, 75);
+                routeRunning = randBetween(1, 10);
+                ballCarrierVision = randBetween(1, 12);
+                trucking = randBetween(30, 65);
+                elusiveness = randBetween(1, 30);
+                catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
+                release = randBetween(10, 20);
+                stiffArm = randBetween(34, 45);
+                juke = randBetween(1, 30);
+                jumping = randBetween(30, 65);
+                throwPower = randBetween(30, 50);
+                shortAccuracy = randBetween(10, 25);
+                mediumAccuracy = randBetween(10, 20);
+                deepAccuracy = randBetween(10, 15);
+                playAction = randBetween(1, 10);
+                throwOnTheRun = randBetween(1, 15);
+                tackle = randBetween(80, 99);
+                playRecognition = randBetween(50, 95);
+                blockShedding = randBetween(65, 85);
+                powerMoves = randBetween(65, 75);
+                finesseMoves = randBetween(50, 65);
+                zoneCoverage = randBetween(75, 85);
+                manCoverage = randBetween(70, 85);
+                pursuit = randBetween(75, 90);
+                hitPower = randBetween(78, 92);
+                press = randBetween(60, 79);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
+            }
             case DT: {
                 number = getUniqueNumberFromRanges(Arrays.asList(
                         new int[] { 70, 79 },
@@ -694,7 +741,7 @@ public class PlayerGenerator3D4L {
                 kickPower = randBetween(1, 20);
                 break;
             }
-            case DE: {
+            case RE: {
                 number = getUniqueNumberFromRanges(Arrays.asList(
                         new int[] { 90, 99 },
                         new int[] { 50, 70 }), usedNumbers);
@@ -999,20 +1046,61 @@ public class PlayerGenerator3D4L {
                 kickPower = randBetween(75, 99);
                 break;
             }
+            default :
+                number = 00; 
+                height = 60; 
+                weight = 200; 
+                awareness = 0;
+                strength = 0; 
+                speed = 20; 
+                acceleration = 35;
+                passBlock = 0; 
+                runBlock = 0;
+                impactBlock = 0;
+                carrying = 0;
+                catching = 0;
+                routeRunning = 0;
+                ballCarrierVision =0;
+                trucking = 0; 
+                elusiveness = 0;
+                catchInTraffic = 0;
+                spectacularCatch = 0;
+                release = 0;
+                stiffArm = 0;
+                juke = 0;
+                jumping = 0;
+                throwPower = 0;
+                shortAccuracy = 0;
+                mediumAccuracy = 0;
+                deepAccuracy = 0;
+                playAction = 0;;
+                throwOnTheRun = 0;
+                tackle = 0;;
+                playRecognition = 0;
+                blockShedding = 0;
+                powerMoves = 0;
+                finesseMoves = 0;
+                zoneCoverage = 0;
+                manCoverage = 0;
+                pursuit = 0;
+                hitPower = 0;
+                press = 0;
+                kickAccuracy = 0;
+                kickPower = 0;
 
                 // Update the constructor call to match the Player class definition
-                return new Player(firstName, lastName, hometown, college, position, number,
-                        experience, age, height, weight,
-                        awareness, strength, speed, acceleration, injuryResistance,
-                        passBlock, runBlock, impactBlock, carrying, catching,
-                        routeRunning, ballCarrierVision, trucking, elusiveness,
-                        catchInTraffic, release, stiffArm, juke, jumping,
-                        throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
-                        playAction, throwOnTheRun, tackle, playRecognition,
-                        blockShedding, powerMoves, finesseMoves, zoneCoverage,
-                        manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
-        }
 
+        }
+        return new Player(firstName, lastName, hometown, college, position, number,
+                experience, age, height, weight,
+                awareness, strength, speed, acceleration, injuryResistance,
+                passBlock, runBlock, impactBlock, carrying, catching,
+                routeRunning, ballCarrierVision, trucking, elusiveness,
+                catchInTraffic, spectacularCatch, release, stiffArm, juke, jumping,
+                throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
+                playAction, throwOnTheRun, tackle, playRecognition,
+                blockShedding, powerMoves, finesseMoves, zoneCoverage,
+                manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
     }
 
     // Add missing helper methods

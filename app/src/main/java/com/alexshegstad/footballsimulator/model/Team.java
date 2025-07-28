@@ -1,5 +1,8 @@
 package com.alexshegstad.footballsimulator.model;
 
+import java.util.List;
+import com.alexshegstad.footballsimulator.data.PlayerGenerator;
+
 public class Team {
 
     private String name;
@@ -7,7 +10,7 @@ public class Team {
     private String stadiumName;
     private String ownerName;
     private Coach coach;
-    //private List<Player> roster;
+    private List<Player> roster;
     private boolean division;
 
     public Team(String name, String location, String stadiumName, String ownerName, Coach coach) {
@@ -16,7 +19,7 @@ public class Team {
         this.location = location;
         this.ownerName = ownerName;
         this.coach = coach;
-        //this.roster = new ArrayList<>();
+        this.roster = PlayerGenerator.generateTeamPlayers();
     }
 
     public String getTeamName() {

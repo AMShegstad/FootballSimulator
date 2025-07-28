@@ -4,12 +4,10 @@ public class Player {
 
     private Position position;
     private int number;
-
     private String firstName;
     private String lastName;
     private String hometown;
-    private String college;
-    //private String position;
+    private College college;
     private int experience;
     private int age;
     private int height;
@@ -121,7 +119,7 @@ public class Player {
         return hometown;
     }
 
-    public String getCollege() {
+    public College getCollege() {
         return college;
     }
 
@@ -141,8 +139,6 @@ public class Player {
         return weight;
     }
 
-    // Awareness, strength, speed
-
     public int getAwareness() {
         return awareness;
     }
@@ -154,8 +150,6 @@ public class Player {
     public int getSpeed() {
         return speed;
     }
-
-    // Acceleration, pass block, run block, impact block
 
     public int getAcceleration() {
         return acceleration;
@@ -172,8 +166,6 @@ public class Player {
     public int getImpactBlock() {
         return impactBlock;
     }
-
-    // carrying, catching, route running, ball carrier vision, trucking, elusiveness
 
     public int getCarrying() {
         return carrying;
@@ -199,7 +191,6 @@ public class Player {
         return elusiveness;
     }
 
-    // Catch in traffic, spectacular catch, release, stiff arm, juke, jumping
     public int getCatchInTraffic() {
         return catchInTraffic;
     }
@@ -223,8 +214,6 @@ public class Player {
     public int getJumping() {
         return jumping;
     }
-
-    // injury resistance, throw power, short acc, med acc, deep accuracy, play action, throw on the run.
 
     public int injuryResistance() {
         return injuryResistance;
@@ -253,8 +242,6 @@ public class Player {
     public int getThrowOnTheRun() {
         return throwOnTheRun;
     }
-
-    // tackle, play recognition, block shedding, power moves, finesse moves, zone coverage, man coverage, pursuit, hit power, press
 
     public int getTackle() {
         return tackle;
