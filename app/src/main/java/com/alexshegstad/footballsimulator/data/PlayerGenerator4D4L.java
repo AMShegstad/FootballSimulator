@@ -1,40 +1,49 @@
 package com.alexshegstad.footballsimulator.data;
 
 import java.util.*;
+
 import com.alexshegstad.footballsimulator.model.Player;
 import com.alexshegstad.footballsimulator.model.Position;
 import com.alexshegstad.footballsimulator.data.NameGenerator;
+import com.alexshegstad.footballsimulator.data.LocationGenerator;
+import com.alexshegstad.footballsimulator.data.CollegeGenerator;
 
-public class PlayerGenerator4D3L {
+public class PlayerGenerator4D4L {
 
     private static final Random rand = new Random();
 
-    private static final Map<Position, Integer> rosterComposition = Map.of(
-            Position.QB, 3,
-            Position.HB, 4,
-            Position.FB, 1,
-            Position.WR, 5,
-            Position.TE, 3,
-            Position.LT, 2,
-            Position.LG, 2,
-            Position.C, 2,
-            Position.RG, 2,
-            Position.RT, 2,
-            Position.MLB, 2,
-            Position.LOLB, 3,
-            Position.ROLB, 2,
-            Position.DT, 3,
-            Position.DE, 4,
-            Position.SS, 2,
-            Position.FS, 2,
-            Position.CB, 5,
-            Position.LS, 1,
-            Position.K, 1,
-            Position.P, 1);
+    private static final Map<Position, Integer> rosterComposition;
+    static {
+        Map<Position, Integer> map = new HashMap<>();
+        map.put(Position.QB, 3);
+        map.put(Position.HB, 4);
+        map.put(Position.FB, 1);
+        map.put(Position.WR, 5);
+        map.put(Position.TE, 3);
+        map.put(Position.LT, 2);
+        map.put(Position.LG, 2); // Fixed typo
+        map.put(Position.C, 2);
+        map.put(Position.RG, 2);
+        map.put(Position.RT, 2);
+        map.put(Position.MLB, 3);
+        map.put(Position.LOLB, 2);
+        map.put(Position.ROLB, 2);
+        map.put(Position.DT, 3);
+        map.put(Position.SS, 2);
+        map.put(Position.FS, 3);
+        map.put(Position.CB, 5);
+        map.put(Position.LS, 1);
+        map.put(Position.K, 1);
+        map.put(Position.P, 1);
+        rosterComposition = Collections.unmodifiableMap(map);
+    }
 
     public static List<Player> generateTeamPlayers() {
         List<Player> players = new ArrayList<>();
         NameGenerator nameGen = new NameGenerator();
+        Set<Integer> usedNumbers = new HashSet<>();
+        LocationGenerator locationGen = new LocationGenerator();
+        CollegeGenerator collegeGen = new CollegeGenerator();
 
         for (Map.Entry<Position, Integer> entry : rosterComposition.entrySet()) {
             Position position = entry.getKey();
@@ -42,22 +51,37 @@ public class PlayerGenerator4D3L {
 
             for (int i = 0; i < count; i++) {
                 String name = nameGen.getRandomName();
+                String hometown = locationGen.getRandomLocation();
+                String college = collegeGen.getRandomCollege();
                 String[] nameParts = name.split(" ", 2);
                 String firstName = nameParts.length > 0 ? nameParts[0] : "";
                 String lastName = nameParts.length > 1 ? nameParts[1] : "";
-                players.add(generatePlayer(firstName, lastName, position));
+                players.add(generatePlayer(firstName, lastName, hometown, college, position, usedNumbers));
             }
         }
 
         return players;
     }
 
-    private static Player generatePlayer(String firstName, String lastName, Position position) {
+    private static Player generatePlayer(String firstName, String lastName, String hometown, String college,
+            Position position, Set<Integer> usedNumbers) {
+        // Declare all variables
+        int age, experience;
+        int number, height, weight, awareness, strength, speed, acceleration;
+        int passBlock, runBlock, impactBlock, carrying, catching, routeRunning;
+        int ballCarrierVision, trucking, elusiveness, catchInTraffic, spectacularCatch, release;
+        int stiffArm, juke, jumping, throwPower, shortAccuracy, mediumAccuracy;
+        int deepAccuracy, playAction, throwOnTheRun, tackle, playRecognition;
+        int blockShedding, powerMoves, finesseMoves, zoneCoverage, manCoverage;
+        int pursuit, hitPower, press, injuryResistance, kickAccuracy, kickPower;
+
         injuryResistance = randBetween(50, 99);
+        experience = randBetween(0, 20);
+        age = experience + randBetween(20, 23);
 
         switch (position) {
-            case QB: {
-                number = randBetween(1, 19);
+            case QB: { 
+                number = getUniqueNumber(1, 19, usedNumbers);
                 height = randBetween(68, 80);
                 weight = randBetween(165, 250);
                 awareness = randBetween(65, 99);
@@ -74,6 +98,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(50, 90);
                 catchInTraffic = randBetween(1, 15);
+                spectacularCatch = randBetween(1, 30);
                 release = randBetween(15, 40);
                 stiffArm = randBetween(50, 80);
                 juke = randBetween(50, 80);
@@ -94,6 +119,9 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case HB: {
                 number = randBetween(20, 44);
@@ -113,6 +141,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(60, 99);
                 elusiveness = randBetween(65, 99);
                 catchInTraffic = randBetween(50, 80);
+                spectacularCatch = randBetween(30, 67);
                 release = randBetween(60, 80);
                 stiffArm = randBetween(75, 99);
                 juke = randBetween(75, 99);
@@ -133,8 +162,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(60, 70);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case FB: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(37, 53);
                 height = randBetween(70, 80);
                 weight = randBetween(190, 260);
@@ -152,6 +186,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(75, 95);
                 elusiveness = randBetween(44, 65);
                 catchInTraffic = randBetween(40, 70);
+                spectacularCatch = randBetween(25, 55);
                 release = randBetween(30, 50);
                 stiffArm = randBetween(70, 85);
                 juke = randBetween(50, 80);
@@ -172,8 +207,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(34, 54);
                 hitPower = randBetween(50, 68);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case WR: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
                         new int[] { 10, 19 },
                         new int[] { 80, 89 }), usedNumbers);
@@ -192,7 +232,8 @@ public class PlayerGenerator4D3L {
                 ballCarrierVision = randBetween(80, 95);
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(66, 95);
-                catchInTraffic = randBetween(80, 99);
+                catchInTraffic = randBetween(75, 99);
+                spectacularCatch = randBetween(75, 99);
                 release = randBetween(75, 99);
                 stiffArm = randBetween(50, 88);
                 juke = randBetween(50, 80);
@@ -213,11 +254,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(60, 80);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case TE: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 40, 44 },
-                    new int[] { 80, 89}), usedNumbers);
+                        new int[] { 40, 44 },
+                        new int[] { 80, 89 }), usedNumbers);
                 height = randBetween(74, 82);
                 weight = randBetween(200, 264);
                 awareness = randBetween(65, 99);
@@ -234,6 +280,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(60, 85);
                 elusiveness = randBetween(30, 65);
                 catchInTraffic = randBetween(50, 75);
+                spectacularCatch = randBetween(68, 85);
                 release = randBetween(60, 70);
                 stiffArm = randBetween(75, 80);
                 juke = randBetween(50, 70);
@@ -254,8 +301,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case LT: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(60, 79);
                 height = randBetween(74, 80);
                 weight = randBetween(295, 320);
@@ -273,6 +325,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(1, 11);
                 catchInTraffic = randBetween(1, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(30, 40);
                 stiffArm = randBetween(50, 55);
                 juke = randBetween(1, 30);
@@ -293,8 +346,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case LG: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(60, 79);
                 height = randBetween(74, 80);
                 weight = randBetween(295, 340);
@@ -312,6 +370,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(1, 11);
                 catchInTraffic = randBetween(1, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(30, 40);
                 stiffArm = randBetween(50, 55);
                 juke = randBetween(1, 30);
@@ -332,8 +391,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case C: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(60, 79);
                 height = randBetween(74, 80);
                 weight = randBetween(295, 340);
@@ -351,6 +415,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(1, 11);
                 catchInTraffic = randBetween(1, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(30, 40);
                 stiffArm = randBetween(50, 55);
                 juke = randBetween(1, 30);
@@ -371,8 +436,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case RG: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(60, 79);
                 height = randBetween(74, 80);
                 weight = randBetween(295, 340);
@@ -390,6 +460,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(1, 11);
                 catchInTraffic = randBetween(1, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(30, 40);
                 stiffArm = randBetween(50, 55);
                 juke = randBetween(1, 30);
@@ -410,8 +481,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case RT: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(60, 79);
                 height = randBetween(74, 80);
                 weight = randBetween(295, 320);
@@ -429,6 +505,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 50);
                 elusiveness = randBetween(1, 11);
                 catchInTraffic = randBetween(1, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(30, 40);
                 stiffArm = randBetween(50, 55);
                 juke = randBetween(1, 30);
@@ -449,9 +526,14 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 30);
                 hitPower = randBetween(10, 40);
                 press = randBetween(1, 15);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case MLB: {
-                number = randBetween(45, 59) || 0;
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
+                number = randBetween(45, 59);
                 height = randBetween(71, 78);
                 weight = randBetween(230, 265);
                 awareness = randBetween(75, 99);
@@ -468,6 +550,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(1, 30);
@@ -488,11 +571,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 90);
                 hitPower = randBetween(78, 92);
                 press = randBetween(60, 79);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case LOLB: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 90, 99 },
-                    new int[] { 0, 19 }), usedNumbers);
+                        new int[] { 90, 99 },
+                        new int[] { 0, 19 }), usedNumbers);
                 height = randBetween(71, 78);
                 weight = randBetween(230, 265);
                 awareness = randBetween(55, 80);
@@ -509,6 +597,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(1, 30);
@@ -529,11 +618,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 90);
                 hitPower = randBetween(78, 92);
                 press = randBetween(60, 79);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case ROLB: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 90, 99 },
-                    new int[] { 0, 19}), usedNumbers);
+                        new int[] { 90, 99 },
+                        new int[] { 0, 19 }), usedNumbers);
                 height = randBetween(71, 78);
                 weight = randBetween(230, 265);
                 awareness = randBetween(55, 80);
@@ -550,6 +644,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(1, 30);
@@ -570,11 +665,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 90);
                 hitPower = randBetween(78, 92);
                 press = randBetween(60, 79);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case DT: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 70, 79 },
-                    new int[] { 90, 99}), usedNumbers);
+                        new int[] { 70, 79 },
+                        new int[] { 90, 99 }), usedNumbers);
                 height = randBetween(73, 80);
                 weight = randBetween(285, 375);
                 awareness = randBetween(55, 80);
@@ -591,6 +691,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(1, 30);
@@ -611,11 +712,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(60, 75);
                 hitPower = randBetween(78, 92);
                 press = randBetween(30, 50);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case DE: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 90, 99 },
-                    new int[] { 50, 70}), usedNumbers);
+                        new int[] { 90, 99 },
+                        new int[] { 50, 70 }), usedNumbers);
                 height = randBetween(75, 80);
                 weight = randBetween(270, 310);
                 awareness = randBetween(55, 80);
@@ -632,6 +738,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 45);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(1, 30);
@@ -652,8 +759,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(74, 86);
                 hitPower = randBetween(78, 92);
                 press = randBetween(30, 50);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case SS: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(20, 43);
                 height = randBetween(68, 76);
                 weight = randBetween(178, 236);
@@ -671,6 +783,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 65);
+                spectacularCatch = randBetween(40, 70);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(50, 65);
@@ -691,8 +804,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 90);
                 hitPower = randBetween(78, 92);
                 press = randBetween(75, 94);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case FS: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(20, 43);
                 height = randBetween(68, 76);
                 weight = randBetween(178, 236);
@@ -710,6 +828,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(30, 65);
+                spectacularCatch = randBetween(40, 70);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(50, 65);
@@ -730,8 +849,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 90);
                 hitPower = randBetween(78, 92);
                 press = randBetween(75, 94);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case CB: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(20, 43);
                 height = randBetween(69, 76);
                 weight = randBetween(178, 220);
@@ -749,6 +873,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(14, 30);
                 elusiveness = randBetween(56, 75);
                 catchInTraffic = randBetween(50, 88);
+                spectacularCatch = randBetween(65, 83);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(54, 66);
                 juke = randBetween(50, 77);
@@ -769,11 +894,16 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(75, 97);
                 hitPower = randBetween(50, 75);
                 press = randBetween(75, 98);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case LS: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = getUniqueNumberFromRanges(Arrays.asList(
-                    new int[] { 40, 44 },
-                    new int[] { 80, 89}), usedNumbers);
+                        new int[] { 40, 44 },
+                        new int[] { 80, 89 }), usedNumbers);
                 height = randBetween(68, 78);
                 weight = randBetween(280, 320);
                 awareness = randBetween(75, 90);
@@ -790,6 +920,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(30, 65);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(15, 30);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(10, 20);
                 stiffArm = randBetween(34, 45);
                 juke = randBetween(23, 46);
@@ -810,8 +941,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(6, 14);
                 hitPower = randBetween(58, 92);
                 press = randBetween(25, 35);
+                kickAccuracy = randBetween(1, 30);
+                kickPower = randBetween(1, 20);
+                break;
             }
             case K: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(1, 99);
                 height = randBetween(65, 73);
                 weight = randBetween(150, 180);
@@ -829,6 +965,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(1, 5);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(1, 5);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(1, 5);
                 stiffArm = randBetween(1, 5);
                 juke = randBetween(20, 30);
@@ -849,8 +986,13 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 5);
                 hitPower = randBetween(1, 5);
                 press = randBetween(1, 5);
+                kickAccuracy = randBetween(75, 99);
+                kickPower = randBetween(75, 99);
+                break;
             }
             case P: {
+                experience = randBetween(0, 20);
+                age = experience + randBetween(20, 23);
                 number = randBetween(1, 99);
                 height = randBetween(65, 73);
                 weight = randBetween(150, 180);
@@ -868,6 +1010,7 @@ public class PlayerGenerator4D3L {
                 trucking = randBetween(1, 5);
                 elusiveness = randBetween(1, 30);
                 catchInTraffic = randBetween(1, 5);
+                spectacularCatch = randBetween(1, 15);
                 release = randBetween(1, 5);
                 stiffArm = randBetween(1, 5);
                 juke = randBetween(20, 30);
@@ -888,7 +1031,62 @@ public class PlayerGenerator4D3L {
                 pursuit = randBetween(1, 5);
                 hitPower = randBetween(1, 5);
                 press = randBetween(1, 5);
+                kickAccuracy = randBetween(69, 88);
+                kickPower = randBetween(75, 99);
+                break;
+            }
+            default: {
+                throw new IllegalArgumentException("Unknown position: " + position);
             }
         }
+
+        // Update the constructor call to match the Player class definition
+        return new Player(firstName, lastName, hometown, college, position, number,
+                experience, age, height, weight,
+                awareness, strength, speed, acceleration, injuryResistance,
+                passBlock, runBlock, impactBlock, carrying, catching,
+                routeRunning, ballCarrierVision, trucking, elusiveness,
+                catchInTraffic, spectacularCatch, release, stiffArm, juke, jumping,
+                throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
+                playAction, throwOnTheRun, tackle, playRecognition,
+                blockShedding, powerMoves, finesseMoves, zoneCoverage,
+                manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
+    }
+
+    // Add missing helper methods
+    private static int randBetween(int min, int max) {
+        return rand.nextInt(max - min + 1) + min;
+    }
+
+    private static int getUniqueNumber(int min, int max, Set<Integer> usedNumbers) {
+        List<Integer> available = new ArrayList<>();
+        for (int i = min; i <= max; i++) {
+            if (!usedNumbers.contains(i)) {
+                available.add(i);
+            }
+        }
+        if (available.isEmpty()) {
+            throw new RuntimeException("No available numbers in range " + min + "-" + max);
+        }
+        int selected = available.get(rand.nextInt(available.size()));
+        usedNumbers.add(selected);
+        return selected;
+    }
+
+    private static int getUniqueNumberFromRanges(List<int[]> ranges, Set<Integer> usedNumbers) {
+        List<Integer> available = new ArrayList<>();
+        for (int[] range : ranges) {
+            for (int i = range[0]; i <= range[1]; i++) {
+                if (!usedNumbers.contains(i)) {
+                    available.add(i);
+                }
+            }
+        }
+        if (available.isEmpty()) {
+            throw new RuntimeException("No available numbers in specified ranges");
+        }
+        int selected = available.get(rand.nextInt(available.size()));
+        usedNumbers.add(selected);
+        return selected;
     }
 }
