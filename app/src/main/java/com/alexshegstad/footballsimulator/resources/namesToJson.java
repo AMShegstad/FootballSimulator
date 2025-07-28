@@ -1,3 +1,4 @@
+package com.alexshegstad.footballsimulator.resources;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;

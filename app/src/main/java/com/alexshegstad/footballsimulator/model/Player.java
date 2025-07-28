@@ -1,3 +1,5 @@
+package com.alexshegstad.footballsimulator.model;
+
 public class Player {
 
     private Position position;
@@ -51,8 +53,52 @@ public class Player {
     private int kickAccuracy;
     private int kickPower;
 
-    public Player(Position position) {
-
+    public Player(String firstName, String lastName, String hometown, String college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hometown = hometown;
+        this.age = age;
+        this.number = number;
+        this.height = height;
+        this.weight = weight;
+        this.awareness = awareness;
+        this.strength = strength;
+        this.speed = speed;
+        this.acceleration = acceleration;
+        this.passBlock = passBlock;
+        this.runBlock = runBlock;
+        this.impactBlock = impactBlock;
+        this.carrying = carrying;
+        this.catching = catching;
+        this.routeRunning = routeRunning;
+        this.ballCarrierVision = ballCarrierVision;
+        this.trucking = trucking;
+        this.elusiveness = elusiveness;
+        this.catchInTraffic = catchInTraffic;
+        this.spectacularCatch = spectacularCatch;
+        this.release = release;
+        this.stiffArm = stiffArm;
+        this.juke = juke;
+        this.jumping = jumping;
+        this.injuryResistance = injuryResistance;
+        this.throwPower = throwPower;
+        this.shortAccuracy = shortAccuracy;
+        this.mediumAccuracy = mediumAccuracy;
+        this.deepAccuracy = deepAccuracy;
+        this.playAction = playAction;
+        this.throwOnTheRun = throwOnTheRun;
+        this.tackle = tackle;
+        this.playRecognition = playRecognition;
+        this.blockShedding = blockShedding;
+        this.powerMoves = powerMoves;
+        this.finesseMoves = finesseMoves;
+        this.zoneCoverage = zoneCoverage;
+        this.manCoverage = manCoverage;
+        this.pursuit = pursuit;
+        this.hitPower = hitPower;
+        this.press = press;
+        this.kickAccuracy = kickAccuracy;
+        this.kickPower = kickPower;
     }
 
     public String getFirstName() {
@@ -63,7 +109,11 @@ public class Player {
         return lastName;
     }
 
-    public String getPosition() {
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    public Position getPosition() {
         return position;
     }
 
@@ -244,5 +294,17 @@ public class Player {
 
     public int getPress() {
         return press;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public int getKickAccuracy() {
+        return kickAccuracy;
+    }
+
+    public int getKickPower() {
+        return kickPower;
     }
 }

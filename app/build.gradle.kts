@@ -19,6 +19,11 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // Jackson for JSON processing
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
 }
 
 testing {

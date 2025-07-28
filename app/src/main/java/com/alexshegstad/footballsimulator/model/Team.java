@@ -1,3 +1,5 @@
+package com.alexshegstad.footballsimulator.model;
+
 public class Team {
 
     private String name;
@@ -5,16 +7,16 @@ public class Team {
     private String stadiumName;
     private String ownerName;
     private Coach coach;
-    private List<Player> roster;
+    //private List<Player> roster;
     private boolean division;
 
-    public Team(String name, String location, String stadium, String owner, Coach coach) {
+    public Team(String name, String location, String stadiumName, String ownerName, Coach coach) {
         this.name = name;
-        this.stadium = stadium;
+        this.stadiumName = stadiumName;
         this.location = location;
-        this.owner = owner;
+        this.ownerName = ownerName;
         this.coach = coach;
-        this.roster = new ArrayList<>();
+        //this.roster = new ArrayList<>();
     }
 
     public String getTeamName() {
@@ -26,7 +28,7 @@ public class Team {
     }
 
     public String getOwnerName() {
-        return owner;
+        return ownerName;
     }
 
     public String getStadiumName() {
@@ -39,14 +41,14 @@ public class Team {
 
     public String getDivision() {
         if (division) {
-            return East;
+            return "East";
         } else {
-            return West;
+            return "West";
         }
     }
 
     @Override
     public String toString() {
-        return "Team: " + name + "\nOwner: " + owner + "\nCoach: " + coach + "\nPlayers:\n " + roster;
+        return "Team: " + name + "\nOwner: " + ownerName + "\nCoach: " + coach + "\nPlayers:\n " + roster;
     }
 }
