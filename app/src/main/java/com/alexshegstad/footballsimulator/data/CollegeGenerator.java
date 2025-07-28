@@ -1,7 +1,6 @@
 package com.alexshegstad.footballsimulator.data;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.fasterxml.jackson.core.type.TypeReference;
 import com.alexshegstad.footballsimulator.model.College;
 import com.alexshegstad.footballsimulator.model.CollegeData;
 import java.io.InputStream;

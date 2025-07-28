@@ -5,10 +5,11 @@ package org.example;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import com.alexshegstad.footballsimulator.App; // Add this import
 
 public class AppTest {
     @Test public void appHasAGreeting() {
-        App classUnderTest = new App();
+        App classUnderTest = new App(); // Now this will work
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 }
