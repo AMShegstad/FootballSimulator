@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.alexshegstad.footballsimulator.model.Player;
 import com.alexshegstad.footballsimulator.model.Position;
+
 import com.alexshegstad.footballsimulator.data.NameGenerator;
 import com.alexshegstad.footballsimulator.data.LocationGenerator;
 import com.alexshegstad.footballsimulator.data.CollegeGenerator;
@@ -76,7 +77,7 @@ public class PlayerGenerator {
         int deepAccuracy, playAction, throwOnTheRun, tackle, playRecognition;
         int blockShedding, powerMoves, finesseMoves, zoneCoverage, manCoverage;
         int pursuit, hitPower, press, injuryResistance, kickAccuracy, kickPower;
-
+        
         injuryResistance = randBetween(50, 99);
         experience = randBetween(0, 20);
         age = experience + randBetween(20, 23);
@@ -1046,22 +1047,22 @@ public class PlayerGenerator {
                 kickPower = randBetween(75, 99);
                 break;
             }
-            default :
-                number = 00; 
-                height = 60; 
-                weight = 200; 
+            default:
+                number = 00;
+                height = 60;
+                weight = 200;
                 awareness = 0;
-                strength = 0; 
-                speed = 20; 
+                strength = 0;
+                speed = 20;
                 acceleration = 35;
-                passBlock = 0; 
+                passBlock = 0;
                 runBlock = 0;
                 impactBlock = 0;
                 carrying = 0;
                 catching = 0;
                 routeRunning = 0;
-                ballCarrierVision =0;
-                trucking = 0; 
+                ballCarrierVision = 0;
+                trucking = 0;
                 elusiveness = 0;
                 catchInTraffic = 0;
                 spectacularCatch = 0;
@@ -1073,9 +1074,11 @@ public class PlayerGenerator {
                 shortAccuracy = 0;
                 mediumAccuracy = 0;
                 deepAccuracy = 0;
-                playAction = 0;;
+                playAction = 0;
+                ;
                 throwOnTheRun = 0;
-                tackle = 0;;
+                tackle = 0;
+                ;
                 playRecognition = 0;
                 blockShedding = 0;
                 powerMoves = 0;

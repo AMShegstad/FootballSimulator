@@ -11,6 +11,8 @@ public class Team {
     private String ownerName;
     private Coach coach;
     private List<Player> roster;
+
+    // When teams are created, 8 of htem return true, and the other 8 false.
     private boolean division;
 
     public Team(String name, String location, String stadiumName, String ownerName, Coach coach) {
