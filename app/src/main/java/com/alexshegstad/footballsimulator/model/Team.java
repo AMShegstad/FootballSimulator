@@ -11,8 +11,10 @@ public class Team {
     private String ownerName;
     private Coach coach;
     private List<Player> roster;
+    private Boolean coinFlipChoice;
+    private int seed;
 
-    // When teams are created, 8 of htem return true, and the other 8 false.
+    // When teams are created, 8 of them return true, and the other 8 false.
     private boolean division;
 
     public Team(String name, String location, String stadiumName, String ownerName, Coach coach) {
@@ -50,6 +52,22 @@ public class Team {
         } else {
             return "West";
         }
+    }
+
+    public void setCoinFlipChoice(Boolean coinFlipChoice) {
+        this.coinFlipChoice = coinFlipChoice;
+    }
+
+    public Boolean getCoinFlipChoice() {
+        return coinFlipChoice;
+    }
+
+    public void setSeed(int seed) {
+        this.seed = seed;
+    }
+
+    public int getSeed() {
+        return seed;
     }
 
     @Override
