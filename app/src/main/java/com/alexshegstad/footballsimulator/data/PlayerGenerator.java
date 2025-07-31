@@ -5,10 +5,6 @@ import java.util.*;
 import com.alexshegstad.footballsimulator.model.Player;
 import com.alexshegstad.footballsimulator.model.Position;
 
-import com.alexshegstad.footballsimulator.data.NameGenerator;
-import com.alexshegstad.footballsimulator.data.LocationGenerator;
-import com.alexshegstad.footballsimulator.data.CollegeGenerator;
-
 public class PlayerGenerator {
 
     private static final Random rand = new Random();
