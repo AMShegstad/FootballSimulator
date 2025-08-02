@@ -1,14 +1,14 @@
 package com.alexshegstad.footballsimulator.logic;
 
-import com.alexshegstad.footballsimulator.model.Matchup;
-import com.alexshegstad.footballsimulator.model.Team;
+// import com.alexshegstad.footballsimulator.model.Matchup;
+//import com.alexshegstad.footballsimulator.model.Team;
 import java.util.*;
 import java.util.Scanner;
 
 public class CoinFlip {
     
-    private Team team1;
-    private Team team2;
+    // private Team team1;
+    // private Team team2;
 
     public Boolean getGuess() {
 
@@ -32,6 +32,7 @@ public class CoinFlip {
                 choiceAsBool = false;
             }
         }
+        input.close();
 
         return choiceAsBool;
     }
@@ -50,5 +51,20 @@ public class CoinFlip {
         return flipResult;
     }
 
-    // Create a method that
+    public Boolean coinFlip() {
+        Boolean guess = getGuess();
+        Boolean flipResult = headsOrTails();
+        Boolean wagerResult = false;
+
+        if (guess == flipResult) {
+            wagerResult = true;
+            System.out.println("User Won the Coin Toss!");
+        } else {
+            wagerResult = false;
+            System.out.println("User Lost the Coin Toss!");
+        }
+
+
+        return wagerResult;
+    }
 }
