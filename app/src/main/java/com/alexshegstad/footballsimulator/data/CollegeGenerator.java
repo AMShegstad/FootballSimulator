@@ -1,8 +1,9 @@
 package com.alexshegstad.footballsimulator.data;
 
+import com.alexshegstad.footballsimulator.model.teamcomponents.College;
+import com.alexshegstad.footballsimulator.model.teamcomponents.CollegeData;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.alexshegstad.footballsimulator.model.College;
-import com.alexshegstad.footballsimulator.model.CollegeData;
+
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.List;

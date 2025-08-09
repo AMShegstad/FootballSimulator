@@ -1,4 +1,4 @@
-package com.alexshegstad.footballsimulator.model;
+package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 public enum Position {
     QB,

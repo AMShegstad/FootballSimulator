@@ -1,4 +1,4 @@
-package com.alexshegstad.footballsimulator.model;
+package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 import java.util.List;
 

@@ -2,8 +2,9 @@ package com.alexshegstad.footballsimulator.data;
 
 import java.util.*;
 
-import com.alexshegstad.footballsimulator.model.Player;
-import com.alexshegstad.footballsimulator.model.Position;
+import com.alexshegstad.footballsimulator.model.teamcomponents.Player;
+import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
+
 
 public class PlayerGenerator {
 
@@ -1071,10 +1072,8 @@ public class PlayerGenerator {
                 mediumAccuracy = 0;
                 deepAccuracy = 0;
                 playAction = 0;
-                ;
                 throwOnTheRun = 0;
                 tackle = 0;
-                ;
                 playRecognition = 0;
                 blockShedding = 0;
                 powerMoves = 0;

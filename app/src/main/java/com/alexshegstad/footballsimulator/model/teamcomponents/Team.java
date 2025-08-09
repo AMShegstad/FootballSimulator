@@ -1,6 +1,8 @@
-package com.alexshegstad.footballsimulator.model;
+package com.alexshegstad.footballsimulator.model.teamcomponents;
 
-import java.util.List;
+import java.util.*;
+import java.util.ArrayList;
+
 import com.alexshegstad.footballsimulator.data.PlayerGenerator;
 
 public class Team {
@@ -16,6 +18,15 @@ public class Team {
 
     // When teams are created, 8 of them return true, and the other 8 false.
     private boolean division;
+
+    public Team() {
+        //this.name = MascotGenerator.generateMascot();
+        // this.location = LocationGenerator.getRandomLocation();
+        // this.stadiumName = StadiumGenerator.generateStadium();
+        // this.ownerName = NameGenerator.generateFullName();
+        // this.coach = CoachGenerator.generateCoach();
+        // this.roster = PlayerGenerator.generateTeamPlayers();
+    }
 
     public Team(String name, String location, String stadiumName, String ownerName, Coach coach) {
         this.name = name;

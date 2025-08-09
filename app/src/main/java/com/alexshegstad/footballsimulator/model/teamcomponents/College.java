@@ -1,4 +1,4 @@
-package com.alexshegstad.footballsimulator.model;
+package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 public class College {
     
@@ -107,6 +107,8 @@ public class College {
     // For now, I will only need the region name.
     @Override
     public String toString() {
-        return region;
-    }
+        
+        String text = name + ", " + abbrev + ", " + pop + ", " + city + ", " + state + ", {" + longitude + ", " + latitude + "}";
+        return text;
+    }   
 }

@@ -1,7 +1,7 @@
 package com.alexshegstad.footballsimulator.data;
 
-import com.alexshegstad.footballsimulator.model.Matchup;
-import com.alexshegstad.footballsimulator.model.Team;
+import com.alexshegstad.footballsimulator.model.game.Matchup;
+import com.alexshegstad.footballsimulator.model.teamcomponents.Team;
 
 public class BracketGenerator {
 

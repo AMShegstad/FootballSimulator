@@ -1,6 +1,6 @@
-package com.alexshegstad.footballsimulator.model;
+package com.alexshegstad.footballsimulator.model.enumerations;
 
-public enum CoachingStyle {
+public enum LeadershipStyle {
     autocratic,
     democratic,
     holistic,
