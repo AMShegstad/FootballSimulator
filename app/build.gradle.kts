@@ -86,3 +86,28 @@ tasks.test {
         }
     }
 }
+
+configurations {
+    e2eTestImplementation.extendsFrom(testImplementation)
+    e2eTestRuntimeOnly.extendsFrom(testRuntimeOnly)
+}
+
+sourceSets {
+    create("e2eTest") {
+        compileClasspath += sourceSets.main.get().output
+        runtimeClasspath += sourceSets.main.get().output
+    }
+}
+
+tasks.register<Test>("e2eTest") {
+    description = "Run end-to-end tests"
+    group = "verification"
+    
+    testClassesDirs = sourceSets["e2eTest"].output.classesDirs
+    classpath = sourceSets["e2eTest"].runtimeClasspath
+    
+    useJUnitPlatform()
+    
+    // E2E tests should run slower
+    systemProperty("junit.jupiter.execution.timeout.default", "5m")
+}
