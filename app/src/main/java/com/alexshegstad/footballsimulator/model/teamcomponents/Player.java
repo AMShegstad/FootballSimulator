@@ -6,7 +6,7 @@ public class Player {
     private int number;
     private String firstName;
     private String lastName;
-    private String hometown;
+    private Location hometown;
     private College college;
     private int experience;
     private int age;
@@ -50,15 +50,15 @@ public class Player {
     private int press;
     private int kickAccuracy;
     private int kickPower;
-    private int starts;
-    private int wins;
-    private int losses;
-    private int gamesPlayed;
-    private int seasonsPlayed;
-    private int downsPlayed;
-    private int matchupWins;
+    private int starts = 0;
+    private int wins = 0;
+    private int losses = 0;
+    private int gamesPlayed = 0;
+    private int seasonsPlayed = 0;
+    private int downsPlayed = 0;
+    private int matchupWins = 0;
 
-    public Player(String firstName, String lastName, String hometown, String college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower, int wins, int losses, int starts, int gamesPlayed, int seasonsPlayed, int downsPlayed, int matchupWins) {
+    public Player(String firstName, String lastName, Location hometown, String college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.hometown = hometown;
@@ -104,12 +104,6 @@ public class Player {
         this.press = press;
         this.kickAccuracy = kickAccuracy;
         this.kickPower = kickPower;
-        this.starts = starts;
-        this.wins = wins;
-        this.losses = losses;
-        this.gamesPlayed = gamesPlayed;
-        this.downsPlayed = downsPlayed;
-        this.matchupWins = matchupWins;
     }
 
     public String getFirstName() {
@@ -129,7 +123,7 @@ public class Player {
     }
 
     public String getHometown() {
-        return hometown;
+        return hometown.toString();
     }
 
     public College getCollege() {
@@ -182,7 +176,7 @@ public class Player {
     }
 
     public void decrementAwareness() {
-        if (awareness >= 2) {
+        if (awareness > 1) {
             awareness--;
         } else {
             System.out.println("Lowest value reached");
@@ -202,7 +196,7 @@ public class Player {
     }
 
     public void decrementStrength() {
-        if (strength >= 2) {
+        if (strength > 1) {
             strength--;
         } else {
             System.out.println("Min value reached");
@@ -222,7 +216,7 @@ public class Player {
     }
 
     public void decrementSpeed() {
-        if (strength >= 2) {
+        if (strength > 1) {
             strength--;
         } else {
             System.out.println("Min value reached");
@@ -242,7 +236,7 @@ public class Player {
     }
 
     public void decrementAcceleration() {
-        if (strength >= 2) {
+        if (strength > 1) {
             strength--;
         } else {
             System.out.println("Min value reached");
@@ -262,7 +256,7 @@ public class Player {
     }
 
     public void decrementPassBlock() {
-        if (passBlock >= 2) {
+        if (passBlock > 1) {
             passBlock--;
         } else {
             System.out.println("Min passBlock value reached");
@@ -282,7 +276,7 @@ public class Player {
     }
 
     public void decrementRunBlock() {
-        if (runBlock >= 2) {
+        if (runBlock > 1) {
             runBlock--;
         } else {
             System.out.println("Min runBlock value reached");
@@ -294,11 +288,19 @@ public class Player {
     }
 
     public void incrementImpactBlock() {
-        impactBlock++;
+        if (impactBlock < 99) {
+            impactBlock++;
+        } else {
+            System.out.println("Max impactBlock value reached");
+        }
     }
 
     public void decrementImpactBlock() {
-        impactBlock--;
+        if (impactBlock > 1) {
+            impactBlock--;
+        } else {
+            System.out.println("Min impactBlock value reached");
+        }
     }
 
     public int getCarrying() {
@@ -306,11 +308,31 @@ public class Player {
     }
 
     public void incrementCarrying() {
-        carrying++;
+        if (carrying < 99) {
+            carrying++;
+        } else {
+            System.out.println("Max carrying value reached");
+        }
+    }
+
+    public void decrementCarrying() {
+        if (carrying > 1) {
+            carrying--;
+        } else {
+            System.out.println("Min carrying value reached");
+        }
     }
 
     public int getCatching() {
         return catching;
+    }
+
+    public void incrementCatching() {
+        if (catching < 99) {
+            catching++;
+        } else {
+            System.out.println("Max catching value reached");
+        }
     }
 
     public int getRouteRunning() {

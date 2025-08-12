@@ -6,7 +6,7 @@ import com.alexshegstad.footballsimulator.data.LocationGenerator;
 public class Stadium {
     // The stadium model will create a Stadium object containing the name, location, capacity, 
     private String name;
-    private String location;
+    private Location location;
     private int capacity;
 
     // For generating a new location
@@ -14,11 +14,11 @@ public class Stadium {
 
     public Stadium() {
         this.name = "";
-        this.location = "";
+        //this.location = "";
         this.capacity = 0;
     }
 
-    public Stadium(String name, String location, int capacity) {
+    public Stadium(String name, Location location, int capacity) {
         this.name = name;
         this.location = location;
         this.capacity = capacity;
@@ -32,11 +32,11 @@ public class Stadium {
         this.name = newName;
     }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String newLocation) {
+    public void setLocation(Location newLocation) {
         this.location = newLocation;
     }
 

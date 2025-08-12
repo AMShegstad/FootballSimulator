@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.alexshegstad.footballsimulator.model.teamcomponents.Player;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
+import com.alexshegstad.footballsimulator.model.teamcomponents.Location;
 
 
 public class PlayerGenerator {
@@ -51,7 +52,7 @@ public class PlayerGenerator {
 
             for (int i = 0; i < count; i++) {
                 String name = nameGen.getRandomName();
-                String hometown = locationGen.getRandomLocation();
+                Location hometown = locationGen.getRandomLocation();
                 String college = collegeGen.getRandomCollege();
                 String[] nameParts = name.split(" ", 2);
                 String firstName = nameParts.length > 0 ? nameParts[0] : "";
@@ -63,7 +64,7 @@ public class PlayerGenerator {
         return players;
     }
 
-    private static Player generatePlayer(String firstName, String lastName, String hometown, String college,
+    private static Player generatePlayer(String firstName, String lastName, Location hometown, String college,
             Position position, Set<Integer> usedNumbers) {
         // Declare all variables
         int age, experience;

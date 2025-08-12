@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    id("com.gradle.build-scan") version "3.16.2"
 }
 
 repositories {
@@ -24,6 +25,17 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
     implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
+
+    // JUnit 5 (Jupiter)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    
+    // Mockito for mocking
+    testImplementation("org.mockito:mockito-core:5.1.1")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.1.1")
+    
+    // AssertJ for better assertions
+    testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 testing {
@@ -46,4 +58,31 @@ java {
 application {
     // Define the main class for the application.
     mainClass = "com.alexshegstad.footballsimulator.App"
+}
+
+buildScan {
+    termsOfServiceUrl = "https://gradle.com/terms-of-service"
+    termsOfServiceAgree = "yes"
+    publishAlways()
+}
+
+tasks.test {
+    useJUnitPlatform()
+    
+    testLogging {
+        events("started", "passed", "skipped", "failed")
+        showExceptions = true
+        showStackTraces = true
+        
+        // Live output
+        afterSuite { desc, result ->
+            if (!desc.parent) {
+                println("\nTest results: ${result.resultType}")
+                println("Test summary: ${result.testCount} tests, " +
+                       "${result.successfulTestCount} succeeded, " +
+                       "${result.failedTestCount} failed, " +
+                       "${result.skippedTestCount} skipped")
+            }
+        }
+    }
 }
