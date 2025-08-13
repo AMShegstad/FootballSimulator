@@ -26,7 +26,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.0")
 
-    // JUnit 5 (Jupiter)
+    // JUnit 5 (Jupiter) - FIXED: Remove JUnit 4 conflict
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     
@@ -38,15 +38,14 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
-testing {
-    suites {
-        // Configure the built-in test suite
-        val test by getting(JvmTestSuite::class) {
-            // Use JUnit4 test framework
-            useJUnit("4.13.2")
-        }
-    }
-}
+// REMOVED: This conflicts with JUnit 5
+// testing {
+//     suites {
+//         val test by getting(JvmTestSuite::class) {
+//             useJUnit("4.13.2")  // This was causing conflicts!
+//         }
+//     }
+// }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
@@ -73,6 +72,7 @@ tasks.test {
         events("started", "passed", "skipped", "failed")
         showExceptions = true
         showStackTraces = true
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
         
         // Live output
         afterSuite { desc, result ->
@@ -87,15 +87,22 @@ tasks.test {
     }
 }
 
+// E2E Test Configuration
 configurations {
-    e2eTestImplementation.extendsFrom(testImplementation)
-    e2eTestRuntimeOnly.extendsFrom(testRuntimeOnly)
+    create("e2eTestImplementation") {
+        extendsFrom(configurations.testImplementation.get())
+    }
+    create("e2eTestRuntimeOnly") {
+        extendsFrom(configurations.testRuntimeOnly.get())
+    }
 }
 
 sourceSets {
     create("e2eTest") {
         compileClasspath += sourceSets.main.get().output
         runtimeClasspath += sourceSets.main.get().output
+        compileClasspath += configurations.e2eTestImplementation.get()
+        runtimeClasspath += configurations.e2eTestRuntimeOnly.get()
     }
 }
 
@@ -110,4 +117,23 @@ tasks.register<Test>("e2eTest") {
     
     // E2E tests should run slower
     systemProperty("junit.jupiter.execution.timeout.default", "5m")
+    
+    testLogging {
+        events("started", "passed", "skipped", "failed")
+        showExceptions = true
+        showStackTraces = true
+    }
+}
+
+// Custom task to run different test types
+tasks.register("testAll") {
+    description = "Run all test types"
+    group = "verification"
+    dependsOn("test", "e2eTest")
+}
+
+tasks.register("testUnit") {
+    description = "Run only unit tests"
+    group = "verification"
+    dependsOn("test")
 }

@@ -335,92 +335,452 @@ public class Player {
         }
     }
 
+    public void decrementCatching() {
+        if (catching > 1) {
+            catching--;
+        } else {
+            System.out.println("Min catching value reached");
+        }
+    }
+
     public int getRouteRunning() {
         return routeRunning;
+    }
+
+    public void incrementRouteRunning() {
+        if (routeRunning < 99) {
+            routeRunning++;
+        } else {
+            System.out.println("Max routeRunning value reached");
+        }
+    }
+
+    public void decrementRouteRunning() {
+        if (routeRunning > 1) {
+            routeRunning--;
+        } else {
+            System.out.println("Min routeRunning value reached");
+        }
     }
 
     public int getBallCarrierVision() {
         return ballCarrierVision;
     }
 
+    public void incrementBallCarrierVision() {
+        if (ballCarrierVision < 99) {
+            ballCarrierVision++;
+        } else {
+            System.out.println("Max ballCarrierVision value reached");
+        }
+    }
+
+    public void decrementBallCarrierVision() {
+        if (ballCarrierVision > 1) {
+            ballCarrierVision--;
+        } else {
+            System.out.println("Min ballCarrierVision value reached");
+        }
+    }
+
     public int getTrucking() {
         return trucking;
+    }
+
+    public void incrementTrucking() {
+        if (trucking < 99) {
+            trucking++;
+        } else {
+            System.out.println("Max trucking value reached");
+        }
+    }
+
+    public void decrementTrucking() {
+        if (trucking > 1) {
+            trucking--;
+        } else {
+            System.out.println("Min trucking value reached");
+        }
     }
 
     public int getElusiveness() {
         return elusiveness;
     }
 
+    public void incrementExlusiveness() {
+        if (elusiveness < 99) {
+            elusiveness++;
+        } else {
+            System.out.println("Max elusiveness value reached");
+        }
+    }
+
+    public void decrementElusiveness() {
+        if (elusiveness > 1) {
+            elusiveness++;
+        } else {
+            System.out.println("Min elusiveness value reached");
+        }
+    }
+
     public int getCatchInTraffic() {
         return catchInTraffic;
+    }
+
+    public void incrementCatchIntTraffic() {
+        if (catchInTraffic < 99) {
+            catchInTraffic++;
+        } else {
+            System.out.println("Max catchInTraffic value reached");
+        }
+    }
+
+    public void decrementCatchInTraffic() {
+        if (catchInTraffic > 1) {
+            catchInTraffic--;
+        } else {
+            System.out.println("Min catchInTraffic value reached");
+        }
     }
 
     public int getSpectacularCatch() {
         return spectacularCatch;
     }
 
+    public void incrementSpectacularCatch() {
+        if (spectacularCatch < 99) {
+            spectacularCatch++;
+        } else {
+            System.out.println("Max spectacularCatch value reached");
+        }
+    }
+
+    public void decrementSpectacularCatch() {
+        if (spectacularCatch > 1) {
+            spectacularCatch--;
+        } else {
+            System.out.println("Min spectacularCatch value reached");
+        }
+    }
+
     public int getRelease() {
         return release;
+    }
+
+    public void incrementRelease() {
+        if (release < 99) {
+            release++;
+        } else {
+            System.out.println("Max release value reached");
+        }
+    }
+
+    public void decrementRelease() {
+        if (release > 1) {
+            release--;
+        } else {
+            System.out.println("Min release value reached");
+        }
     }
 
     public int getStiffArm() {
         return stiffArm;
     }
 
+    public void incrementStiffArm() {
+        if (stiffArm < 99) {
+            stiffArm++;
+        } else {
+            System.out.println("Max stiffArm value reached");
+        }
+    }
+
+    public void decrementStiffArm() {
+        if (stiffArm > 1) {
+            stiffArm--;
+        } else {
+            System.out.println("Min stiffArm value reached");
+        }
+    }
+
     public int getJuke() {
         return juke;
+    }
+
+    public void incrementJuke() {
+        if (juke < 99) {
+            juke++;
+        } else {
+            System.out.println("Max juke value reached");
+        }
+    }
+
+    public void decrementJuke() {
+        if (juke > 1) {
+            juke--;
+        } else {
+            System.out.println("Min juke value reached");
+        }
     }
 
     public int getJumping() {
         return jumping;
     }
 
+    public void incrementJumping() {
+        if (jumping < 99) {
+            jumping++;
+        } else {
+            System.out.println("Max jumping value reached");
+        }
+    }
+
+    public void decrementJumping() {
+        if (jumping > 1) {
+            jumping--;
+        } else {
+            System.out.println("Min jumping value reached");
+        }
+    }
+
     public int injuryResistance() {
         return injuryResistance;
+    }
+
+    public void incrementInjuryResistance() {
+        if (injuryResistance < 99) {
+            injuryResistance++;
+        } else {
+            System.out.println("Max injuryResistance value reached");
+        }
+    }
+
+    public void decrementInjuryResistance() {
+        if (injuryResistance > 1) {
+            injuryResistance--;
+        } else {
+            System.out.println("Min injuryResistance value reached");
+        }
     }
 
     public int getThrowPower() {
         return throwPower;
     }
 
+    public void incrementThrowPower() {
+        if (throwPower < 99) {
+            throwPower++;
+        } else {
+            System.out.println("Max throwPower value reached");
+        }
+    }
+
+    public void decrementThrowPower() {
+        if (throwPower > 1) {
+            throwPower--;
+        } else {
+            System.out.println("Min throwPower value reached");
+        }
+    }
+
     public int getShortAccuracy() {
         return shortAccuracy;
+    }
+
+    public void incrementShortAccuracy() {
+        if (shortAccuracy < 99) {
+            shortAccuracy++;
+        } else {
+            System.out.println("Max shortAccuracy value reached");
+        }
+    }
+
+    public void decrementShortAccuracy() {
+        if (shortAccuracy > 1) {
+            shortAccuracy--;
+        } else {
+            System.out.println("Min shortAccuracy value reached");
+        }
     }
 
     public int getMediumAccuracy() {
         return mediumAccuracy;
     }
 
+    public void incrementMediumAccuracy() {
+        if (mediumAccuracy < 99) {
+            mediumAccuracy++;
+        } else {
+            System.out.println("Max mediumAccuracy value reached");
+        }
+    }
+
+    public void decrementMediumAccuracy() {
+        if (mediumAccuracy > 1) {
+            mediumAccuracy--;
+        } else {
+            System.out.println("Min mediumAccuracy value reached");
+        }
+    }
+
     public int getDeepAccuracy() {
         return deepAccuracy;
+    }
+
+    public void incrementDeepAccuracy() {
+        if (deepAccuracy < 99) {
+            deepAccuracy++;
+        } else {
+            System.out.println("Max deepAccuracy value reached");
+        }
+    }
+
+    public void decrementDeepAccuracy() {
+        if (deepAccuracy > 1) {
+            deepAccuracy--;
+        } else {
+            System.out.println("Min deepaccuracy value reached");
+        }
     }
 
     public int getPlayAction() {
         return playAction;
     }
 
+    public void incrementPlayAction() {
+        if (playAction < 99) {
+            playAction++;
+        } else {
+            System.out.println("Max playAction value reached");
+        }
+    }
+
+    public void decrementPlayAction() {
+        if (playAction > 1) {
+            playAction--;
+        } else {
+            System.out.println("Min placyAction value reached");
+        }
+    }
+
     public int getThrowOnTheRun() {
         return throwOnTheRun;
+    }
+
+    public void incrementThrowOnTheRun() {
+        if (throwOnTheRun < 99) {
+            throwOnTheRun++;
+        } else {
+            System.out.println("Max throwOnTheRun value reached");
+        }
+    }
+
+    public void decrementThrowOnTheRun() {
+        if (throwOnTheRun > 1) {
+            throwOnTheRun--;
+        } else {
+            System.out.println("Min throwOnTheRun value reached");
+        }
     }
 
     public int getTackle() {
         return tackle;
     }
 
+    public void incrementTackle() {
+        if (tackle < 99) {
+            tackle++;
+        } else {
+            System.out.println("Max tackle value reached");
+        }
+    }
+
+    public void decrementTackle() {
+        if (tackle > 1) {
+            tackle--;
+        } else {
+            System.out.println("Min tackle value reached");
+        }
+    }
+
     public int getPlayRecognition() {
         return playRecognition;
     }
 
+    public void incrementPlayRecognition() {
+        if (playRecognition < 99) {
+            playRecognition++;
+        } else {
+            System.out.println("Max playRecognition value reached");
+        }
+    }
+
+    public void decrementPlayRecognition() {
+        if (playRecognition > 1) {
+            playRecognition--;
+        } else {
+            System.out.println("Min playRecognition value reached");
+        }
+    } 
+
     public int getBlockShedding() {
         return blockShedding;
+    }
+
+    public void incrementBlockShedding() {
+        if (blockShedding < 99) {
+            blockShedding++;
+        } else {
+            System.out.println("Max playRecognition value reached");
+        }
+    }
+
+    public void decrementBlockShedding() {
+        if (blockShedding > 1) {
+            blockShedding--;
+        } else {
+            System.out.println("Min blockShedding value reached");
+        }
     }
 
     public int getPowerMoves() {
         return powerMoves;
     }
 
+    public void incrementPowerMoves() {
+        if (powerMoves < 99) {
+            powerMoves++;
+        } else {
+            System.out.println("Max powerMoves value reached");
+        }
+    }
+
+    public void decrementPowerMoves() {
+        if (powerMoves > 1) {
+            powerMoves--;
+        } else {
+            System.out.println("Min powerMoves value reached");
+        }
+    }
+
     public int getFinesseMoves() {
         return finesseMoves;
+    }
+
+    public void incrementFinesseMoves() {
+        if (finesseMoves < 99) {
+            finesseMoves++;
+        } else {
+            System.out.println("Max finesseMoves value reached");
+        }
+    }
+
+    public void decrementFinesseMoves() {
+        if (finesseMoves > 1) {
+            finesseMoves--;
+        } else {
+            System.out.println("Min finesseMoves value reached");
+        }
     }
 
     public int getZoneCoverage() {
