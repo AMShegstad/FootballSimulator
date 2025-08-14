@@ -58,12 +58,15 @@ public class Player {
     private int downsPlayed = 0;
     private int matchupWins = 0;
 
-    public Player(String firstName, String lastName, Location hometown, String college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower) {
+    public Player(String firstName, String lastName, Location hometown, College college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.position = position;
         this.hometown = hometown;
+        this.college = college;
         this.age = age;
         this.number = number;
+        this.experience = experience;
         this.height = height;
         this.weight = weight;
         this.awareness = awareness;
@@ -106,10 +109,12 @@ public class Player {
         this.kickPower = kickPower;
     }
 
+    // Test created
     public String getFirstName() {
         return firstName;
     }
 
+    // Test created
     public String getLastName() {
         return lastName;
     }
@@ -118,18 +123,22 @@ public class Player {
         return firstName + " " + lastName;
     }
 
+    // Test created
     public Position getPosition() {
         return position;
     }
 
+    // Test created
     public String getHometown() {
         return hometown.toString();
     }
 
+    // Test created
     public College getCollege() {
         return college;
     }
 
+    // 
     public int getExperience() {
         return experience;
     }
@@ -787,20 +796,100 @@ public class Player {
         return zoneCoverage;
     }
 
+    public void incrementZoneCoverage() {
+        if (zoneCoverage < 99) {
+            zoneCoverage++;
+        } else {
+            System.out.println("Max zoneCoverage value reached");
+        }
+    }
+
+    public void decrementZoneCoverage() {
+        if (zoneCoverage > 1) {
+            zoneCoverage--;
+        } else {
+            System.out.println("Min zoneCoverage value reached");
+        }
+    }
+
     public int getManCoverage() {
         return manCoverage;
+    }
+
+    public void incrementManCoverage() {
+        if (manCoverage < 99) {
+            manCoverage++;
+        } else {
+            System.out.println("Max manCoverage value reached");
+        }
+    }
+
+    public void decrementManCoverage() {
+        if (manCoverage > 1) {
+            manCoverage--;
+        } else {
+            System.out.println("Min manCoverage value reached");
+        }
     }
 
     public int getPursuit() {
         return pursuit;
     }
 
+    public void incrementPursuit() {
+        if (pursuit < 99) {
+            pursuit++;
+        } else {
+            System.out.println("Max pursuit value reached");
+        }
+    }
+
+    public void decrementPursuit() {
+        if (pursuit > 1) {
+            pursuit--;
+        } else {
+            System.out.println("Min pursuit value reached");
+        }
+    }
+
     public int getHitPower() {
         return hitPower;
     }
 
+    public void incrementHitPower() {
+        if (hitPower < 99) {
+            hitPower++;
+        } else {
+            System.out.println("Max hitPower value reached");
+        }
+    }
+
+    public void decrementHitPower() {
+        if (hitPower > 1) {
+            hitPower--;
+        } else {
+            System.out.println("Min hitPower value reached");
+        }
+    }
+
     public int getPress() {
         return press;
+    }
+
+    public void incrementPress() {
+        if (press < 99) {
+            press++;
+        } else {
+            System.out.println("Max press value reached");
+        }
+    }
+
+    public void decrementPress() {
+        if (press > 1) {
+            press--;
+        } else {
+            System.out.println("Min press value reached");
+        }
     }
 
     public int getNumber() {
@@ -811,8 +900,40 @@ public class Player {
         return kickAccuracy;
     }
 
+    public void incrementKickAccuracy() {
+        if (kickAccuracy < 99) {
+            kickAccuracy++;
+        } else {
+            System.out.print("Max kickAccuracy value reached");
+        }
+    }
+
+    public void decrementKickAccuracy() {
+        if (kickAccuracy > 1) {
+            kickAccuracy--;
+        } else {
+            System.out.println("Min kickAccuracy value reached");
+        }
+    }
+
     public int getKickPower() {
         return kickPower;
+    }
+
+    public void incrementKickPower() {
+        if (kickPower < 99) {
+            kickPower++;
+        } else {
+            System.out.println("Max kickPower value reached");
+        }
+    }
+
+    public void decrementKickPower() {
+        if (kickPower > 1) {
+            kickPower--;
+        } else {
+            System.out.println("Min kickPower value reached");
+        }
     }
 
     public String toString() {
@@ -825,7 +946,7 @@ public class Player {
     }
 
     public void incrementStarts() {
-        starts = starts + 1;
+        starts++;
     }
 
     public int getWins() {
@@ -833,7 +954,7 @@ public class Player {
     }
 
     public void incrementWins() {
-        wins = wins + 1;
+        wins++;
     }
 
     public int getLosses() {
@@ -841,7 +962,7 @@ public class Player {
     }
 
     public void incrementLosses() {
-        losses = losses + 1;
+        losses++;
     }
 
     public int getGamesPlayed() {
@@ -849,7 +970,7 @@ public class Player {
     }
 
     public void incrementGamesPlayed() {
-        gamesPlayed = gamesPlayed + 1;
+        gamesPlayed++;
     }
 
     public int getSeasonsPlayed() {
@@ -857,7 +978,7 @@ public class Player {
     }
 
     public void incrementSeasonsPlayed() {
-        seasonsPlayed = seasonsPlayed + 1;
+        seasonsPlayed++;
     }
 
     public int getDownsPlayed() {
@@ -865,7 +986,7 @@ public class Player {
     }
 
     public void incrementDownsPlayed() {
-        downsPlayed = downsPlayed + 1;
+        downsPlayed++;
     }
 
     public int getMatchupWins() {
@@ -873,6 +994,6 @@ public class Player {
     }
 
     public void incrementMatchupWins() {
-        matchupWins = matchupWins + 1;
+        matchupWins++;
     }
 }
