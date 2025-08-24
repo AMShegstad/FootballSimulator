@@ -2,7 +2,7 @@ package com.alexshegstad.footballsimulator.data;
 
 import com.alexshegstad.footballsimulator.model.teamcomponents.Coach;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Player;
-import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
+//import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
 import java.util.*;
 
 
@@ -59,11 +59,33 @@ public class TeamGenerator {
         teamStatistics = new double[NUM_STATS];
     }
 
+    private Player[] selectStartingOffense(Player[] roster) {
+        // return array with the top QB, HB, FB, LT, LG, C, RG, RT, WR1, WR2, TE using roster variable.
+    }
+
+    private Player[] selectStartingDefense(Player[] roster) {
+        // return array with the top CB1, CB2, CBN, DT, RE, LE, LOLB, ROLB, MLB, SS, FS using roster variable.
+    }
+
+    private Player[] selectSpecialTeamsKick(Player[] roster) {
+        // return array with the top K, P, C, holder(QB3) and pursuit/blocking team.
+    }
+
+    private Player[] selectSpecialTeamsReturn(Player[] roster) {
+        // return array with the top kick returners, punt returners, and blockers.
+    }
+
+    private generateCoachingStaff() {
+        // Return array containing Coach, OC, DC, STC
+    }
+
     private void generateTeam() {
         // generateRoster();
         // selectStarters();
         // generateCoachingStaff();
         // initializeTeamStats();
+
+        // Create Team with generated data
     }
 
 

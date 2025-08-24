@@ -1,21 +1,57 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
+
 public class College {
     
-    private int tid;//
-    private int cid;//
-    private int did;//
-    private String region;//
-    private String name;//
-    private String abbrev;//
-    private int pop;//
-    private String city;//
+    @JsonProperty("tid")
+    private int tid;
+    
+    @JsonProperty("cid")
+    private int cid;
+    
+    @JsonProperty("did")
+    private int did;
+    
+    @JsonProperty("region")
+    private String region;
+    
+    @JsonProperty("name")
+    private String name;
+    
+    @JsonProperty("abbrev")
+    private String abbrev;
+    
+    @JsonProperty("pop")
+    private int pop;
+    
+    @JsonProperty("city")
+    private String city;
+    
+    @JsonProperty("state")
     private String state;
+    
+    @JsonProperty("latitude")
     private double latitude;
+    
+    @JsonProperty("longitude")
     private double longitude;
 
-    public College () {};
+    public College() {
+        // Default constructor for Jackson
+    }
 
+    // Constructor for creating test colleges
+    public College(String region, String name, String abbrev, String city, String state) {
+        this.region = region;
+        this.name = name;
+        this.abbrev = abbrev;
+        this.city = city;
+        this.state = state;
+    }
+
+    // All your existing getters and setters (unchanged)
     public String getRegion() {
         return region;
     }
@@ -104,11 +140,60 @@ public class College {
         this.longitude = longitude;
     }
 
-    // For now, I will only need the region name.
+    /**
+     * Get the full college name (region + name)
+     */
+    public String getFullName() {
+        if (region != null && name != null) {
+            return region + " " + name;
+        } else if (region != null) {
+            return region;
+        } else if (name != null) {
+            return name;
+        } else {
+            return "Unknown College";
+        }
+    }
+
+    /**
+     * Get location as "City, State"
+     */
+    public String getLocation() {
+        if (city != null && state != null) {
+            return city + ", " + state;
+        } else if (city != null) {
+            return city;
+        } else if (state != null) {
+            return state;
+        } else {
+            return "Unknown Location";
+        }
+    }
+
     @Override
     public String toString() {
-        
-        String text = name + ", " + abbrev + ", " + pop + ", " + city + ", " + state + ", {" + longitude + ", " + latitude + "}";
-        return text;
-    }   
+        return "College{" +
+                "region='" + region + '\'' +
+                ", name='" + name + '\'' +
+                ", abbrev='" + abbrev + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", coordinates={" + longitude + ", " + latitude + "}" +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        College college = (College) o;
+        return tid == college.tid &&
+                Objects.equals(region, college.region) &&
+                Objects.equals(name, college.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tid, region, name);
+    }
 }

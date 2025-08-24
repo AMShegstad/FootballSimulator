@@ -5,8 +5,8 @@ import java.util.*;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Player;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Location;
-
-
+import com.alexshegstad.footballsimulator.model.teamcomponents.College; // ADDED: Missing import
+  
 public class PlayerGenerator {
 
     private static final Random rand = new Random();
@@ -20,7 +20,7 @@ public class PlayerGenerator {
         map.put(Position.WR, 5);
         map.put(Position.TE, 3);
         map.put(Position.LT, 2);
-        map.put(Position.LG, 2); // Fixed typo
+        map.put(Position.LG, 2);
         map.put(Position.C, 2);
         map.put(Position.RG, 2);
         map.put(Position.RT, 2);
@@ -53,7 +53,7 @@ public class PlayerGenerator {
             for (int i = 0; i < count; i++) {
                 String name = nameGen.getRandomName();
                 Location hometown = locationGen.getRandomLocation();
-                String college = collegeGen.getRandomCollegeObject();
+                College college = collegeGen.getRandomCollegeObject(); // Now this will work
                 String[] nameParts = name.split(" ", 2);
                 String firstName = nameParts.length > 0 ? nameParts[0] : "";
                 String lastName = nameParts.length > 1 ? nameParts[1] : "";
@@ -127,7 +127,7 @@ public class PlayerGenerator {
                 break;
             }
             case HB: {
-                number = randBetween(20, 44);
+                number = getUniqueNumber(20, 44, usedNumbers); // FIXED: Added missing method call
                 height = randBetween(66, 74);
                 weight = randBetween(180, 235);
                 awareness = randBetween(65, 85);
@@ -1046,7 +1046,7 @@ public class PlayerGenerator {
                 break;
             }
             default:
-                number = 00;
+                number = 0; // FIXED: was 00
                 height = 60;
                 weight = 200;
                 awareness = 0;
@@ -1086,10 +1086,9 @@ public class PlayerGenerator {
                 press = 0;
                 kickAccuracy = 0;
                 kickPower = 0;
-
-                // Update the constructor call to match the Player class definition
-
+                break;
         }
+        
         return new Player(firstName, lastName, hometown, college, position, number,
                 experience, age, height, weight,
                 awareness, strength, speed, acceleration, injuryResistance,
@@ -1102,7 +1101,7 @@ public class PlayerGenerator {
                 manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
     }
 
-    // Add missing helper methods
+    // Helper methods
     private static int randBetween(int min, int max) {
         return rand.nextInt(max - min + 1) + min;
     }

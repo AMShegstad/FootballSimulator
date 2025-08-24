@@ -14,35 +14,38 @@ public class PlayerTest {
     
     private Player player;
     private Location hometown;
-    CollegeGenerator college = new CollegeGenerator();
+    private CollegeGenerator college = new CollegeGenerator();
 
     @BeforeEach
     void setUp() {
         hometown = new Location("Green Bay", "Wisconsin");
         College randomCollege = college.getRandomCollegeObject();
+        
+        // Debug output
+        System.out.println("Selected college: " + randomCollege);
+        System.out.println("College region: " + randomCollege.getRegion());
+        
         player = new Player("Aaron", "Rodgers", hometown, randomCollege, Position.QB, 12, 15, 38, 74, 225, 
             95, 85, 70, 75, 60, 65, 70, 80, 85, 90,
             65, 75, 80, 85, 90, 85, 75, 85, 90, 95, 
             99, 95, 90, 85, 80, 85, 60, 70, 65, 70, 
             80, 75, 70, 75, 80, 85, 90, 95);
 
-        System.out.println(player);
+        System.out.println("Player created: " + player);
     }
 
     @Test
-    @DisplayName("Player should be created with correct basic information")
+    @DisplayName("✅ Player should be created with correct basic information")
     void testPlayerCreation() {
-        assertThat(player.getFirstName())
-            .as("Player first name should match constructor parameter")
-            .isEqualTo("Aaron");
-            
-        assertThat(player.getLastName())
-            .as("Player last name should match constructor parameter")
-            .isEqualTo("Rodgers");
+        assertThat(player).isNotNull();
+        assertThat(player.getFirstName()).isEqualTo("Aaron");
+        assertThat(player.getLastName()).isEqualTo("Rodgers");
+        assertThat(player.getNumber()).isEqualTo(12);
+        assertThat(player.getAge()).isEqualTo(38);
     }
     
     @Test
-    @DisplayName("Player should have correct position")
+    @DisplayName("🏈 Player should have correct position")
     void testPlayerPosition() {
         assertThat(player.getPosition())
             .as("Player position should be set correctly in constructor")
@@ -51,34 +54,26 @@ public class PlayerTest {
     }
     
     @Test
-    @DisplayName("Player should have valid hometown")
+    @DisplayName("📍 Player should have valid hometown")
     void testPlayerHometown() {
         assertThat(player.getHometown())
             .as("Player hometown should not be null")
             .isNotNull();
+            
+        assertThat(player.getHometown().getCity()).isEqualTo("Green Bay");
+        assertThat(player.getHometown().getState()).isEqualTo("Wisconsin");
     }
 
     @Test
-    @DisplayName("Player should have correct College")
+    @DisplayName("🎓 Player should have valid college")
     void testPlayerCollege() {
         assertThat(player.getCollege())
-            .as("Player college should match constructor parameter")
+            .as("Player college should not be null")
             .isNotNull();
-    }
-
-    @Test
-    @DisplayName("Player should have correct number")
-    void testPlayerNumber() {
-        assertThat(player.getNumber())
-            .as("Player's number should match the constructor parameter")
-            .isEqualTo(12);
-    }
-
-    @Test
-    @DisplayName("Player should have correct experience value")
-    void testPlayerExperience() {
-        assertThat(player.getExperience())
-            .as("Player experience should match the constructor parameter")
-            .isEqualTo(15);
+            
+        assertThat(player.getCollege().getRegion())
+            .as("College should have a region")
+            .isNotNull()
+            .isNotEmpty();
     }
 }

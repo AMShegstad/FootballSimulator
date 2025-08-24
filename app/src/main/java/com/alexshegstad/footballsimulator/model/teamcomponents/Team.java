@@ -1,7 +1,7 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 import java.util.*;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 import com.alexshegstad.footballsimulator.data.PlayerGenerator;
 
