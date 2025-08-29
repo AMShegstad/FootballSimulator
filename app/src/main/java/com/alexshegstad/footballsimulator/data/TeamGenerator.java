@@ -60,22 +60,46 @@ public class TeamGenerator {
     }
 
     private Player[] selectStartingOffense(Player[] roster) {
-        // return array with the top QB, HB, FB, LT, LG, C, RG, RT, WR1, WR2, TE using roster variable.
+        // GOAL: return array with the top QB, HB, FB, LT, LG, C, RG, RT, WR1, WR2, TE using roster variable.
+
+        // Take in the entire array and add it to a variable
+
+        // Initialize the startingOffense array
+
+        // Sort the array using overall statistic (Might need to add that)
+
+        // Add the top-rated QB to startingOffense[], and so on and so forth
     }
 
     private Player[] selectStartingDefense(Player[] roster) {
-        // return array with the top CB1, CB2, CBN, DT, RE, LE, LOLB, ROLB, MLB, SS, FS using roster variable.
+        // GOAL: return array with the top CB1, CB2, CBN, DT, RE, LE, LOLB, ROLB, MLB, SS, FS using roster variable.
+
+        // Take in the entire array and add it to a variable
+
+        // Initialize the startingDefense array
+
+        // Sort the array using the overall statistic 
+
+        // Add the top-rated CB1 to startingDefense[], and so on and so forth
     }
 
-    private Player[] selectSpecialTeamsKick(Player[] roster) {
-        // return array with the top K, P, C, holder(QB3) and pursuit/blocking team.
+    private Player[] selectSpecialTeamsKick(Player[] roster, Player[] startingO, Player [] startingD) {
+        // GOAL: return array with the top K, P, C, holder(QB3) and pursuit/blocking team.
+
+        // Take in the entire array and add it to a variable
+
+        // Initialize the specialTeamsKick array
+
+        // Sort the array unsing the overall statistic
+
+        // Add the top-rated
     }
 
     private Player[] selectSpecialTeamsReturn(Player[] roster) {
         // return array with the top kick returners, punt returners, and blockers.
     }
 
-    private generateCoachingStaff() {
+    private generateCoach() {
         // Return array containing Coach, OC, DC, STC
     }
 
