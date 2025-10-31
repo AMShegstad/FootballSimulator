@@ -5,7 +5,15 @@ import com.alexshegstad.footballsimulator.model.enumerations.LeadershipStyle;
 import com.alexshegstad.footballsimulator.model.enumerations.Offense;
 import com.alexshegstad.footballsimulator.model.enumerations.Defense;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Location;
+
 import java.util.*;
+
+/*
+ * The CoachGenerator class contains methods for randomly generating the firstName, lastName,
+ * hometown, age, defensive and offensive styles, and coachingStyle.
+ * 
+ * In order to create a new Coach, call CoachGenerator.generateCoach(), with your preferred parameters.
+ */
 
 public class CoachGenerator {
     
@@ -18,7 +26,7 @@ public class CoachGenerator {
     private LeadershipStyle coachingStyle;
 
     // For calculating age
-    private int minAge = 29;
+    private int minAge = 30;
     private int maxAge = 75;
 
     // For generating the random names
@@ -79,6 +87,19 @@ public class CoachGenerator {
         return newCoach;
     }
 
+    public Coach generateCoach(String firstName, String lastName, Offense offense) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.hometown = loc.getRandomLocation();
+        this.age = setRandomAge();
+        this.defense = setRandomDefense();
+        this.offense = offense;
+        this.coachingStyle = setRandomCoachingStyle();
+
+        Coach newCoach = new Coach(firstName, lastName, hometown, age, defense, offense, coachingStyle);
+        return newCoach;
+    }
+
     public Coach generateCoach(String firstName, String lastName, Defense defense, Offense offense) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -105,12 +126,14 @@ public class CoachGenerator {
         return newCoach;
     }
 
+    // Method for returning a random age.
     public int setRandomAge() {
         Random rand = new Random();
         int randomAge = rand.nextInt(minAge, maxAge +1);
         return randomAge;
     }
 
+    // Method for choosing a random defensive strategy from the enum.
     public Defense setRandomDefense() {
         Random rand = new Random();
         Defense[] defenses = Defense.values();

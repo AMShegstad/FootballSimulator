@@ -3,6 +3,13 @@ package com.alexshegstad.footballsimulator.data;
 import com.alexshegstad.footballsimulator.model.game.Matchup;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Team;
 
+/*
+ * This class contains methods for creating a competition bracket. The first round will have 
+ * 8 games, the second round 4 games, the third round has 2 games, and finally a championship.
+ * 
+ * The class must allow for each subsequent round to be updated to contain matchups between 
+ * the previous rounds' winners.
+ */
 public class BracketGenerator {
 
     public Matchup round1Game1;

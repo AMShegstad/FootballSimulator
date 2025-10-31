@@ -1,55 +1,57 @@
 package com.alexshegstad.footballsimulator.model.enumerations;
 
 public enum ColorSchemes {
-//    CRIMSON_GOLD("#8C1C13", "#FFD700", "#000000"),
-//    NAVY_SILVER("#0A2342", "#C0C0C0", "#FFFFFF"),
-//    ROYALBLUE_ORANGE("#0051BA", "#FF6600", "#FFFFFF"),
-//    GREEN_WHITE("#00843D", "#FFFFFF", "#101820"),
-//    BLACK_YELLOW("#101820", "#FFD100", "#FFFFFF"),
-//    MAROON_CREAM("#7B2D26", "#F5F5DC", "C5A46D"),
-//    TEAL_BLACK("#006D77", "#101820", "#A7A7A7"),
-//    PURPLE_GOLD("#4B0082", "FFCC00", "#FFFFFF"),
-//    RED_BLACK("C8102E", "#000000", "#FFFFFF"),
-//    SKYBLUE_NAVY("#87CEEB", "#000000", "#FFFFFF"),
-//    ORANGE_BROWN("#D35400", "#4E342E", "#FFFFFF"),
-//    FORESTGREEN_GOLD("#013220", "#FFD700", "#FFFFFF"),
-//    TURQUOISE_WHITE("#40E0D0", "#FFFFFF", "#333333"),
-//    SCARLET_GRAY("#BB0000", "#888888", "#000000"),
-//    MIDNIGHTBLUE_NEONGREEN("#003366", "#39FF14", "#A9A9A9"),
-//    COPPER_BLACK("#B87333", "#101820", "#FFFFFF"),
-//    BURGUNDY_GOLD("#800020", "#DAA520", "#FFFFFF"),
-//    CYAN_CHARCOAL("#00BCD4", "#36454F", "#FFFFFF"),
-//    MAGENTA_BLACK("#E20074", "#101820", "#B0B0B0"),
-//    BROWN_YELLOW("#8B4513", "#FFD34E", "FFFFFF"),
-//    DARKPURPLE_SILVER("#301934", "#C0C0C0", "#000000"),
-//    REDORANGE_NAVY("#E34234", "#0A2342", "#FFFFFF"),
-//    OLIVEGREEN_TAN("#808000", "#D2B48C", "#FFFFFF"),
-//    ICEBLUE_BLACK("#A9D6E5", "#101820", "#FFFFFF"),
-//    PINK_GRAY("#FF69B4", "#808080", "#FFFFFF"),
-//    DARKTEAL_ORANGE("#014D4E", "#FF6F3C", "#FFFFFF"),
-//    INDIGIO_WHITE("#4B0082", "#FFFFFF", "#C0C0C0"),
-//    DARKRED_CREAM("#8B0000", "#FFFDD0", "#000000"),
-//    STEELBLUE_BRONZE("#4682B4", "#CD7F32", "#FFFFFF"),
-//    CHARCOAL_NEONYELLOW("#2F4F4F", "#DFFF00", "#000000");
+   CRIMSON_GOLD("Crimson & Gold", "#8C1C13", "#FFD700", "#000000"),
+   NAVY_SILVER("Navy & Silver", "#0A2342", "#C0C0C0", "#FFFFFF"),
+   ROYALBLUE_ORANGE("Royal Blue & Orange", "#0051BA", "#FF6600", "#FFFFFF"),
+   GREEN_WHITE("Green & White", "#00843D", "#FFFFFF", "#101820"),
+   BLACK_YELLOW("Black & Yellow", "#101820", "#FFD100", "#FFFFFF"),
+   MAROON_CREAM("Maroon & Cream", "#7B2D26", "#F5F5DC", "C5A46D"),
+   TEAL_BLACK("Teal & Black", "#006D77", "#101820", "#A7A7A7"),
+   PURPLE_GOLD("Purple & Gold", "#4B0082", "FFCC00", "#FFFFFF"),
+   RED_BLACK("Red & Black", "C8102E", "#000000", "#FFFFFF"),
+   SKYBLUE_NAVY("Sky Blue & Navy", "#87CEEB", "#000000", "#FFFFFF"),
+   ORANGE_BROWN("Orange & Brown", "#D35400", "#4E342E", "#FFFFFF"),
+   FORESTGREEN_GOLD("Forest Green & Gold", "#013220", "#FFD700", "#FFFFFF"),
+   TURQUOISE_WHITE("Turquoise & White", "#40E0D0", "#FFFFFF", "#333333"),
+   SCARLET_GRAY("Scarlet & Gray", "#BB0000", "#888888", "#000000"),
+   MIDNIGHTBLUE_NEONGREEN("Midnight Blue & Neon Green", "#003366", "#39FF14", "#A9A9A9"),
+   COPPER_BLACK("Copper & Black", "#B87333", "#101820", "#FFFFFF"),
+   BURGUNDY_GOLD("Burgundy & Gold", "#800020", "#DAA520", "#FFFFFF"),
+   CYAN_CHARCOAL("Cyan & Charcoal", "#00BCD4", "#36454F", "#FFFFFF"),
+   MAGENTA_BLACK("Magenta & Black", "#E20074", "#101820", "#B0B0B0"),
+   BROWN_YELLOW("Brown & Yellow", "#8B4513", "#FFD34E", "FFFFFF"),
+   DARKPURPLE_SILVER("Dark Purple & Silver", "#301934", "#C0C0C0", "#000000"),
+   REDORANGE_NAVY("Red Orance & Navy", "#E34234", "#0A2342", "#FFFFFF"),
+   OLIVEGREEN_TAN("Olive Green & Tan", "#808000", "#D2B48C", "#FFFFFF"),
+   ICEBLUE_BLACK("Ice Blue & Black", "#A9D6E5", "#101820", "#FFFFFF"),
+   PINK_GRAY("Pink & Gray", "#FF69B4", "#808080", "#FFFFFF"),
+   DARKTEAL_ORANGE("Dark Teal & Orange", "#014D4E", "#FF6F3C", "#FFFFFF"),
+   INDIGIO_WHITE("Indigo & White", "#4B0082", "#FFFFFF", "#C0C0C0"),
+   DARKRED_CREAM("Dark Red & Cream", "#8B0000", "#FFFDD0", "#000000"),
+   STEELBLUE_BRONZE("Steel Blue & Bronze", "#4682B4", "#CD7F32", "#FFFFFF"),
+   CHARCOAL_NEONYELLOW("Charcoal & Neon Yellow", "#2F4F4F", "#DFFF00", "#000000");
 
+   private final String name;
    private final String colorCode1;
    private final String colorCode2;
    private final String colorCode3;
 
-   ColorSchemes(String colorCode1, String colorCode2, String colorCode3) {
+   ColorSchemes(String name, String colorCode1, String colorCode2, String colorCode3) {
+    this.name = name;
     this.colorCode1 = colorCode1;
     this.colorCode2 = colorCode2;
     this.colorCode3 = colorCode3;
    }
 
    public String[] getColorScheme() {
-    String colorCodes[] = {colorCode1, colorCode2, colorCode3};
+    String colorCodes[] = {name, colorCode1, colorCode2, colorCode3};
     return colorCodes;
    }
 
    @Override
    public String toString() {
-        return colorCode1 + ", " + colorCode2 + ", " + colorCode3 + ".";
+        return name + ": " + colorCode1 + ", " + colorCode2 + ", " + colorCode3 + ".";
    }
 }
 
@@ -114,4 +116,3 @@ Steel Blue & Bronze – Steel Blue (#4682B4), Bronze (#CD7F32), White (#FFFFFF)
 
 Charcoal & Neon Yellow – Charcoal (#2F4F4F), Neon Yellow (#DFFF00), Black (#000000)
 */
-
