@@ -39,7 +39,7 @@ public class PlayerGenerator {
         rosterComposition = Collections.unmodifiableMap(map);
     }
 
-    public static List<Player> generateTeamPlayers() {
+    public List<Player> generateTeamPlayers() {
         List<Player> players = new ArrayList<>();
         NameGenerator nameGen = new NameGenerator();
         Set<Integer> usedNumbers = new HashSet<>();

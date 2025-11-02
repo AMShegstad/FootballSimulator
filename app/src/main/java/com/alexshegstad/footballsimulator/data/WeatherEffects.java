@@ -27,7 +27,7 @@ public class WeatherEffects {
                 }
                 
             case FOGGY:
-                switch (statName) {
+                switch (statName) { 
                     case "shortAccuracy": return -3;
                     case "mediumAccuracy": return -6;
                     case "deepAccuracy": return -10;

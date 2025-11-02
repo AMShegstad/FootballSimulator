@@ -25,7 +25,7 @@ public class ColorSchemeGenerator {
             
             ObjectMapper mapper = new ObjectMapper();
 
-            selectedColorScheme = mapper.readValue(inputStream, new TypeReference<String>)
+            ColorScheme selectedColorScheme = mapper.readValue(inputStream, new TypeReference<String>)
         
         }
     }
