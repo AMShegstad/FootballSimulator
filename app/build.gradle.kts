@@ -36,7 +36,7 @@ application {
     mainClass = "com.alexshegstad.footballsimulator.App"
 }
 
-tasks.test {
+test {
     useJUnitPlatform()
     
     testLogging {

@@ -1,7 +1,7 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 import java.util.*;
-//import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.alexshegstad.footballsimulator.data.LocationGenerator;
 import com.alexshegstad.footballsimulator.data.PlayerGenerator;
@@ -21,7 +21,7 @@ public class Team {
     private List<Player> startingOffense;
     private List<Player> startingDefense;
     private List<Player> startingSpecialTeams;
-    private final ColorScheme colorScheme; 
+    private final ColorSchemes colorScheme; 
 
     //private Boolean coinFlipChoice;
     //private int seed;
@@ -33,9 +33,9 @@ public class Team {
         this.ownerName = builder.ownerName != null ? builder.ownerName : generateOwnerName();
         this.coach = builder.coach != null ? builder.coach : generateCoach();
         this.roster = builder.roster != null ? builder.roster : generateRoster();
-        this.startingOffense = selectStartingOffense();
-        this.startingDefense = selectStartingDefense();
-        this.startingSpecialTeams = selectStartingSpecialTeams();
+        // this.startingOffense = selectStartingOffense();
+        // this.startingDefense = selectStartingDefense();
+        // this.startingSpecialTeams = selectStartingSpecialTeams();
         this.colorScheme = builder.colorScheme != null ? builder.colorScheme : generateColorScheme();
     }
 
@@ -53,6 +53,7 @@ public class Team {
 
     // Generate a location from the JSON list.
     public Location generateLocation() {
+        // TODO: Implement Builder pattern in Location class
         Location loc = new Location.Builder().build();
         return location;
     }
@@ -64,13 +65,14 @@ public class Team {
 
     // Create first and last name of owner using the JSON list.
     public String generateOwnerName() {
-        
+        // TODO: Implement Builder pattern in Owner class
         return ownerName;
     }
 
     // return the owner's full name.
     public String getOwnerName() {
-
+        // TODO: Implement Builder pattern in Owner object.
+        String ownerName = ownerName.firstName + " " + ownerName.lastName;
     }
 
     // Generate an entire Coach object.
@@ -81,7 +83,7 @@ public class Team {
 
     // Return the entire coach object
     public Coach getCoach() {
-        return Coach;
+        return coach();
     }
 
     public Stadium generateStadium() {
@@ -102,20 +104,22 @@ public class Team {
         return roster;
     }
 
-    public List<Player> selectStartingOffense() {
+    // public List<Player> selectStartingOffense() {
 
-    }
+    // }
 
-    public List<Player> selectStartingDefense() {
+    // public List<Player> selectStartingDefense() {
 
-    }
+    // }
 
-    public List<Player> selectStartingSpecialTeams() {
+    // public List<Player> selectStartingSpecialTeams() {
 
-    }
+    // }
 
-    public ColorScheme generateColorScheme() {
-
+    public ColorSchemes generateColorScheme() {
+        ColorSchemes[] colors = ColorSchemes.values();
+        int randomIndex = ThreadLocalRandom.current().nextInt(colors.length);
+        return colors[randomIndex];
     }
 
     // public String generateDivision() {
@@ -151,14 +155,14 @@ public class Team {
     public static class Builder {
         private Coach coach;
         private List<Player> roster;
-        private List<Player> startingOffense;
-        private List<Player> startingDefense;
-        private List<Player> startingSpecialTeams;
+        //private List<Player> startingOffense;
+        //private List<Player> startingDefense;
+        //private List<Player> startingSpecialTeams;
         private String ownerName;
         private Stadium stadium;
         private String teamName;
         private Location location;
-        private ColorScheme colorScheme;
+        private ColorSchemes colorScheme;
 
         private Builder setCoach() {
         this.coach = coach;
@@ -170,20 +174,21 @@ public class Team {
         return this;
         }
 
-        private Builder setStartingOffense() {
-        this.startingOffense = startingOffense;
-        return this;
-        }
+        // private Builder setStartingOffense() {
+        // this.startingOffense = startingOffense;
+        // TODO: Take the top player or two, depending on the team, and  
+        // return this;
+        // }
 
-        private Builder setStartingDefense() {
-        this.startingDefense = startingDefense;
-        return this;
-        }
+        // private Builder setStartingDefense() {
+        // this.startingDefense = startingDefense;
+        // return this;
+        // }
 
-        private Builder setStartingSpecialTeams() {
-        this.startingSpecialTeams = startingSpecialTeams;
-        return this;
-        }
+        // private Builder setStartingSpecialTeams() {
+        // this.startingSpecialTeams = startingSpecialTeams;
+        // return this;
+        // }
 
         private Builder setTeamName() {
         this.teamName = teamName;
@@ -197,6 +202,11 @@ public class Team {
 
         private Builder setColorScheme() {
         this.colorScheme = colorScheme; 
+            return this;
+        }
+
+        private Builder setStadium() {
+            this.stadium = stadium;
             return this;
         }
 

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Crimson & Gold",
+    "primary": "#8C1C13",
+    "secondary": "#FFD700",
+    "accent": "#000000"
+  },
+  {
+    "name": "Navy & Silver",
+    "primary": "#0A2342",
+    "secondary": "#C0C0C0",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Royal Blue & Orange",
+    "primary": "#0051BA",
+    "secondary": "#FF6600",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Green & White",
+    "primary": "#00843D",
+    "secondary": "#FFFFFF",
+    "accent": "#101820"
+  },
+  {
+    "name": "Black & Yellow",
+    "primary": "#101820",
+    "secondary": "#FFD100",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Maroon & Cream",
+    "primary": "#7B2D26",
+    "secondary": "#F5F5DC",
+    "accent": "#C5A46D"
+  },
+  {
+    "name": "Teal & Black",
+    "primary": "#006D77",
+    "secondary": "#101820",
+    "accent": "#A7A7A7"
+  },
+  {
+    "name": "Purple & Gold",
+    "primary": "#4B0082",
+    "secondary": "#FFCC00",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Red & Black",
+    "primary": "#C8102E",
+    "secondary": "#000000",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Sky Blue & Navy",
+    "primary": "#87CEEB",
+    "secondary": "#003366",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Orange & Brown",
+    "primary": "#D35400",
+    "secondary": "#4E342E",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Forest Green & Gold",
+    "primary": "#013220",
+    "secondary": "#FFD700",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Turquoise & White",
+    "primary": "#40E0D0",
+    "secondary": "#FFFFFF",
+    "accent": "#333333"
+  },
+  {
+    "name": "Scarlet & Gray",
+    "primary": "#BB0000",
+    "secondary": "#888888",
+    "accent": "#000000"
+  },
+  {
+    "name": "Midnight Blue & Neon Green",
+    "primary": "#003366",
+    "secondary": "#39FF14",
+    "accent": "#A9A9A9"
+  },
+  {
+    "name": "Copper & Black",
+    "primary": "#B87333",
+    "secondary": "#101820",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Burgundy & Gold",
+    "primary": "#800020",
+    "secondary": "#DAA520",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Cyan & Charcoal",
+    "primary": "#00BCD4",
+    "secondary": "#36454F",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Magenta & Black",
+    "primary": "#E20074",
+    "secondary": "#101820",
+    "accent": "#B0B0B0"
+  },
+  {
+    "name": "Brown & Yellow",
+    "primary": "#8B4513",
+    "secondary": "#FFD34E",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Dark Purple & Silver",
+    "primary": "#301934",
+    "secondary": "#C0C0C0",
+    "accent": "#000000"
+  },
+  {
+    "name": "Red-Orange & Navy",
+    "primary": "#E34234",
+    "secondary": "#0A2342",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Olive Green & Tan",
+    "primary": "#808000",
+    "secondary": "#D2B48C",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Ice Blue & Black",
+    "primary": "#A9D6E5",
+    "secondary": "#101820",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Pink & Gray",
+    "primary": "#FF69B4",
+    "secondary": "#808080",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Dark Teal & Orange",
+    "primary": "#014D4E",
+    "secondary": "#FF6F3C",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Indigo & White",
+    "primary": "#4B0082",
+    "secondary": "#FFFFFF",
+    "accent": "#C0C0C0"
+  },
+  {
+    "name": "Dark Red & Cream",
+    "primary": "#8B0000",
+    "secondary": "#FFFDD0",
+    "accent": "#000000"
+  },
+  {
+    "name": "Steel Blue & Bronze",
+    "primary": "#4682B4",
+    "secondary": "#CD7F32",
+    "accent": "#FFFFFF"
+  },
+  {
+    "name": "Charcoal & Neon Yellow",
+    "primary": "#2F4F4F",
+    "secondary": "#DFFF00",
+    "accent": "#000000"
+  }
+]

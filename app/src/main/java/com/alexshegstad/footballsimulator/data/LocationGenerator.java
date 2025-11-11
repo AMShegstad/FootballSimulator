@@ -48,7 +48,7 @@ public class LocationGenerator {
             List<String> cities = stateEntry.getValue();
             
             for (String city : cities) {
-                allLocations.add(new Location(city, state));
+                allLocations.add(new Location.Builder().build());
             }
         }
     }

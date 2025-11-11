@@ -12,7 +12,7 @@ public class Coach {
     private final String firstName;
     private final String lastName;
     private final Location hometown;
-    private final Integer age;
+    private Integer age;
     private final Defense defense;
     private final Offense offense;
     private final LeadershipStyle leadershipStyle;
@@ -25,6 +25,35 @@ public class Coach {
         this.defense = builder.defense != null ? builder.defense : randomDefense();
         this.offense = builder.offense != null ? builder.offense : randomOffense();
         this.leadershipStyle = builder.leadershipStyle != null ? builder.leadershipStyle : randomLeadershipStyle();
+    }
+
+    // Getters
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public Location getHometown() {
+        return hometown;
+    }
+
+    public Defense getDefense() {
+        return defense;
+    }
+
+    public Offense getOffense() {
+        return offense;
+    }
+
+    public LeadershipStyle getLeadershipStyle() {
+        return leadershipStyle;
     }
 
     // Random Generation methods
@@ -63,8 +92,7 @@ public class Coach {
     }
 
     private static Location randomHometown() {
-        LocationGenerator locs = new LocationGenerator();
-        Location location = locs.getRandomLocation();
+        Location location = new Location.Builder().build();
         return location;
     }
         

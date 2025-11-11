@@ -2,6 +2,7 @@ package com.alexshegstad.footballsimulator.data;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
+//  import com.alexshegstad.footballsimulator.resources.*;
 import java.io.*;
 import java.util.*;
 
@@ -16,8 +17,8 @@ public class NameGenerator {
     }
     
     private void loadNames() {
-        firstNames = loadNamesFromJsonFile("/firstNames.json");
-        lastNames = loadNamesFromJsonFile("/lastNames.json");
+        firstNames = loadNamesFromJsonFile("/com/alexshegstad/footballsimulator/resources/firstNames.json");
+        lastNames = loadNamesFromJsonFile("/com/alexshegstad/footballsimulator/resources/lastNames.json");
     }
     
     private List<String> loadNamesFromJsonFile(String fileName) {

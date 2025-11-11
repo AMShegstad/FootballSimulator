@@ -1,7 +1,8 @@
 package com.alexshegstad.footballsimulator.data;
 
+import com.alexshegstad.footballsimulator.model.enumerations.SpendingHabit;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Owner;
-import com.alexshegstad.footballsimulator.model.teamcomponents.SpendingHabit;
+
 //import java.util.concurrent.ThreadLocalRandom;
 import java.util.Random;
 
