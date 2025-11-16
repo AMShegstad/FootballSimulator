@@ -2,6 +2,7 @@ package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 import com.alexshegstad.footballsimulator.data.NameGenerator;
 import com.alexshegstad.footballsimulator.model.enumerations.SpendingHabit;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Owner {
     
@@ -64,11 +65,13 @@ public class Owner {
     }
 
     private static SpendingHabit randomSpendingHabit() {
-
+        SpendingHabit[] habits = SpendingHabit.values(); 
+        int randomIndex = ThreadLocalRandom.current().nextInt(habits.length);
+        return habits[randomIndex];
     }
 
     private static double randomNetWorth() {
-
+        return (10_000_000 + Math.random() * 1_000_000_000);
     }
     
 

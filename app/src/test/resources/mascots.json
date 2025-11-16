@@ -1,5 +1,4 @@
-{
-  "mascots": [
+[
     "Wildcats",
     "Tigers",
     "Eagles",
@@ -91,7 +90,6 @@
     "Goblins",
     "Ogres",
     "Yetis",
-    "Yetis",
     "Berserkers",
     "Juggernauts",
     "Crushers",
@@ -114,4 +112,4 @@
     "Barracudas",
     "Kraken"
   ]
-}
+

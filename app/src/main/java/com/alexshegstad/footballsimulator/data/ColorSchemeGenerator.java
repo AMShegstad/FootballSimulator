@@ -1,38 +1,38 @@
-package com.alexshegstad.footballsimulator.data;
+// package com.alexshegstad.footballsimulator.data;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.alexshegstad.footballsimulator.model.teamcomponents.ColorScheme;
-import java.io.*;
-import java.util.*;
+// import com.fasterxml.jackson.databind.ObjectMapper;
+// import com.fasterxml.jackson.core.type.TypeReference;
+// import com.alexshegstad.footballsimulator.model.enumerations.ColorSchemes;
+// import java.io.*;
+// import java.util.*;
 
-public class ColorSchemeGenerator {
+// public class ColorSchemeGenerator {
     
-    private static final Random rand = new Random();
-    private List<ColorScheme> colorSchemes;
+//     private static final Random rand = new Random();
+//     private List<ColorSchemes> colorSchemes;
 
-    public ColorSchemeGenerator() {
-        loadColorSchemes();
-    }
+//     public ColorSchemeGenerator() {
+//         loadColorSchemes();
+//     }
 
-    private void loadColorSchemes() {
-        try {
-            InputStream inputStream = getClass().getResourceAsStream("/colorSchemes.json");
+//     private void loadColorSchemes() {
+//         try {
+//             InputStream inputStream = getClass().getResourceAsStream("/colorSchemes.json");
 
-            if (inputStream == null) {
-                throw new RuntimeException("colorSchemes.json file not found in resources folder");
-            }
+//             if (inputStream == null) {
+//                 throw new RuntimeException("colorSchemes.json file not found in resources folder");
+//             }
             
-            ObjectMapper mapper = new ObjectMapper();
+//             ObjectMapper mapper = new ObjectMapper();
 
-            ColorScheme selectedColorScheme = mapper.readValue(inputStream, new TypeReference<String>)
+//             ColorSchemes selectedColorScheme = mapper.readValue(inputStream, new TypeReference<List<String>>() {});
         
-        }
-    }
+//         }
+//     }
 
-    public String getRandomColorScheme() {
-        if (colorSchemes == null || colorSchemes.isEmpty()) {
-            return "unknown Color Scheme";
-        }
-    }
-}
+//     public String getRandomColorScheme() {
+//         if (colorSchemes == null || colorSchemes.isEmpty()) {
+//             return "unknown Color Scheme";
+//         }
+//     }
+// }

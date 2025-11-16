@@ -2,7 +2,7 @@ package com.alexshegstad.footballsimulator.data;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
-//  import com.alexshegstad.footballsimulator.resources.*;
+//import com.alexshegstad.footballsimulator.resources.*;
 import java.io.*;
 import java.util.*;
 
@@ -28,7 +28,7 @@ public class NameGenerator {
             InputStream inputStream = getClass().getResourceAsStream(fileName);
             
             if (inputStream == null) {
-                throw new RuntimeException(fileName + " file not found in resources");
+                throw new RuntimeException(fileName + " file not found in resources...");
             }
             
             ObjectMapper mapper = new ObjectMapper();

@@ -4,7 +4,7 @@ import com.alexshegstad.footballsimulator.model.enumerations.LeadershipStyle;
 import com.alexshegstad.footballsimulator.model.enumerations.Defense;
 import com.alexshegstad.footballsimulator.model.enumerations.Offense;
 import com.alexshegstad.footballsimulator.data.NameGenerator;
-import com.alexshegstad.footballsimulator.data.LocationGenerator;
+// import com.alexshegstad.footballsimulator.data.LocationGenerator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Coach {

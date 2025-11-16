@@ -1,8 +1,8 @@
 package com.alexshegstad.footballsimulator.logic;
 
 // import com.alexshegstad.footballsimulator.model.Matchup;
-//import com.alexshegstad.footballsimulator.model.Team;
-import java.util.*;
+// import com.alexshegstad.footballsimulator.model.Team;
+// import java.util.*;
 import java.util.Scanner;
 
 public class CoinFlip {

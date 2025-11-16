@@ -43,7 +43,7 @@ public class PlayerGenerator {
         List<Player> players = new ArrayList<>();
         NameGenerator nameGen = new NameGenerator();
         Set<Integer> usedNumbers = new HashSet<>();
-        LocationGenerator locationGen = new LocationGenerator();
+        //LocationGenerator locationGen = new LocationGenerator();
         CollegeGenerator collegeGen = new CollegeGenerator();
 
         for (Map.Entry<Position, Integer> entry : rosterComposition.entrySet()) {
@@ -52,7 +52,7 @@ public class PlayerGenerator {
 
             for (int i = 0; i < count; i++) {
                 String name = nameGen.getRandomName();
-                Location hometown = locationGen.getRandomLocation();
+                Location hometown = new Location.Builder().build();
                 College college = collegeGen.getRandomCollegeObject(); // Now this will work
                 String[] nameParts = name.split(" ", 2);
                 String firstName = nameParts.length > 0 ? nameParts[0] : "";

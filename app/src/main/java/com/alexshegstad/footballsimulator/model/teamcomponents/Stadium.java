@@ -1,7 +1,5 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
-import com.alexshegstad.footballsimulator.data.LocationGenerator;
-import com.alexshegstad.footballsimulator.model.teamcomponents.Team;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.util.*;
@@ -38,7 +36,7 @@ public class Stadium {
 
     private void loadStadiumNames() {
 
-        stadiumNames = loadStadiumsFromJsonFile("/com/alexshegstad/footballsimulator/resources/stadiums.json");
+        stadiumNames = loadStadiumsFromJsonFile("/stadiums.json");
         
     }
 
@@ -69,8 +67,9 @@ public class Stadium {
     }
 
     private String getRandomStadiumName() {
+        loadStadiumNames();
         if (stadiumNames.isEmpty()) {
-            return "unknown stadium name";
+            return "Stadium Names Not Loaded!";
         }
 
         String name = stadiumNames.get(rand.nextInt(stadiumNames.size()));
@@ -119,6 +118,7 @@ public class Stadium {
         return stadiumString;
     }
 
+    // Builder inner/nested class.
     public static class Builder {
         private String name;
         private Integer capacity;
@@ -137,6 +137,10 @@ public class Stadium {
         public Builder setLocation(Location location) {
             this.location = location;
             return this;
+        }
+
+        public Stadium build() {
+            return new Stadium(this);
         }
     }
 

@@ -2,60 +2,88 @@ package com.alexshegstad.footballsimulator.model.teamcomponents;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
-import com.alexshegstad.footballsimulator.data.LocationGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
+import java.io.*;
 import com.alexshegstad.footballsimulator.data.PlayerGenerator;
 import com.alexshegstad.footballsimulator.model.enumerations.ColorSchemes;
-import com.alexshegstad.footballsimulator.model.teamcomponents.Coach;
-import com.alexshegstad.footballsimulator.model.teamcomponents.Owner;
-import com.alexshegstad.footballsimulator.model.teamcomponents.Stadium;
 
 public class Team {
 
-    private String teamName;
-    private Location location;
-    private Stadium stadium;
-    private String ownerName;
-    private Coach coach;
-    private List<Player> roster;
-    private List<Player> startingOffense;
-    private List<Player> startingDefense;
-    private List<Player> startingSpecialTeams;
-    private final ColorSchemes colorScheme; 
+    private final String mascot;
+    private final Location location;
+    private final Stadium stadium;
+    private final Owner owner;
+    private final Coach coach;
+    private final List<Player> roster;
+    private final ColorSchemes colorScheme;
 
-    //private Boolean coinFlipChoice;
-    //private int seed;
+    List<String> mascots;
+    Random rand = new Random();
 
-    public Team (Builder builder) {
-        this.teamName = builder.teamName != null ? builder.teamName : generateTeamName();
+    public Team(Builder builder) {
+        this.mascot = builder.mascot != null ? builder.mascot : generateMascot();
         this.stadium = builder.stadium != null ? builder.stadium : generateStadium();
         this.location = builder.location != null ? builder.location : generateLocation();
-        this.ownerName = builder.ownerName != null ? builder.ownerName : generateOwnerName();
+        this.owner = builder.owner != null ? builder.owner : generateOwner();
         this.coach = builder.coach != null ? builder.coach : generateCoach();
         this.roster = builder.roster != null ? builder.roster : generateRoster();
-        // this.startingOffense = selectStartingOffense();
-        // this.startingDefense = selectStartingDefense();
-        // this.startingSpecialTeams = selectStartingSpecialTeams();
         this.colorScheme = builder.colorScheme != null ? builder.colorScheme : generateColorScheme();
     }
 
-    // Create the teamName from the JSON list.
-    public String generateTeamName() {
-        String teamName = "x";
-        // TODO: Implement code to select a mastcot.
-        return teamName;
+    private List<String> loadMascotsFromJsonFile(String fileName) {
+        List<String> mascotList = new ArrayList<>();
+
+        try {
+            InputStream inputStream = getClass().getResourceAsStream(fileName);
+
+            if (inputStream == null) {
+                throw new RuntimeException(fileName + " file not found in resources...");
+            }
+
+            ObjectMapper mapper = new ObjectMapper();
+            mascotList = mapper.readValue(inputStream, new TypeReference<List<String>>() {
+            });
+
+            inputStream.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading " + fileName, e);
+        }
+
+        return mascotList;
     }
 
-    // return the selected teamName.
-    public String getTeamName() {
-        return teamName;
+    private void loadMascots() {
+
+        mascots = loadMascotsFromJsonFile("/com/alexshegstad/footballsimulator/resources/mascots.json");
+
+    }
+
+    // Create the mascot from the JSON list.
+    public String generateMascot() {
+        // Import mascots
+        loadMascots();
+        // Make sure the names are load, with contingency, Just in case...
+        if (mascots.isEmpty()) {
+            return "unknown mascot...";
+        }
+        // Assign random name to variable
+        String mascot = mascots.get(rand.nextInt(mascots.size()));
+        // Return variable
+        return mascot;
+    }
+
+    // return the selected mascot.
+    public String getMascot() {
+        return mascot;
     }
 
     // Generate a location from the JSON list.
     public Location generateLocation() {
-        // TODO: Implement Builder pattern in Location class
+
         Location loc = new Location.Builder().build();
-        return location;
+        return loc;
     }
 
     // Return the selected location object.
@@ -64,15 +92,15 @@ public class Team {
     }
 
     // Create first and last name of owner using the JSON list.
-    public String generateOwnerName() {
-        // TODO: Implement Builder pattern in Owner class
-        return ownerName;
+    public Owner generateOwner() {
+        Owner owner = new Owner.Builder().build();
+        return owner;
     }
 
     // return the owner's full name.
-    public String getOwnerName() {
-        // TODO: Implement Builder pattern in Owner object.
-        String ownerName = ownerName.firstName + " " + ownerName.lastName;
+    public Owner getOwner() {
+
+        return this.owner;
     }
 
     // Generate an entire Coach object.
@@ -83,15 +111,20 @@ public class Team {
 
     // Return the entire coach object
     public Coach getCoach() {
-        return coach();
+        return coach;
     }
 
     public Stadium generateStadium() {
-        Stadium stadium = new Stadium.Builder().build(); 
+        Stadium stadium = new Stadium.Builder().build();
+        return stadium;
     }
 
     public Stadium getStadium() {
+        return stadium;
+    }
 
+    public ColorSchemes getColorScheme() {
+        return colorScheme;
     }
 
     public List<Player> generateRoster() {
@@ -104,113 +137,59 @@ public class Team {
         return roster;
     }
 
-    // public List<Player> selectStartingOffense() {
-
-    // }
-
-    // public List<Player> selectStartingDefense() {
-
-    // }
-
-    // public List<Player> selectStartingSpecialTeams() {
-
-    // }
-
     public ColorSchemes generateColorScheme() {
         ColorSchemes[] colors = ColorSchemes.values();
         int randomIndex = ThreadLocalRandom.current().nextInt(colors.length);
         return colors[randomIndex];
     }
 
-    // public String generateDivision() {
-    //     if (division) {
-    //         return "East";
-    //     } else {
-    //         return "West";
-    //     }
-    // }
-
-    // public void setCoinFlipChoice(Boolean coinFlipChoice) {
-    //     this.coinFlipChoice = coinFlipChoice;
-    // }
-
-    // public Boolean getCoinFlipChoice() {
-    //     return coinFlipChoice;
-    // }
-
-    // public void setSeed(int seed) {
-    //     this.seed = seed;
-    // }
-
-    // public int getSeed() {
-    //     return seed;
-    // }
-
     @Override
     public String toString() {
-        return "Team: " + teamName + "\nOwner: " + ownerName + "\nCoach: " + coach + "\nPlayers:\n " + roster;
+        return "Team: " + mascot + "\nOwner: " + owner.getLastName() + " " + owner.getLastName() + "\nCoach: " + coach
+                + "\nPlayers:\n " + roster;
     }
 
-        // Builder inner class to add flexibility to the constructor
+    // Builder inner class to add flexibility to the constructor
     public static class Builder {
         private Coach coach;
         private List<Player> roster;
-        //private List<Player> startingOffense;
-        //private List<Player> startingDefense;
-        //private List<Player> startingSpecialTeams;
-        private String ownerName;
+        private Owner owner;
         private Stadium stadium;
-        private String teamName;
+        private String mascot;
         private Location location;
         private ColorSchemes colorScheme;
 
-        private Builder setCoach() {
-        this.coach = coach;
-        return this;
-        }
-
-        private Builder setPlayerRoster() {
-        this.roster = roster;
-        return this;
-        }
-
-        // private Builder setStartingOffense() {
-        // this.startingOffense = startingOffense;
-        // TODO: Take the top player or two, depending on the team, and  
-        // return this;
-        // }
-
-        // private Builder setStartingDefense() {
-        // this.startingDefense = startingDefense;
-        // return this;
-        // }
-
-        // private Builder setStartingSpecialTeams() {
-        // this.startingSpecialTeams = startingSpecialTeams;
-        // return this;
-        // }
-
-        private Builder setTeamName() {
-        this.teamName = teamName;
-        return this;
-        }
-
-        private Builder setTeamLocation() {
-        this.location = location;
-        return this;
-        }
-
-        private Builder setColorScheme() {
-        this.colorScheme = colorScheme; 
+        public Builder setCoach(Coach coach) {
+            this.coach = coach;
             return this;
         }
 
-        private Builder setStadium() {
+        public Builder setPlayerRoster(List<Player> roster) {
+            this.roster = roster;
+            return this;
+        }
+
+        public Builder setMascot(String mascot) {
+            this.mascot = mascot;
+            return this;
+        }
+
+        public Builder setLocation(Location location) {
+            this.location = location;
+            return this;
+        }
+
+        public Builder setColorScheme(ColorSchemes colorScheme) {
+            this.colorScheme = colorScheme;
+            return this;
+        }
+
+        public Builder setStadium(Stadium stadium) {
             this.stadium = stadium;
             return this;
         }
 
-        private Team build() {
+        public Team build() {
             return new Team(this);
         }
     }

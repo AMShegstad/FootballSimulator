@@ -49,6 +49,18 @@ public enum ColorSchemes {
     return colorCodes;
    }
 
+   public String getColorCode1() {
+      return colorCode1;
+   }
+
+   public String getColorCode2() {
+      return colorCode2;
+   }
+
+   public String getColorCode3() {
+      return colorCode3;
+   }
+
    @Override
    public String toString() {
         return name + ": " + colorCode1 + ", " + colorCode2 + ", " + colorCode3 + ".";
