@@ -5,7 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.io.*;
-import com.alexshegstad.footballsimulator.data.PlayerGenerator;
+
+import com.alexshegstad.footballsimulator.data.rostergen.RosterGenerator;
 import com.alexshegstad.footballsimulator.model.enumerations.ColorSchemes;
 
 public class Team {
@@ -56,7 +57,7 @@ public class Team {
 
     private void loadMascots() {
 
-        mascots = loadMascotsFromJsonFile("/com/alexshegstad/footballsimulator/resources/mascots.json");
+        mascots = loadMascotsFromJsonFile("/mascots.json");
 
     }
 
@@ -128,7 +129,7 @@ public class Team {
     }
 
     public List<Player> generateRoster() {
-        PlayerGenerator pg = new PlayerGenerator();
+        RosterGenerator pg = new RosterGenerator();
         List<Player> newRoster = pg.generateTeamPlayers();
         return newRoster;
     }

@@ -15,6 +15,11 @@ public enum Defense {
         this.description = description;
     }
 
+    public String[] getDefense() {
+        String[] defenseInfo = {name, description};
+        return defenseInfo;
+    }
+
     public String getName() {
         return name;
     }

@@ -17,8 +17,8 @@ public class NameGenerator {
     }
     
     private void loadNames() {
-        firstNames = loadNamesFromJsonFile("/com/alexshegstad/footballsimulator/resources/firstNames.json");
-        lastNames = loadNamesFromJsonFile("/com/alexshegstad/footballsimulator/resources/lastNames.json");
+        firstNames = loadNamesFromJsonFile("/firstNames.json");
+        lastNames = loadNamesFromJsonFile("/lastNames.json");
     }
     
     private List<String> loadNamesFromJsonFile(String fileName) {

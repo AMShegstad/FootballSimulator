@@ -93,6 +93,11 @@ public class Owner {
             return this;
         }
 
+        public Builder setAge(Integer age) {
+            this.age = age;
+            return this;
+        }
+
         public Builder setSpendingHabit(SpendingHabit spendingHabit) {
             this.spendingHabit = spendingHabit;
             return this;

@@ -1,13 +1,15 @@
-package com.alexshegstad.footballsimulator.data;
+package com.alexshegstad.footballsimulator.data.rostergen;
 
 import java.util.*;
 
 import com.alexshegstad.footballsimulator.model.teamcomponents.Player;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Position;
 import com.alexshegstad.footballsimulator.model.teamcomponents.Location;
+import com.alexshegstad.footballsimulator.data.CollegeGenerator;
+import com.alexshegstad.footballsimulator.data.NameGenerator;
 import com.alexshegstad.footballsimulator.model.teamcomponents.College; // ADDED: Missing import
   
-public class PlayerGenerator {
+public class RosterGenerator {
 
     private static final Random rand = new Random();
 

@@ -4,6 +4,7 @@
 
 plugins {
     application
+    java
 }
 
 repositories {
@@ -36,7 +37,7 @@ application {
     mainClass = "com.alexshegstad.footballsimulator.App"
 }
 
-test {
+tasks.test {
     useJUnitPlatform()
     
     testLogging {

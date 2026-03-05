@@ -1,148 +1,198 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
-import java.util.*;
-import java.io.*;
+import java.io.InputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Stadium {
-    // The stadium model will create a Stadium object containing the name, location, capacity, 
+    private static final Random rand = new Random();
+    private static List<String> stadiumNames;
+    
     private String name;
-    private Location location;
-    private Integer capacity;
-    private List<String> stadiumNames;
-
-    Random rand = new Random();
-    // For generating a new location
-    //LocationGenerator loc = new LocationGenerator();
-
-    // public Stadium() {
-    //     this.name = "";
-    //     //this.location = "";
-    //     this.capacity = 0;
-    // }
-
-    // public Stadium(String name, Location location, int capacity) {
-    //     this.name = name;
-    //     this.location = location;
-    //     this.capacity = capacity; 
-    // } 
-
-    private Stadium (Builder builder) {
-        this.name = builder.name != null ? builder.name : getRandomStadiumName();
-        this.location = builder.location != null ? builder.location : getRandomLocation();
-        this.capacity = (builder.capacity != null) ? builder.capacity : randomCapacity();
-    }
-
-    private void loadStadiumNames() {
-
-        stadiumNames = loadStadiumsFromJsonFile("/stadiums.json");
-        
-    }
-
-    private static List<String> loadStadiumsFromJsonFile(String fileName) {
-        List<String> nameList = new ArrayList<>();
-
-        try {
-            InputStream inputStream = nameList.getClass().getResourceAsStream(fileName);
-
-            if (inputStream == null) {
-                throw new RuntimeException(fileName + " file not found int resources");
-            }
-
-            ObjectMapper mapper = new ObjectMapper();
-            nameList = mapper.readValue(inputStream, new TypeReference<List<String>>() {});
-
-            inputStream.close();
-        } catch (IOException e) {
-            throw new RuntimeException("Error reading " + fileName, e);
-        }
-
-        return nameList;
-    }
-
-    private Location getRandomLocation() {
-        Location location = new Location.Builder().build();
-        return location;
-    }
-
-    private String getRandomStadiumName() {
+    private int capacity;
+    private String city;
+    private String state;
+    
+    // Static block to load stadium names once
+    static {
         loadStadiumNames();
-        if (stadiumNames.isEmpty()) {
-            return "Stadium Names Not Loaded!";
+    }
+    
+    public Stadium() {
+        this.name = getRandomStadiumName();
+        this.capacity = generateCapacity();
+        // You can set city/state based on your needs
+    }
+    
+    private static void loadStadiumNames() {
+        try {
+            stadiumNames = loadStadiumsFromJsonFile();
+            if (stadiumNames == null || stadiumNames.isEmpty()) {
+                throw new RuntimeException("No stadiums loaded from JSON file");
+            }
+            System.out.println("✅ Loaded " + stadiumNames.size() + " stadiums");
+        } catch (Exception e) {
+            System.err.println("❌ Error loading stadiums: " + e.getMessage());
+            // Provide fallback stadiums
+            stadiumNames = getDefaultStadiums();
         }
-
-        String name = stadiumNames.get(rand.nextInt(stadiumNames.size()));
-        return name;
     }
-
-    private Integer randomCapacity() {
-        int minCapacity = 5000;
-        int maxCapacity = 132000;
-        Random rand = new Random();
-        int randomCapacity = rand.nextInt(minCapacity, maxCapacity);
-        return randomCapacity;
+    
+    private static List<String> loadStadiumsFromJsonFile() {
+        try {
+            // FIXED: Proper resource loading
+            InputStream inputStream = Stadium.class.getResourceAsStream("/stadiums.json");
+            
+            if (inputStream == null) {
+                throw new RuntimeException("/stadiums.json file not found in resources");
+            }
+            
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode rootNode = mapper.readTree(inputStream);
+            
+            List<String> names = new ArrayList<>();
+            
+            // Handle different JSON structures
+            if (rootNode.isArray()) {
+                // If JSON is directly an array of stadiums
+                for (JsonNode stadiumNode : rootNode) {
+                    String name = extractStadiumName(stadiumNode);
+                    if (name != null) {
+                        names.add(name);
+                    }
+                }
+            } else if (rootNode.has("stadiums")) {
+                // If JSON has a "stadiums" wrapper
+                JsonNode stadiumsArray = rootNode.get("stadiums");
+                for (JsonNode stadiumNode : stadiumsArray) {
+                    String name = extractStadiumName(stadiumNode);
+                    if (name != null) {
+                        names.add(name);
+                    }
+                }
+            } else {
+                throw new RuntimeException("Invalid JSON structure in stadiums.json");
+            }
+            
+            return names;
+            
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading stadiums.json: " + e.getMessage(), e);
+        }
     }
-
-    public String getName() {
-        return name;
+    
+    private static String extractStadiumName(JsonNode stadiumNode) {
+        // Try different possible field names
+        if (stadiumNode.has("name")) {
+            return stadiumNode.get("name").asText();
+        } else if (stadiumNode.has("stadium")) {
+            return stadiumNode.get("stadium").asText();
+        } else if (stadiumNode.has("stadiumName")) {
+            return stadiumNode.get("stadiumName").asText();
+        } else if (stadiumNode.isTextual()) {
+            return stadiumNode.asText();
+        }
+        return null;
     }
-
-    public void setName(String newName) {
-        this.name = newName;
+    
+    private static List<String> getDefaultStadiums() {
+        List<String> defaults = new ArrayList<>();
+        defaults.add("Memorial Stadium");
+        defaults.add("Veteran's Field");
+        defaults.add("City Stadium");
+        defaults.add("University Arena");
+        defaults.add("Champion Field");
+        defaults.add("Victory Stadium");
+        defaults.add("Liberty Field");
+        defaults.add("Eagle Stadium");
+        defaults.add("Thunder Dome");
+        defaults.add("Warrior Field");
+        return defaults;
     }
-
-    public Location getLocation() {
-        return location;
+    
+    public static String getRandomStadiumName() {
+        if (stadiumNames == null || stadiumNames.isEmpty()) {
+            return "Generic Stadium";
+        }
+        return stadiumNames.get(rand.nextInt(stadiumNames.size()));
     }
-
-    public void setLocation(Location newLocation) {
-        this.location = newLocation;
+    
+    private int generateCapacity() {
+        // Generate realistic stadium capacity (15,000 to 110,000)
+        return 15000 + rand.nextInt(95000);
     }
-
-    public void setRandomLocation() {
-        Location loc = new Location.Builder().build();
-        location = loc;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int newCapacity) {
-        this.capacity = newCapacity;
-    }
-
-    public String toString() {
-        String stadiumString = name + ", " + location + ", " + capacity;
-        return stadiumString;
-    }
-
-    // Builder inner/nested class.
+    
+    // Builder pattern
     public static class Builder {
         private String name;
-        private Integer capacity;
-        private Location location;
-
-        public Builder setName(String name) {
+        private int capacity;
+        private String city;
+        private String state;
+        
+        public Builder() {
+            // Default values will be set in build()
+        }
+        
+        public Builder name(String name) {
             this.name = name;
             return this;
         }
-
-        public Builder setCapacity(int capacity) {
+        
+        public Builder capacity(int capacity) {
             this.capacity = capacity;
             return this;
         }
-
-        public Builder setLocation(Location location) {
-            this.location = location;
+        
+        public Builder city(String city) {
+            this.city = city;
             return this;
         }
-
+        
+        public Builder state(String state) {
+            this.state = state;
+            return this;
+        }
+        
         public Stadium build() {
-            return new Stadium(this);
+            Stadium stadium = new Stadium();
+            
+            // Override defaults if provided
+            if (name != null) {
+                stadium.name = name;
+            }
+            if (capacity > 0) {
+                stadium.capacity = capacity;
+            }
+            if (city != null) {
+                stadium.city = city;
+            }
+            if (state != null) {
+                stadium.state = state;
+            }
+            
+            return stadium;
         }
     }
-
-
+    
+    // Getters
+    public String getName() { return name; }
+    public int getCapacity() { return capacity; }
+    public String getCity() { return city; }
+    public String getState() { return state; }
+    
+    // Setters
+    public void setName(String name) { this.name = name; }
+    public void setCapacity(int capacity) { this.capacity = capacity; }
+    public void setCity(String city) { this.city = city; }
+    public void setState(String state) { this.state = state; }
+    
+    @Override
+    public String toString() {
+        return String.format("Stadium{name='%s', capacity=%d, location='%s, %s'}", 
+                           name, capacity, city != null ? city : "Unknown", state != null ? state : "Unknown");
+    }
 }

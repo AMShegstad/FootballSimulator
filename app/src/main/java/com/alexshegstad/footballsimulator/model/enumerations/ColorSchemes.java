@@ -6,10 +6,10 @@ public enum ColorSchemes {
    ROYALBLUE_ORANGE("Royal Blue & Orange", "#0051BA", "#FF6600", "#FFFFFF"),
    GREEN_WHITE("Green & White", "#00843D", "#FFFFFF", "#101820"),
    BLACK_YELLOW("Black & Yellow", "#101820", "#FFD100", "#FFFFFF"),
-   MAROON_CREAM("Maroon & Cream", "#7B2D26", "#F5F5DC", "C5A46D"),
+   MAROON_CREAM("Maroon & Cream", "#7B2D26", "#F5F5DC", "#C5A46D"),
    TEAL_BLACK("Teal & Black", "#006D77", "#101820", "#A7A7A7"),
-   PURPLE_GOLD("Purple & Gold", "#4B0082", "FFCC00", "#FFFFFF"),
-   RED_BLACK("Red & Black", "C8102E", "#000000", "#FFFFFF"),
+   PURPLE_GOLD("Purple & Gold", "#4B0082", "#FFCC00", "#FFFFFF"),
+   RED_BLACK("Red & Black", "#C8102E", "#000000", "#FFFFFF"),
    SKYBLUE_NAVY("Sky Blue & Navy", "#87CEEB", "#000000", "#FFFFFF"),
    ORANGE_BROWN("Orange & Brown", "#D35400", "#4E342E", "#FFFFFF"),
    FORESTGREEN_GOLD("Forest Green & Gold", "#013220", "#FFD700", "#FFFFFF"),
@@ -20,14 +20,14 @@ public enum ColorSchemes {
    BURGUNDY_GOLD("Burgundy & Gold", "#800020", "#DAA520", "#FFFFFF"),
    CYAN_CHARCOAL("Cyan & Charcoal", "#00BCD4", "#36454F", "#FFFFFF"),
    MAGENTA_BLACK("Magenta & Black", "#E20074", "#101820", "#B0B0B0"),
-   BROWN_YELLOW("Brown & Yellow", "#8B4513", "#FFD34E", "FFFFFF"),
+   BROWN_YELLOW("Brown & Yellow", "#8B4513", "#FFD34E", "#FFFFFF"),
    DARKPURPLE_SILVER("Dark Purple & Silver", "#301934", "#C0C0C0", "#000000"),
-   REDORANGE_NAVY("Red Orance & Navy", "#E34234", "#0A2342", "#FFFFFF"),
+   REDORANGE_NAVY("Red Orange & Navy", "#E34234", "#0A2342", "#FFFFFF"),
    OLIVEGREEN_TAN("Olive Green & Tan", "#808000", "#D2B48C", "#FFFFFF"),
    ICEBLUE_BLACK("Ice Blue & Black", "#A9D6E5", "#101820", "#FFFFFF"),
    PINK_GRAY("Pink & Gray", "#FF69B4", "#808080", "#FFFFFF"),
    DARKTEAL_ORANGE("Dark Teal & Orange", "#014D4E", "#FF6F3C", "#FFFFFF"),
-   INDIGIO_WHITE("Indigo & White", "#4B0082", "#FFFFFF", "#C0C0C0"),
+   INDIGO_WHITE("Indigo & White", "#4B0082", "#FFFFFF", "#C0C0C0"),
    DARKRED_CREAM("Dark Red & Cream", "#8B0000", "#FFFDD0", "#000000"),
    STEELBLUE_BRONZE("Steel Blue & Bronze", "#4682B4", "#CD7F32", "#FFFFFF"),
    CHARCOAL_NEONYELLOW("Charcoal & Neon Yellow", "#2F4F4F", "#DFFF00", "#000000");
@@ -45,7 +45,7 @@ public enum ColorSchemes {
    }
 
    public String[] getColorScheme() {
-    String colorCodes[] = {name, colorCode1, colorCode2, colorCode3};
+    String[] colorCodes = {name, colorCode1, colorCode2, colorCode3};
     return colorCodes;
    }
 

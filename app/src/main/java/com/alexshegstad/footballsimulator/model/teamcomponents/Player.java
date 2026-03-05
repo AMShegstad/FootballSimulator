@@ -1,7 +1,14 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
-public class Player {
+import com.alexshegstad.footballsimulator.data.*;
+import com.alexshegstad.footballsimulator.model.enumerations.Handedness;
+import com.alexshegstad.footballsimulator.model.enumerations.LeadershipStyle;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Player {
+    // All your existing fields...
     private Position position;
     private int number;
     private String firstName;
@@ -16,6 +23,7 @@ public class Player {
     private int strength;
     private int speed;
     private int acceleration;
+    private int injuryResistance;
     private int passBlock;
     private int runBlock;
     private int impactBlock;
@@ -31,7 +39,6 @@ public class Player {
     private int stiffArm;
     private int juke;
     private int jumping;
-    private int injuryResistance;
     private int throwPower;
     private int shortAccuracy;
     private int mediumAccuracy;
@@ -50,113 +57,119 @@ public class Player {
     private int press;
     private int kickAccuracy;
     private int kickPower;
+    private LeadershipStyle preferredLeadershipStyle;
+    private Handedness handedness;
+
+    // Stats tracking
     private int starts = 0;
     private int wins = 0;
     private int losses = 0;
+    private int draws = 0;
     private int gamesPlayed = 0;
     private int seasonsPlayed = 0;
     private int downsPlayed = 0;
     private int matchupWins = 0;
 
-    public Player(String firstName, String lastName, Location hometown, College college, Position position, int number, int experience, int age, int height, int weight, int awareness, int strength, int speed, int acceleration, int passBlock, int runBlock, int impactBlock, int carrying, int catching, int routeRunning, int ballCarrierVision, int trucking, int elusiveness, int catchInTraffic, int spectacularCatch, int release, int stiffArm, int juke, int jumping, int injuryResistance, int throwPower, int shortAccuracy, int mediumAccuracy, int deepAccuracy, int playAction, int throwOnTheRun, int tackle, int playRecognition, int blockShedding, int powerMoves, int finesseMoves, int zoneCoverage, int manCoverage, int pursuit, int hitPower, int press, int kickAccuracy, int kickPower) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.position = position;
-        this.hometown = hometown;
-        this.college = college;
-        this.age = age;
-        this.number = number;
-        this.experience = experience;
-        this.height = height;
-        this.weight = weight;
-        this.awareness = awareness;
-        this.strength = strength;
-        this.speed = speed;
-        this.acceleration = acceleration;
-        this.passBlock = passBlock;
-        this.runBlock = runBlock;
-        this.impactBlock = impactBlock;
-        this.carrying = carrying;
-        this.catching = catching;
-        this.routeRunning = routeRunning;
-        this.ballCarrierVision = ballCarrierVision;
-        this.trucking = trucking;
-        this.elusiveness = elusiveness;
-        this.catchInTraffic = catchInTraffic;
-        this.spectacularCatch = spectacularCatch;
-        this.release = release;
-        this.stiffArm = stiffArm;
-        this.juke = juke;
-        this.jumping = jumping;
-        this.injuryResistance = injuryResistance;
-        this.throwPower = throwPower;
-        this.shortAccuracy = shortAccuracy;
-        this.mediumAccuracy = mediumAccuracy;
-        this.deepAccuracy = deepAccuracy;
-        this.playAction = playAction;
-        this.throwOnTheRun = throwOnTheRun;
-        this.tackle = tackle;
-        this.playRecognition = playRecognition;
-        this.blockShedding = blockShedding;
-        this.powerMoves = powerMoves;
-        this.finesseMoves = finesseMoves;
-        this.zoneCoverage = zoneCoverage;
-        this.manCoverage = manCoverage;
-        this.pursuit = pursuit;
-        this.hitPower = hitPower;
-        this.press = press;
-        this.kickAccuracy = kickAccuracy;
-        this.kickPower = kickPower;
+    // Private constructor for Builder pattern
+    private Player(Builder builder) {
+        this.firstName = builder.firstName != null ? builder.firstName : randomFirstName();
+        this.lastName = builder.lastName != null ? builder.lastName : randomLastName();
+        this.position = builder.position;
+        this.hometown = builder.hometown != null ? builder.hometown : randomLocation();
+        this.college = builder.college != null ? builder.college : getRandomCollege();
+        this.number = builder.number;
+        this.experience = builder.experience > 18 ? builder.experience : builder.age - 21;
+        this.age = builder.age > 17 ? builder.age : randomAge();
+        // Height must be represented as an int between 60 - 84 (inches)
+        this.height = builder.height;
+        // Weight must be represented as an int between 160 and 360 (lbs)
+        this.weight = builder.weight;
+        this.awareness = builder.awareness;
+        this.strength = builder.strength;
+        this.speed = builder.speed;
+        this.acceleration = builder.acceleration;
+        this.injuryResistance = builder.injuryResistance;
+        this.passBlock = builder.passBlock;
+        this.runBlock = builder.runBlock;
+        this.impactBlock = builder.impactBlock;
+        this.carrying = builder.carrying;
+        this.catching = builder.catching;
+        this.routeRunning = builder.routeRunning;
+        this.ballCarrierVision = builder.ballCarrierVision;
+        this.trucking = builder.trucking;
+        this.elusiveness = builder.elusiveness;
+        this.catchInTraffic = builder.catchInTraffic;
+        this.spectacularCatch = builder.spectacularCatch;
+        this.release = builder.release;
+        this.stiffArm = builder.stiffArm;
+        this.juke = builder.juke;
+        this.jumping = builder.jumping;
+        this.throwPower = builder.throwPower;
+        this.shortAccuracy = builder.shortAccuracy;
+        this.mediumAccuracy = builder.mediumAccuracy;
+        this.deepAccuracy = builder.deepAccuracy;
+        this.playAction = builder.playAction;
+        this.throwOnTheRun = builder.throwOnTheRun;
+        this.tackle = builder.tackle;
+        this.playRecognition = builder.playRecognition;
+        this.blockShedding = builder.blockShedding;
+        this.powerMoves = builder.powerMoves;
+        this.finesseMoves = builder.finesseMoves;
+        this.zoneCoverage = builder.zoneCoverage;
+        this.manCoverage = builder.manCoverage;
+        this.pursuit = builder.pursuit;
+        this.hitPower = builder.hitPower;
+        this.press = builder.press;
+        this.kickAccuracy = builder.kickAccuracy;
+        this.kickPower = builder.kickPower;
+        this.preferredLeadershipStyle = builder.preferredLeadershipStyle != null ? builder.preferredLeadershipStyle
+                : randomLeadershipStyle();
+        this.handedness = builder.handedness != null ? builder.handedness : generateRandomHandedness();
     }
 
-    // Test created
+    // Getters
     public String getFirstName() {
         return firstName;
     }
 
-    // Test created
+    public void setFirstName(String newFirstName) {
+        firstName = newFirstName;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(String newLastName) {
+        lastName = newLastName;
     }
 
     public String getFullName() {
         return firstName + " " + lastName;
     }
 
-    // Test created
     public Position getPosition() {
         return position;
     }
 
-    // Test created
-    public String getHometown() {
-        return hometown.toString();
-    }
-
-    // Test created
-    public College getCollege() {
-        return college;
-    }
-
-    // 
-    public int getExperience() {
-        return experience;
-    }
-
-    public void incrementExperience() {
-        if (experience < 20) {
-            experience++;
+    public void setPosition(Position newPosition) {
+        if (position == newPosition) {
+            System.out.print(getFullName() + " is already assigned to " + newPosition + " role.");
         } else {
-            // Implement retirement at some point...
+            position = newPosition;
         }
     }
 
-    public int getAge() {
-        return age;
+    public int getNumber() {
+        return number;
     }
 
-    public void incrementAge() {
-        age++;
+    public Location getHometown() {
+        return hometown;
+    }
+
+    public College getCollege() {
+        return college;
     }
 
     public int getHeight() {
@@ -167,833 +180,526 @@ public class Player {
         return weight;
     }
 
-    public void setWeight(int i) {
-        weight = i;
-        System.out.println("Player weight set to " + i);
+    public void setHeight(int newHeight) {
+        if (newHeight > 60 && newHeight < 84) {
+            height = newHeight;
+        } else {
+            System.out.print("Invalid Height");
+        }
     }
 
     public int getAwareness() {
         return awareness;
     }
 
-    public void incrementAwareness() {
-        if (awareness < 99) { 
-            awareness++;
-        } else {
-            System.out.println("Max value reached");
-        }
+    public void incrementAwareness(int change) {
+        awareness = awareness + change;
     }
 
-    public void decrementAwareness() {
-        if (awareness > 1) {
-            awareness--;
-        } else {
-            System.out.println("Lowest value reached");
-        }
+    public void decrementAwareness(int change) {
+        awareness = awareness - change;
     }
 
     public int getStrength() {
         return strength;
     }
 
-    public void incrementStrength() {
-        if (strength < 99) {
-            strength++;
-        } else {
-            System.out.println("Max value reached");
-        }
+    public void incrementStrength(int change) {
+        strength = strength + change;
     }
 
-    public void decrementStrength() {
-        if (strength > 1) {
-            strength--;
-        } else {
-            System.out.println("Min value reached");
-        }
+    public void decrementStrength(int change) {
+        strength = strength - change;
     }
 
     public int getSpeed() {
         return speed;
     }
 
-    public void incrementSpeed() {
-        if (speed < 99) {
-            speed++;
-        } else {
-            System.out.println("Max value reached");
-        }
-    }
-
-    public void decrementSpeed() {
-        if (strength > 1) {
-            strength--;
-        } else {
-            System.out.println("Min value reached");
-        }
-    }
-
     public int getAcceleration() {
         return acceleration;
     }
 
-    public void incrementAcceleration() {
-        if (acceleration < 99) {
-            acceleration++;
-        } else {
-            System.out.println("Max value reached");
-        }
-    }
-
-    public void decrementAcceleration() {
-        if (strength > 1) {
-            strength--;
-        } else {
-            System.out.println("Min value reached");
-        }
+    public int getInjuryResistance() {
+        return injuryResistance;
     }
 
     public int getPassBlock() {
         return passBlock;
     }
 
-    public void incrementPassBlock() {
-        if (passBlock < 99) {
-            passBlock++;
-        } else {
-            System.out.println("Max passBlock value reached");
-        }
-    }
-
-    public void decrementPassBlock() {
-        if (passBlock > 1) {
-            passBlock--;
-        } else {
-            System.out.println("Min passBlock value reached");
-        }
-    }
-
     public int getRunBlock() {
         return runBlock;
-    }
-
-    public void incrementRunBlock() {
-        if (runBlock < 99) {
-            runBlock++;
-        } else {
-            System.out.println("Max runBlock value reached");
-        }
-    }
-
-    public void decrementRunBlock() {
-        if (runBlock > 1) {
-            runBlock--;
-        } else {
-            System.out.println("Min runBlock value reached");
-        }
     }
 
     public int getImpactBlock() {
         return impactBlock;
     }
 
-    public void incrementImpactBlock() {
-        if (impactBlock < 99) {
-            impactBlock++;
-        } else {
-            System.out.println("Max impactBlock value reached");
-        }
-    }
-
-    public void decrementImpactBlock() {
-        if (impactBlock > 1) {
-            impactBlock--;
-        } else {
-            System.out.println("Min impactBlock value reached");
-        }
-    }
-
     public int getCarrying() {
         return carrying;
-    }
-
-    public void incrementCarrying() {
-        if (carrying < 99) {
-            carrying++;
-        } else {
-            System.out.println("Max carrying value reached");
-        }
-    }
-
-    public void decrementCarrying() {
-        if (carrying > 1) {
-            carrying--;
-        } else {
-            System.out.println("Min carrying value reached");
-        }
-    }
-
-    public int getCatching() {
-        return catching;
-    }
-
-    public void incrementCatching() {
-        if (catching < 99) {
-            catching++;
-        } else {
-            System.out.println("Max catching value reached");
-        }
-    }
-
-    public void decrementCatching() {
-        if (catching > 1) {
-            catching--;
-        } else {
-            System.out.println("Min catching value reached");
-        }
-    }
-
-    public int getRouteRunning() {
-        return routeRunning;
-    }
-
-    public void incrementRouteRunning() {
-        if (routeRunning < 99) {
-            routeRunning++;
-        } else {
-            System.out.println("Max routeRunning value reached");
-        }
-    }
-
-    public void decrementRouteRunning() {
-        if (routeRunning > 1) {
-            routeRunning--;
-        } else {
-            System.out.println("Min routeRunning value reached");
-        }
     }
 
     public int getBallCarrierVision() {
         return ballCarrierVision;
     }
 
-    public void incrementBallCarrierVision() {
-        if (ballCarrierVision < 99) {
-            ballCarrierVision++;
-        } else {
-            System.out.println("Max ballCarrierVision value reached");
-        }
+    public int getCatching() {
+        return catching;
     }
 
-    public void decrementBallCarrierVision() {
-        if (ballCarrierVision > 1) {
-            ballCarrierVision--;
-        } else {
-            System.out.println("Min ballCarrierVision value reached");
-        }
+    public int getRouteRunning() {
+        return routeRunning;
     }
 
     public int getTrucking() {
         return trucking;
     }
 
-    public void incrementTrucking() {
-        if (trucking < 99) {
-            trucking++;
-        } else {
-            System.out.println("Max trucking value reached");
-        }
-    }
-
-    public void decrementTrucking() {
-        if (trucking > 1) {
-            trucking--;
-        } else {
-            System.out.println("Min trucking value reached");
-        }
-    }
-
     public int getElusiveness() {
         return elusiveness;
-    }
-
-    public void incrementExlusiveness() {
-        if (elusiveness < 99) {
-            elusiveness++;
-        } else {
-            System.out.println("Max elusiveness value reached");
-        }
-    }
-
-    public void decrementElusiveness() {
-        if (elusiveness > 1) {
-            elusiveness++;
-        } else {
-            System.out.println("Min elusiveness value reached");
-        }
     }
 
     public int getCatchInTraffic() {
         return catchInTraffic;
     }
 
-    public void incrementCatchIntTraffic() {
-        if (catchInTraffic < 99) {
-            catchInTraffic++;
-        } else {
-            System.out.println("Max catchInTraffic value reached");
-        }
-    }
-
-    public void decrementCatchInTraffic() {
-        if (catchInTraffic > 1) {
-            catchInTraffic--;
-        } else {
-            System.out.println("Min catchInTraffic value reached");
-        }
-    }
-
     public int getSpectacularCatch() {
         return spectacularCatch;
-    }
-
-    public void incrementSpectacularCatch() {
-        if (spectacularCatch < 99) {
-            spectacularCatch++;
-        } else {
-            System.out.println("Max spectacularCatch value reached");
-        }
-    }
-
-    public void decrementSpectacularCatch() {
-        if (spectacularCatch > 1) {
-            spectacularCatch--;
-        } else {
-            System.out.println("Min spectacularCatch value reached");
-        }
     }
 
     public int getRelease() {
         return release;
     }
 
-    public void incrementRelease() {
-        if (release < 99) {
-            release++;
-        } else {
-            System.out.println("Max release value reached");
-        }
-    }
-
-    public void decrementRelease() {
-        if (release > 1) {
-            release--;
-        } else {
-            System.out.println("Min release value reached");
-        }
-    }
-
     public int getStiffArm() {
         return stiffArm;
-    }
-
-    public void incrementStiffArm() {
-        if (stiffArm < 99) {
-            stiffArm++;
-        } else {
-            System.out.println("Max stiffArm value reached");
-        }
-    }
-
-    public void decrementStiffArm() {
-        if (stiffArm > 1) {
-            stiffArm--;
-        } else {
-            System.out.println("Min stiffArm value reached");
-        }
     }
 
     public int getJuke() {
         return juke;
     }
 
-    public void incrementJuke() {
-        if (juke < 99) {
-            juke++;
-        } else {
-            System.out.println("Max juke value reached");
-        }
-    }
-
-    public void decrementJuke() {
-        if (juke > 1) {
-            juke--;
-        } else {
-            System.out.println("Min juke value reached");
-        }
-    }
-
     public int getJumping() {
         return jumping;
-    }
-
-    public void incrementJumping() {
-        if (jumping < 99) {
-            jumping++;
-        } else {
-            System.out.println("Max jumping value reached");
-        }
-    }
-
-    public void decrementJumping() {
-        if (jumping > 1) {
-            jumping--;
-        } else {
-            System.out.println("Min jumping value reached");
-        }
-    }
-
-    public int injuryResistance() {
-        return injuryResistance;
-    }
-
-    public void incrementInjuryResistance() {
-        if (injuryResistance < 99) {
-            injuryResistance++;
-        } else {
-            System.out.println("Max injuryResistance value reached");
-        }
-    }
-
-    public void decrementInjuryResistance() {
-        if (injuryResistance > 1) {
-            injuryResistance--;
-        } else {
-            System.out.println("Min injuryResistance value reached");
-        }
     }
 
     public int getThrowPower() {
         return throwPower;
     }
 
-    public void incrementThrowPower() {
-        if (throwPower < 99) {
-            throwPower++;
-        } else {
-            System.out.println("Max throwPower value reached");
-        }
-    }
-
-    public void decrementThrowPower() {
-        if (throwPower > 1) {
-            throwPower--;
-        } else {
-            System.out.println("Min throwPower value reached");
-        }
-    }
-
     public int getShortAccuracy() {
         return shortAccuracy;
-    }
-
-    public void incrementShortAccuracy() {
-        if (shortAccuracy < 99) {
-            shortAccuracy++;
-        } else {
-            System.out.println("Max shortAccuracy value reached");
-        }
-    }
-
-    public void decrementShortAccuracy() {
-        if (shortAccuracy > 1) {
-            shortAccuracy--;
-        } else {
-            System.out.println("Min shortAccuracy value reached");
-        }
     }
 
     public int getMediumAccuracy() {
         return mediumAccuracy;
     }
 
-    public void incrementMediumAccuracy() {
-        if (mediumAccuracy < 99) {
-            mediumAccuracy++;
-        } else {
-            System.out.println("Max mediumAccuracy value reached");
-        }
-    }
-
-    public void decrementMediumAccuracy() {
-        if (mediumAccuracy > 1) {
-            mediumAccuracy--;
-        } else {
-            System.out.println("Min mediumAccuracy value reached");
-        }
-    }
-
     public int getDeepAccuracy() {
         return deepAccuracy;
-    }
-
-    public void incrementDeepAccuracy() {
-        if (deepAccuracy < 99) {
-            deepAccuracy++;
-        } else {
-            System.out.println("Max deepAccuracy value reached");
-        }
-    }
-
-    public void decrementDeepAccuracy() {
-        if (deepAccuracy > 1) {
-            deepAccuracy--;
-        } else {
-            System.out.println("Min deepaccuracy value reached");
-        }
     }
 
     public int getPlayAction() {
         return playAction;
     }
 
-    public void incrementPlayAction() {
-        if (playAction < 99) {
-            playAction++;
-        } else {
-            System.out.println("Max playAction value reached");
-        }
-    }
-
-    public void decrementPlayAction() {
-        if (playAction > 1) {
-            playAction--;
-        } else {
-            System.out.println("Min placyAction value reached");
-        }
-    }
-
     public int getThrowOnTheRun() {
         return throwOnTheRun;
-    }
-
-    public void incrementThrowOnTheRun() {
-        if (throwOnTheRun < 99) {
-            throwOnTheRun++;
-        } else {
-            System.out.println("Max throwOnTheRun value reached");
-        }
-    }
-
-    public void decrementThrowOnTheRun() {
-        if (throwOnTheRun > 1) {
-            throwOnTheRun--;
-        } else {
-            System.out.println("Min throwOnTheRun value reached");
-        }
     }
 
     public int getTackle() {
         return tackle;
     }
 
-    public void incrementTackle() {
-        if (tackle < 99) {
-            tackle++;
-        } else {
-            System.out.println("Max tackle value reached");
-        }
-    }
-
-    public void decrementTackle() {
-        if (tackle > 1) {
-            tackle--;
-        } else {
-            System.out.println("Min tackle value reached");
-        }
-    }
-
     public int getPlayRecognition() {
         return playRecognition;
     }
 
-    public void incrementPlayRecognition() {
-        if (playRecognition < 99) {
-            playRecognition++;
-        } else {
-            System.out.println("Max playRecognition value reached");
-        }
-    }
-
-    public void decrementPlayRecognition() {
-        if (playRecognition > 1) {
-            playRecognition--;
-        } else {
-            System.out.println("Min playRecognition value reached");
-        }
-    } 
-
     public int getBlockShedding() {
         return blockShedding;
-    }
-
-    public void incrementBlockShedding() {
-        if (blockShedding < 99) {
-            blockShedding++;
-        } else {
-            System.out.println("Max playRecognition value reached");
-        }
-    }
-
-    public void decrementBlockShedding() {
-        if (blockShedding > 1) {
-            blockShedding--;
-        } else {
-            System.out.println("Min blockShedding value reached");
-        }
     }
 
     public int getPowerMoves() {
         return powerMoves;
     }
 
-    public void incrementPowerMoves() {
-        if (powerMoves < 99) {
-            powerMoves++;
-        } else {
-            System.out.println("Max powerMoves value reached");
-        }
-    }
-
-    public void decrementPowerMoves() {
-        if (powerMoves > 1) {
-            powerMoves--;
-        } else {
-            System.out.println("Min powerMoves value reached");
-        }
-    }
-
     public int getFinesseMoves() {
         return finesseMoves;
-    }
-
-    public void incrementFinesseMoves() {
-        if (finesseMoves < 99) {
-            finesseMoves++;
-        } else {
-            System.out.println("Max finesseMoves value reached");
-        }
-    }
-
-    public void decrementFinesseMoves() {
-        if (finesseMoves > 1) {
-            finesseMoves--;
-        } else {
-            System.out.println("Min finesseMoves value reached");
-        }
     }
 
     public int getZoneCoverage() {
         return zoneCoverage;
     }
 
-    public void incrementZoneCoverage() {
-        if (zoneCoverage < 99) {
-            zoneCoverage++;
-        } else {
-            System.out.println("Max zoneCoverage value reached");
-        }
-    }
-
-    public void decrementZoneCoverage() {
-        if (zoneCoverage > 1) {
-            zoneCoverage--;
-        } else {
-            System.out.println("Min zoneCoverage value reached");
-        }
-    }
-
     public int getManCoverage() {
         return manCoverage;
-    }
-
-    public void incrementManCoverage() {
-        if (manCoverage < 99) {
-            manCoverage++;
-        } else {
-            System.out.println("Max manCoverage value reached");
-        }
-    }
-
-    public void decrementManCoverage() {
-        if (manCoverage > 1) {
-            manCoverage--;
-        } else {
-            System.out.println("Min manCoverage value reached");
-        }
     }
 
     public int getPursuit() {
         return pursuit;
     }
 
-    public void incrementPursuit() {
-        if (pursuit < 99) {
-            pursuit++;
-        } else {
-            System.out.println("Max pursuit value reached");
-        }
-    }
-
-    public void decrementPursuit() {
-        if (pursuit > 1) {
-            pursuit--;
-        } else {
-            System.out.println("Min pursuit value reached");
-        }
-    }
-
     public int getHitPower() {
         return hitPower;
-    }
-
-    public void incrementHitPower() {
-        if (hitPower < 99) {
-            hitPower++;
-        } else {
-            System.out.println("Max hitPower value reached");
-        }
-    }
-
-    public void decrementHitPower() {
-        if (hitPower > 1) {
-            hitPower--;
-        } else {
-            System.out.println("Min hitPower value reached");
-        }
     }
 
     public int getPress() {
         return press;
     }
 
-    public void incrementPress() {
-        if (press < 99) {
-            press++;
-        } else {
-            System.out.println("Max press value reached");
-        }
-    }
-
-    public void decrementPress() {
-        if (press > 1) {
-            press--;
-        } else {
-            System.out.println("Min press value reached");
-        }
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
     public int getKickAccuracy() {
         return kickAccuracy;
-    }
-
-    public void incrementKickAccuracy() {
-        if (kickAccuracy < 99) {
-            kickAccuracy++;
-        } else {
-            System.out.print("Max kickAccuracy value reached");
-        }
-    }
-
-    public void decrementKickAccuracy() {
-        if (kickAccuracy > 1) {
-            kickAccuracy--;
-        } else {
-            System.out.println("Min kickAccuracy value reached");
-        }
     }
 
     public int getKickPower() {
         return kickPower;
     }
 
-    public void incrementKickPower() {
-        if (kickPower < 99) {
-            kickPower++;
-        } else {
-            System.out.println("Max kickPower value reached");
-        }
+    public LeadershipStyle getPreferredLeadershipStyle() {
+        return preferredLeadershipStyle;
     }
 
-    public void decrementKickPower() {
-        if (kickPower > 1) {
-            kickPower--;
-        } else {
-            System.out.println("Min kickPower value reached");
-        }
+    public String getHandedness() {
+        return handedness.name();
     }
 
-    public String toString() {
-        String text = "";
-        return text;
-    }
-
+    // Getters and incrementers for tracked stats
     public int getStarts() {
         return starts;
     }
 
-    public void incrementStarts() {
-        starts++;
+    public void incrementStarts(int change) {
+        starts = starts + change;
     }
 
     public int getWins() {
         return wins;
     }
 
-    public void incrementWins() {
-        wins++;
+    public void incrementWins(int change) {
+        wins = wins + change;
     }
 
     public int getLosses() {
         return losses;
     }
 
-    public void incrementLosses() {
-        losses++;
+    public void incrementLosses(int change) {
+        losses = losses + change;
+    }
+
+    public int getDraws() {
+        return draws;
+    }
+
+    public void incrementDraws(int change) {
+        draws = draws + change;
     }
 
     public int getGamesPlayed() {
         return gamesPlayed;
     }
 
-    public void incrementGamesPlayed() {
-        gamesPlayed++;
+    public void incrementGamesPlayed(int change) {
+        gamesPlayed = gamesPlayed + change;
     }
 
     public int getSeasonsPlayed() {
         return seasonsPlayed;
     }
 
-    public void incrementSeasonsPlayed() {
-        seasonsPlayed++;
-    }
-
-    public int getDownsPlayed() {
-        return downsPlayed;
-    }
-
-    public void incrementDownsPlayed() {
-        downsPlayed++;
+    public void incrementSeasonsPlayed(int change) {
+        seasonsPlayed = seasonsPlayed + change;
     }
 
     public int getMatchupWins() {
         return matchupWins;
     }
 
-    public void incrementMatchupWins() {
-        matchupWins++;
+    public void incrementMatchupWins(int change) {
+        matchupWins = matchupWins + change;
+    }
+
+    public int getDownsPlayed() {
+        return downsPlayed;
+    }
+
+    private static int randomAge() {
+        return (int) (30 + Math.random() * 35);
+    }
+
+    private static String randomFirstName() {
+        NameGenerator names = new NameGenerator();
+        String firstName = names.getRandomFirstName();
+        return firstName;
+    }
+
+    private static String randomLastName() {
+        NameGenerator names = new NameGenerator();
+        String lastName = names.getRandomLastName();
+        return lastName;
+    }
+
+    private static LeadershipStyle randomLeadershipStyle() {
+        LeadershipStyle[] leadershipStyles = LeadershipStyle.values();
+        int randomIndex = ThreadLocalRandom.current().nextInt(leadershipStyles.length);
+        return leadershipStyles[randomIndex];
+    }
+
+    private static Location randomLocation() {
+        Location loc = new Location.Builder().build();
+        return loc;
+    }
+
+    private static College getRandomCollege() {
+        CollegeGenerator colGen = new CollegeGenerator();
+        College col = colGen.getRandomCollegeObject();
+        return col;
+    }
+
+    public static Handedness generateRandomHandedness() {
+        Random rand = new Random();
+        int roll = rand.nextInt(100); // 0-99
+
+        if (roll < 85) {
+            // 85% chance: right-handed players
+            // Split evenly between RIGHT and RIGHT_MOST
+            return roll < 43 ? Handedness.RIGHT : Handedness.RIGHT_MOST;
+        } else {
+            // 15% chance: non-right-handed players
+            int leftRoll = rand.nextInt(100);
+            if (leftRoll < 10) {
+                // 10% of remaining = 1.5% overall
+                return Handedness.AMBIDEXTROUS;
+            } else if (leftRoll < 55) {
+                return Handedness.LEFT;
+            } else {
+                return Handedness.LEFT_MOST;
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s #%d - %s (Age: %d, Exp: %d)",
+                firstName, lastName, number, position, age, experience);
+    }
+
+    // Builder Pattern
+    public static class Builder {
+        private static final Random rand = new Random();
+        private static NameGenerator nameGen;
+        private static CollegeGenerator collegeGen;
+
+        // Required fields
+        // No player can be created without first having a predetermined position. This
+        // allows control of roster size and composition.
+        private Position position;
+
+        // Optional fields with defaults
+        private String firstName;
+        private String lastName;
+        private Location hometown;
+        private College college;
+        private int number;
+        private int experience;
+        private int age;
+        private int height;
+        private int weight;
+        private int awareness;
+        private int strength;
+        private int speed;
+        private int acceleration;
+        private int injuryResistance;
+        private int passBlock, runBlock, impactBlock;
+        private int carrying, catching, routeRunning;
+        private int ballCarrierVision, trucking, elusiveness;
+        private int catchInTraffic, spectacularCatch, release;
+        private int stiffArm, juke, jumping;
+        private int throwPower, shortAccuracy, mediumAccuracy, deepAccuracy;
+        private int playAction, throwOnTheRun;
+        private int tackle, playRecognition, blockShedding;
+        private int powerMoves, finesseMoves;
+        private int zoneCoverage, manCoverage, pursuit;
+        private int hitPower, press;
+        private int kickAccuracy, kickPower;
+        private LeadershipStyle preferredLeadershipStyle;
+        private Handedness handedness;
+
+        static {
+            nameGen = new NameGenerator();
+            collegeGen = new CollegeGenerator();
+        }
+
+        public Builder(Position position) {
+            this.position = position;
+
+            // Set defaults based on position
+            setPositionDefaults(position);
+        }
+
+        private void setPositionDefaults(Position position) {
+            // Generate random name
+            String fullName = nameGen.getRandomName();
+            String[] parts = fullName.split(" ", 2);
+            this.firstName = parts.length > 0 ? parts[0] : "John";
+            this.lastName = parts.length > 1 ? parts[1] : "Doe";
+
+            // Generate random hometown and college
+            this.hometown = new Location.Builder().build();
+            this.college = collegeGen.getRandomCollegeObject();
+
+            // Common defaults
+            this.injuryResistance = randBetween(50, 99);
+            this.experience = randBetween(0, 20);
+            this.age = experience + randBetween(20, 23);
+
+            // Position-specific defaults
+            switch (position) {
+                case QB:
+                    setQuarterbackDefaults();
+                    break;
+                case HB:
+                    setRunningBackDefaults();
+                    break;
+                case WR:
+                    setWideReceiverDefaults();
+                    break;
+                // ... add other positions
+                default:
+                    setGenericDefaults();
+            }
+        }
+
+        private void setQuarterbackDefaults() {
+            this.number = randBetween(1, 19);
+            this.height = randBetween(68, 80);
+            this.weight = randBetween(165, 250);
+            this.awareness = randBetween(65, 99);
+            this.speed = randBetween(40, 95);
+            this.throwPower = randBetween(75, 99);
+            this.shortAccuracy = randBetween(75, 99);
+            this.mediumAccuracy = randBetween(75, 99);
+            this.deepAccuracy = randBetween(65, 89);
+            // this.acceleration = randBetween(50, 95);
+            // this.passBlock = randBetween(10, 50);
+            // this.runBlock = randBetween(15, 45);
+            // this.impactBlock = randBetween(5, 35);
+            // this.carrying = randBetween(35, 85);
+            // this.catching = randBetween(25, 40);
+            // this.routeRunning = randBetween(5, 15);
+            // this.ballCarrierVision = randBetween(30, 75);
+        }
+
+        private void setRunningBackDefaults() {
+            this.number = randBetween(20, 44);
+            this.height = randBetween(66, 74);
+            this.weight = randBetween(180, 235);
+            this.speed = randBetween(82, 99);
+            this.carrying = randBetween(80, 99);
+            this.ballCarrierVision = randBetween(72, 99);
+            this.elusiveness = randBetween(65, 99);
+            // Set all other HB-specific stats...
+        }
+
+        private void setWideReceiverDefaults() {
+            this.number = randBetween(10, 19); // Will need special handling for 80-89
+            this.height = randBetween(72, 81);
+            this.weight = randBetween(183, 234);
+            this.speed = randBetween(82, 99);
+            this.catching = randBetween(88, 99);
+            this.routeRunning = randBetween(75, 99);
+            this.spectacularCatch = randBetween(75, 99);
+            // Set all other WR-specific stats...
+        }
+
+        private void setGenericDefaults() {
+            this.number = randBetween(1, 99);
+            this.height = randBetween(66, 80);
+            this.weight = randBetween(150, 350);
+            this.awareness = randBetween(50, 80);
+            this.speed = randBetween(40, 80);
+            // Set all stats to moderate values...
+        }
+
+        // Fluent setters for custom values
+        public Builder firstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder lastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder position() {
+            Random random = new Random();
+            Position[] positions = Position.values();
+            this.position = positions[random.nextInt(positions.length)];
+            return this;
+        }
+
+        public Builder number(int number) {
+            this.number = number;
+            return this;
+        }
+
+        public Builder height(int height) {
+            this.height = height;
+            return this;
+        }
+
+        public Builder weight(int weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder speed(int speed) {
+            this.speed = speed;
+            return this;
+        }
+
+        public Builder awareness(int awareness) {
+            this.awareness = awareness;
+            return this;
+        }
+
+        public Builder throwPower(int throwPower) {
+            this.throwPower = throwPower;
+            return this;
+        }
+
+        public Builder catching(int catching) {
+            this.catching = catching;
+            return this;
+        }
+
+        public Builder preferredLeadershipStyle(LeadershipStyle preferredLeadershipStyle) {
+            this.preferredLeadershipStyle = preferredLeadershipStyle;
+            return this;
+        }
+
+        public Builder college(College college) {
+            this.college = collegeGen.getRandomCollegeObject();
+            return this;
+        }
+
+        public Builder handedness(Handedness handedness) {
+            this.handedness = generateRandomHandedness();
+            return this;
+        }
+
+        // Add more setters for other stats as needed...
+
+        public Player build() {
+            return new Player(this);
+        }
+
+        private static int randBetween(int min, int max) {
+            return rand.nextInt(max - min + 1) + min;
+        }
+
     }
 }
