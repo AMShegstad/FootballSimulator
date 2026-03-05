@@ -180,9 +180,9 @@ public class Player {
         return weight;
     }
 
-    public void setHeight(int newHeight) {
-        if (newHeight > 60 && newHeight < 84) {
-            height = newHeight;
+    public void setWeight(int newWeight) {
+        if (newWeight > 60 && newWeight < 84) {
+            height = newWeight;
         } else {
             System.out.print("Invalid Height");
         }
@@ -193,11 +193,19 @@ public class Player {
     }
 
     public void incrementAwareness(int change) {
-        awareness = awareness + change;
+        if (awareness < (99 - change)){
+            awareness = awareness + change;
+        } else {
+            awareness = 99;
+        }
     }
 
     public void decrementAwareness(int change) {
-        awareness = awareness - change;
+        if (awareness > change) {
+            awareness = awareness - change;
+        } else {
+            awareness = 0;
+        }
     }
 
     public int getStrength() {
@@ -205,123 +213,569 @@ public class Player {
     }
 
     public void incrementStrength(int change) {
-        strength = strength + change;
+        if (strength < (99 - change)) {
+            strength = strength + change;
+        } else {
+            strength = 99;
+        }
     }
 
     public void decrementStrength(int change) {
-        strength = strength - change;
+        if (strength > change) {
+            strength = strength - change;
+        } else {
+            strength = 0;
+        }
     }
 
     public int getSpeed() {
         return speed;
     }
 
+    public void incrementSpeed(int change) {
+        if (speed < (99 - change)) {
+            speed = speed + change;
+        } else {
+            speed = 99;
+        }
+    }
+
+    public void decrementSpeed(int change) {
+        if (speed > change) {
+            speed = speed - change;
+        } else {
+            speed = 0;
+        }
+    }
+
     public int getAcceleration() {
         return acceleration;
+    }
+
+    public void incrementAcceleration(int change) {
+        if (acceleration < (99 - change)) {
+            acceleration = acceleration + change;
+        } else {
+            acceleration = 99;
+        }
+    }
+
+    public void decrementAcceleration(int change) {
+        if (acceleration > change) {
+            acceleration = acceleration - change;
+        } else {
+            acceleration = 0;
+        }
     }
 
     public int getInjuryResistance() {
         return injuryResistance;
     }
 
+    public void incrementInjuryResistance(int change) {
+        if (injuryResistance < (99 - change)) {
+            injuryResistance = injuryResistance + change;
+        } else {
+            injuryResistance = 99;
+        }
+    }
+
+    public void decrementInjuryResistance(int change) {
+        if (injuryResistance > change) {
+            injuryResistance = injuryResistance - change;
+        } else {
+            injuryResistance = 0;
+        }
+    }
+
     public int getPassBlock() {
         return passBlock;
+    }
+
+    public void incrementPassBlock(int change) {
+        if (passBlock < (99 - change)) {
+            passBlock = passBlock + change;
+        } else {
+            passBlock = 99;
+        }
+    }
+
+    public void decrementPassBlock(int change) {
+        if (passBlock > change) {
+            passBlock = passBlock - change;
+        } else {
+            passBlock = 0;
+        }
     }
 
     public int getRunBlock() {
         return runBlock;
     }
 
+    public void incrementRunBlock(int change) {
+        if (runBlock < (99 - change)){
+            runBlock = runBlock + change;
+        } else {
+            runBlock = 99;
+        }
+     }
+
+    public void decrementRunBlock(int change) {
+        if (runBlock > change) {
+            runBlock = runBlock - change;
+        } else {
+            runBlock = 0;
+        }
+    }
+
     public int getImpactBlock() {
         return impactBlock;
+    }
+
+    public void incrementImpactBlock(int change) {
+        if (impactBlock < (99 - change)) {
+            impactBlock = impactBlock + change;
+        } else {
+            impactBlock = 99;
+        }
+    }
+
+    public void decrementImpactBlock(int change) {
+        if (impactBlock > change) {
+            impactBlock = impactBlock - change;
+        } else {
+            impactBlock = 0;
+        }
     }
 
     public int getCarrying() {
         return carrying;
     }
 
+    public void incrementCarrying(int change) {
+        if (carrying < (99 - change)) {
+            carrying = carrying + change;
+        } else {
+            carrying = 99;
+        }
+    }
+
+    public void decrementCarrying(int change) {
+        if (carrying > change) {
+            carrying = carrying - change;
+        } else {
+            carrying = 0;
+        }
+    }
+
     public int getBallCarrierVision() {
         return ballCarrierVision;
+    }
+
+    public void incrementBallCarrierVision(int change) {
+        if (ballCarrierVision < (99 - change)) {
+            ballCarrierVision = ballCarrierVision + change;
+        } else {
+            ballCarrierVision = 99;
+        }
+    }
+
+    public void decrementBallCarrierVision(int change) {
+        if (ballCarrierVision > change) {
+            ballCarrierVision = ballCarrierVision - change;
+        } else {
+            ballCarrierVision = 0;
+        }
     }
 
     public int getCatching() {
         return catching;
     }
 
+    public void incrementCatching(int change) {
+        if (catching < (99 - change)) {
+            catching = catching + change;
+        } else {
+            catching = 99;
+        }
+    }
+
+    public void decrementCatching(int change) {
+        if (catching > change) {
+            catching = catching - change;
+        } else {
+            catching = 0;
+        }
+    }
+
     public int getRouteRunning() {
         return routeRunning;
+    }
+
+    public void incrementRouteRunning(int change) {
+        if (routeRunning < (99 - change)) {
+            routeRunning = routeRunning + change;
+        } else {
+            routeRunning = 99;
+        }
+    }
+
+    public void decrementRouteRunning(int change) {
+        if (routeRunning > change) {
+            routeRunning = routeRunning - change;
+        } else {
+            routeRunning = 0;
+        }
     }
 
     public int getTrucking() {
         return trucking;
     }
 
+    public void incrementTrucking(int change) {
+        if (trucking < (99 - change)) { 
+            trucking = trucking + change;
+        } else {
+            trucking = 99;
+        }
+    }
+
+    public void decrementTrucking(int change) {
+        if (trucking > change) {
+            trucking = trucking - change;
+        } else {
+            trucking = 0;
+        }
+    }
+
     public int getElusiveness() {
         return elusiveness;
+    }
+
+    public void incrementElusiveness(int change) {
+        if (elusiveness < (99 - change)) {
+            elusiveness = elusiveness + change;
+        } else {
+            elusiveness = 99;
+        }
+    }
+
+    public void decrementElusiveness(int change) {
+        if (elusiveness > change) {
+            elusiveness = elusiveness - change;
+        } else {
+            elusiveness = 0;
+        }
     }
 
     public int getCatchInTraffic() {
         return catchInTraffic;
     }
 
+    public void incrementCatchInTraffic(int change) {
+        if (catchInTraffic < (99 - change)) {
+            catchInTraffic = catchInTraffic - change;
+        } else {
+            catchInTraffic = 99;
+        }
+    }
+
+    public void decrementCatchInTraffic(int change) {
+        if (catchInTraffic > change) {
+            catchInTraffic = catchInTraffic - change;
+        } else {
+            catchInTraffic = 0;
+        }
+    }
+
     public int getSpectacularCatch() {
         return spectacularCatch;
+    }
+
+    public void incrementSpectacularCatch(int change) {
+        if (spectacularCatch < (99 - change)) {
+            spectacularCatch = spectacularCatch + 0;
+        } else {
+            spectacularCatch = 99;
+        }
+    }
+
+    public void decrementSpectacularCatch(int change) {
+        if (spectacularCatch > change) {
+            spectacularCatch = spectacularCatch - change;
+        } else {
+            spectacularCatch = 0;
+        }
     }
 
     public int getRelease() {
         return release;
     }
 
+    public void incrementRelease(int change) {
+        if (release < (99 - change)) {
+            release = release + change;
+        } else {
+            release = 99;
+        }
+    }
+
+    public void decrementRelease(int change) {
+        if (release > change) {
+            release = release - change;
+        } else {
+             release = 0;
+        }
+    }
+
     public int getStiffArm() {
         return stiffArm;
+    }
+
+    public void incrementStiffArm(int change) {
+        if (stiffArm < (99 - change)) {
+            stiffArm = stiffArm + change;
+        } else {
+            stiffArm = 99;
+        }
+    }
+
+    public void decrementStiffArm(int change) {
+        if (stiffArm > change) {
+            stiffArm = stiffArm - change;
+        }
     }
 
     public int getJuke() {
         return juke;
     }
 
+    public void incrementJuke(int change) {
+        if (juke < (99 - change)) {
+            juke = juke + change;
+        } else {
+            juke = 99;
+        }
+    }
+
+    public void decrementJuke(int change) {
+        if (juke > change) {
+            juke = juke - change;
+        } else {
+            juke = 0;
+        }
+    }
+
     public int getJumping() {
         return jumping;
+    }
+
+    public void incrementJumping(int change) {
+        if (jumping < (99 - change)) {
+            jumping = jumping + change;
+        } else {
+            jumping = 99;
+        }
+    }
+
+    public void decrementJumping(int change) {
+        if (jumping > change) {
+            jumping = jumping - change;
+        } else {
+            jumping = 0;
+        }
     }
 
     public int getThrowPower() {
         return throwPower;
     }
 
+    public void incrementThrowPower(int change){
+        if (throwPower < (99 - change)) {
+            throwPower = throwPower + change;
+        } else {
+            throwPower = 99;
+        }
+    }
+
+    public void decrementThrowPower(int change) {
+        if (throwPower > change) {
+            throwPower = throwPower - change;
+        } else {
+            throwPower = 0;
+        }
+    }
+
     public int getShortAccuracy() {
         return shortAccuracy;
+    }
+
+    public void incrementShortAccuracy(int change) {
+        if (shortAccuracy < (99 - change)) {
+            shortAccuracy = shortAccuracy + change;
+        } else {
+            shortAccuracy = 99;
+        }
+    }
+
+    public void decrementShortAccuracy(int change) {
+        if (shortAccuracy > change) {
+            shortAccuracy = shortAccuracy - change;
+        } else {
+            shortAccuracy = 0;
+        }
     }
 
     public int getMediumAccuracy() {
         return mediumAccuracy;
     }
 
+    public void incrementMediumAccuracy(int change) {
+        if (mediumAccuracy < (99 - change)) {
+            mediumAccuracy = mediumAccuracy + change;
+        } else {
+            mediumAccuracy = 99;
+        }
+    }
+
+    public void decrementMediumAccuracy(int change) {
+        if (mediumAccuracy > change) {
+            mediumAccuracy = mediumAccuracy - change;
+        } else {
+            mediumAccuracy = 0;
+        }
+    }
+
     public int getDeepAccuracy() {
         return deepAccuracy;
+    }
+
+    public void incrementDeepAccuracy(int change) {
+        if (deepAccuracy < (99 - change)) {
+            deepAccuracy = deepAccuracy + change;
+        } else {
+            deepAccuracy = 99;
+        }
+    }
+
+    public void decrementDeepAccuracy(int change) {
+        if (deepAccuracy > change) {
+            deepAccuracy = deepAccuracy - change;
+        } else {
+            deepAccuracy = 0;
+        }
     }
 
     public int getPlayAction() {
         return playAction;
     }
 
+    public void incrementPlayAction(int change) {
+        if (playAction < (99 - change)) {
+            playAction = playAction - change;
+        } else {
+            playAction = 99;
+        }
+    }
+
+    public void decrementPlayAction(int change) {
+        if (playAction > change) {
+            playAction = playAction - change;
+        } else {
+            playAction = 0;
+        }
+    }
+
     public int getThrowOnTheRun() {
         return throwOnTheRun;
+    }
+
+    public void incrementThrowOnTheRun(int change) {
+        if (throwOnTheRun < (99 - change)){
+            throwOnTheRun = throwOnTheRun + change;
+        } else {
+            throwOnTheRun = 99;
+        }
+    }
+
+    public void decrementThrowOnTheRun(int change) {
+        if (throwOnTheRun > change) {
+            throwOnTheRun = throwOnTheRun - change;
+        } else {
+            throwOnTheRun = 0;
+        }
     }
 
     public int getTackle() {
         return tackle;
     }
 
+    public void incrementTackle(int change) {
+        if (tackle < (99 - change)) {
+            tackle = tackle + change;
+        } else {
+            tackle = 99;
+        }
+    }
+
+    public void decrementTackle(int change) { 
+        if (tackle > change) {
+            tackle = tackle - tackle;
+        } else {
+            tackle = 0;
+        }
+    }
+
     public int getPlayRecognition() {
         return playRecognition;
+    }
+
+    public void incrementPlayRecognition(int change) {
+        if (playRecognition < (99 - change)) {
+            playRecognition = playRecognition + change;
+        } else {
+            playRecognition = 99;
+        }
+    }
+
+    public void decrementPlayRecognition(int change) {
+        if (playRecognition > change) {
+            playRecognition = playRecognition - change;
+        } else {
+            playRecognition = 0;
+        }
     }
 
     public int getBlockShedding() {
         return blockShedding;
     }
 
+    public void incrementBlockShedding(int change) {
+        if (blockShedding < (99 - change)) {
+            blockShedding = blockShedding + change;
+        } else {
+            blockShedding = 99;
+        }
+    }
+
+    public void decrementBlockShedding(int change) {
+        if (blockShedding > change) {
+            blockShedding = blockShedding - change;
+        } else {
+            blockShedding = 0;
+        }
+    }
+
     public int getPowerMoves() {
         return powerMoves;
+    }
+
+    public void incrementPowerMoves(int change) {
+        if (powerMoves < (99 - change)){
+            powerMoves = powerMoves + change;
+        } else {
+
+        }
     }
 
     public int getFinesseMoves() {
@@ -479,6 +933,24 @@ public class Player {
             }
         }
     }
+
+    // The following code is incorrect.
+
+    // public void incrementStatistic(int stat, int change) {
+    //     if (stat < (99 - change)) {
+    //         stat = stat + change;
+    //     } else {
+    //         stat = 99;
+    //     }
+    // }
+
+    // public void decrementStatistic(int stat, int change) {
+    //     if (stat > change) {
+    //         stat = stat - change;
+    //     } else {
+    //         stat = 0;
+    //     }
+    // }
 
     @Override
     public String toString() {
