@@ -7,14 +7,14 @@ import com.alexshegstad.footballsimulator.model.enumerations.*;
 public class CoachTest {
 
     @Test
-    void testRandomAge() {
+    public void testRandomAge() {
         Coach c = new Coach.Builder().build();
         int age = c.getAge();
         assertTrue(age >= 30 && age <= 70, "Age should be within realistic age");
     }
 
     @Test
-    void testVariableGeneration() {
+    public void testVariableGeneration() {
          Coach c = new Coach.Builder().build();
          Integer age = c.getAge();
          String firstName = c.getFirstName();
