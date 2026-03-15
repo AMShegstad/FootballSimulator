@@ -3,7 +3,6 @@ package com.alexshegstad.footballsimulator.model.teamcomponents;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.assertj.core.api.Assertions.*;
-import com.alexshegstad.footballsimulator.model.enumerations.*;
 
 public class LocationTest {
   
@@ -13,7 +12,8 @@ public class LocationTest {
         Location location = new Location.Builder().build();
 
         assertThat(location).isNotNull();
-        assertThat(location.getCity()).isNotNull().isNotEmpty();
-        assertThat(location.getState()).isNotNull().isNotEmpty();
+        assertThat(location.getCity()).isNotEmpty();
+        assertThat(location.getState()).isNotEmpty();
+        System.out.println(location.toString());
     }
 }

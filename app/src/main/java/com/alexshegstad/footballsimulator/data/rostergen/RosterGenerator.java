@@ -1091,17 +1091,17 @@ public class RosterGenerator {
                 break;
         }
         
-        return new Player(firstName, lastName, hometown, college, position, number,
-                experience, age, height, weight,
-                awareness, strength, speed, acceleration, injuryResistance,
-                passBlock, runBlock, impactBlock, carrying, catching,
-                routeRunning, ballCarrierVision, trucking, elusiveness,
-                catchInTraffic, spectacularCatch, release, stiffArm, juke, jumping,
-                throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
-                playAction, throwOnTheRun, tackle, playRecognition,
-                blockShedding, powerMoves, finesseMoves, zoneCoverage,
-                manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
-    }
+    //     return new Player(firstName, lastName, hometown, college, position, number,
+    //             experience, age, height, weight,
+    //             awareness, strength, speed, acceleration, injuryResistance,
+    //             passBlock, runBlock, impactBlock, carrying, catching,
+    //             routeRunning, ballCarrierVision, trucking, elusiveness,
+    //             catchInTraffic, spectacularCatch, release, stiffArm, juke, jumping,
+    //             throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
+    //             playAction, throwOnTheRun, tackle, playRecognition,
+    //             blockShedding, powerMoves, finesseMoves, zoneCoverage,
+    //             manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
+    // }
 
     // Helper methods
     private static int randBetween(int min, int max) {

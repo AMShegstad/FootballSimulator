@@ -1,5 +1,5 @@
 package com.alexshegstad.footballsimulator.data.rostergen.positionstats;
 
-public   {
+public class REStatGenerator {
     
 }

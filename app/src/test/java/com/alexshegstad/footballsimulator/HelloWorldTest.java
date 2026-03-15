@@ -1,9 +1,11 @@
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+package com.alexshegstad.footballsimulator;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class HelloWorldTest {
     @Test
-    fun testHelloWorld() {
-        assertEquals("Hello, World!", "Hello, World!")
+    public void testHelloWorld() {
+        assertEquals("Hello, World!", "Hello, World!");
     }
 }

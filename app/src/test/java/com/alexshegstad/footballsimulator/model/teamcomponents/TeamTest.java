@@ -24,7 +24,6 @@ public class TeamTest {
     @Test
     void testVariableGeneration() {
         Team t = new Team.Builder().build();
-        System.out.println(t);
         String mascot = t.getMascot();
         Location location = t.getLocation();
         Stadium stadium = t.getStadium();

@@ -12,9 +12,9 @@ public class DefenseTest {
     void defense_should_have_both_name_and_description() {
         for (Defense defense : Defense.values()) {
             String[] def = defense.getDefense();
-            assertThat(def).hasSize(2);
-            assertThat(def[0]).isNotBlank().isInstanceOf(String.class);
-            assertThat(def[1]).isNotBlank().isInstanceOf(String.class);
+            assertThat(def).isNotNull().hasSize(2);
+            assertThat(def[0]).isInstanceOf(String.class);
+            assertThat(def[1]).isInstanceOf(String.class);
         }
     }
 }

@@ -146,7 +146,7 @@ public class Team {
 
     @Override
     public String toString() {
-        return "Team: " + mascot + "\nOwner: " + owner.getLastName() + " " + owner.getLastName() + "\nCoach: " + coach
+        return "Team: " + mascot + "\nOwner: " + owner.getFirstName() + " " + owner.getLastName() + "\nCoach: " + coach
                 + "\nPlayers:\n " + roster;
     }
 

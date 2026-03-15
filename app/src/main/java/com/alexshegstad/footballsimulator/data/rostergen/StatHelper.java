@@ -28,7 +28,7 @@ public class StatHelper {
             case QB: return rand.nextInt(20) + 210;
             case WR: return rand.nextInt(20) + 180;
             case LT: case C: case RT: return rand.nextInt(40) + 290;
-            case DL: return rand.nextInt(40) + 280;
+            case DT: return rand.nextInt(40) + 280;
             default: return rand.nextInt(30) + 240;
         }
     }
