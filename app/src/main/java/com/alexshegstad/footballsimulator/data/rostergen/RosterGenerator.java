@@ -1101,7 +1101,7 @@ public class RosterGenerator {
     //             playAction, throwOnTheRun, tackle, playRecognition,
     //             blockShedding, powerMoves, finesseMoves, zoneCoverage,
     //             manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
-    // }
+    }
 
     // Helper methods
     private static int randBetween(int min, int max) {

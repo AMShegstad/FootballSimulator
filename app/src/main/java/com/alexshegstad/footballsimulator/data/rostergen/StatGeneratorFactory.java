@@ -1,7 +1,7 @@
 package com.alexshegstad.footballsimulator.data.rostergen;
 
 import java.util.Map;
-import com.alexshegstad.footballsimulator.model.teamcomponents.*
+import com.alexshegstad.footballsimulator.model.teamcomponents.*;
 
 public class StatGeneratorFactory {
     
