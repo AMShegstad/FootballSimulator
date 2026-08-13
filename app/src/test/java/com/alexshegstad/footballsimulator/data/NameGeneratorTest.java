@@ -24,11 +24,13 @@ class NameGeneratorTest {
         ObjectMapper mapper = new ObjectMapper();
 
         try (InputStream fn = getClass().getResourceAsStream("/firstNames.json")) {
-            firstNames = mapper.readValue(fn, new TypeReference<List<String>>() {});
+            firstNames = mapper.readValue(fn, new TypeReference<List<String>>() {
+            });
         }
 
         try (InputStream ln = getClass().getResourceAsStream("/lastNames.json")) {
-            lastNames = mapper.readValue(ln, new TypeReference<List<String>>() {});
+            lastNames = mapper.readValue(ln, new TypeReference<List<String>>() {
+            });
         }
 
         nameGenerator = new NameGenerator();

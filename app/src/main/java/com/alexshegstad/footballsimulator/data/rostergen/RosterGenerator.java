@@ -1101,6 +1101,17 @@ public class RosterGenerator {
     //             playAction, throwOnTheRun, tackle, playRecognition,
     //             blockShedding, powerMoves, finesseMoves, zoneCoverage,
     //             manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
+        return new com.alexshegstad.footballsimulator.model.teamcomponents.Player.Builder(position)
+                .firstName(firstName)
+                .lastName(lastName)
+                .number(number)
+                .height(height)
+                .weight(weight)
+                .awareness(awareness)
+                .speed(speed)
+                .catching(catching)
+                .throwPower(throwPower)
+                .build();
     }
 
     // Helper methods

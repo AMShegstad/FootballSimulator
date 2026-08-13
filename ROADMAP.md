@@ -3,7 +3,8 @@
 ---
 
 ## Phase 1: Complete the Data Layer
-*Goal: Every generator works and can produce valid objects.*
+
+_Goal: Every generator works and can produce valid objects._
 
 - [ X - Not using for now] Uncomment and finish `LocationGenerator` (wraps the existing `Location` builder)
 - [ X - Not using for now] Uncomment and finish `OwnerGenerator` (wraps the existing `Owner` builder)
@@ -14,17 +15,20 @@
 ---
 
 ## Phase 2: Complete the Team Model
-*Goal: A `Team` can be fully constructed and inspected.*
+
+_Goal: A `Team` can be fully constructed and inspected._
 
 - [ ] Fill in `PersonnelPackage` — groups of players for a given formation (e.g., base 4-3, nickel, dime)
 - [ ] Add roster query methods to `Team` — getters for starters by unit (offense, defense, special teams), depth chart, etc.
 - [ ] Add a `toString()` / display method to `Team` so you can print a team summary to the console
 - [ ] Verify `CoachTest` and `TeamTest` are green; expand their coverage
+- [ ] Implement a `DataExporter` utility that writes a generated team's full data to a human-readable file on disk (plain text or HTML — no technical jargon, no raw JSON; formatted so a non-programmer can read it); include team identity (name, location, colors, stadium), owner and coach profiles, and a full roster table with each player's name, position, age, and key ratings
 
 ---
 
 ## Phase 3: Build the Game Models
-*Goal: The pieces of a game are represented as data.*
+
+_Goal: The pieces of a game are represented as data._
 
 - [ ] Implement `OffensiveFormation` — position coordinates on the `Gridiron` grid for each formation
 - [ ] Implement `DefensiveFormation` — same for defensive alignments
@@ -35,7 +39,8 @@
 ---
 
 ## Phase 4: Build the Simulation Engine
-*Goal: A single play can be simulated with a result.*
+
+_Goal: A single play can be simulated with a result._
 
 - [ ] Implement `StatChange` — calculates net stat values after applying `WeatherEffects` and any other modifiers
 - [ ] Implement play resolution logic — given a `Play` and two `Team` rosters, compute yards gained, turnovers, scores (start with run plays, then passing)
@@ -47,7 +52,8 @@
 ---
 
 ## Phase 5: Build the Bracket / Season System
-*Goal: Multiple teams can compete in a structured tournament.*
+
+_Goal: Multiple teams can compete in a structured tournament._
 
 - [ ] Uncomment and implement `BracketGenerator` — seed 16 teams, create 1v8 style matchups per the existing design notes
 - [ ] Add round advancement logic — winners progress, bracket updates after each round
@@ -56,18 +62,48 @@
 
 ---
 
-## Phase 6: Entry Point & User Interface
-*Goal: A user can actually run a game.*
+## Phase 6: Entry Point & JavaFX User Interface
 
-- [ ] Update `App.main()` to present a menu (new game, load game, settings)
-- [ ] Add a text-based game flow — team selection, coin flip (`CoinFlip` is ready), play calling, results display
+_Goal: A user can run a game through a JavaFX desktop application._
+
+- [ ] Add the `org.openjfx` JavaFX dependencies (`javafx-controls`, `javafx-fxml`) to `build.gradle.kts` and verify the app launches
+- [ ] Create the application shell — `App` extends `javafx.application.Application`, launches a primary `Stage`
+- [ ] Build a main menu screen — New Game, Load Game, Settings, Quit
+- [ ] Build a team selection screen — display generated team info (name, location, roster summary) and allow the user to confirm or re-roll
+- [ ] Build the in-game play-calling screen — show current down, distance, field position, and a list of available plays; wire up to the simulation engine
+- [ ] Build a results/scoreboard screen — show final score, key stats, and options to export the game report or return to the main menu
 - [ ] Add a "sim to end" option that auto-resolves a full game without user input
 - [ ] Add save/load functionality (serialize game state to JSON using Jackson)
 
 ---
 
-## Phase 7: Test Coverage
-*Goal: 100% test coverage across all non-stub classes.*
+## Phase 7: Visual Gridiron
+
+_Goal: The field and players are rendered visually during a game._
+
+- [ ] Implement a JavaFX `GridironView` canvas component — draw the field, yard lines, hash marks, and end zones to scale
+- [ ] Map each player's position on the `Gridiron` grid to pixel coordinates on the `GridironView`
+- [ ] Render offensive and defensive formations at the snap — place player icons/tokens on the field in the correct positions
+- [ ] Animate player movement during play resolution — move tokens from their snap position to their end position over the course of a play
+- [ ] Display player name/number labels on or beside each token; highlight the ball carrier, the tackler, and key contact events
+- [ ] Integrate `GridironView` into the in-game screen from Phase 6
+
+---
+
+## Phase 9: Game Simulation Export
+
+_Goal: Every game can be exported to a human-readable file for post-game review._
+
+- [ ] Design a `GameReport` data structure that accumulates a full record of a game as it is simulated — every play called by both the user and the CPU, every player-vs-player contact event and its outcome, scoring drives, and the final result
+- [ ] Implement `GameReportExporter` — writes a completed `GameReport` to disk in plain text or HTML; sections should include: final score and game summary, a chronological play-by-play log (down, distance, field position, play called, yards gained/lost, turnovers, scores), and a player matchup log listing every individual contact event (attacker, defender, relevant ratings, and result)
+- [ ] Hook `GameReportExporter` into the game loop so a report is offered at the end of every simulated game
+- [ ] Ensure the output is readable without any knowledge of the codebase — use natural language labels, not field names or enum constants
+
+---
+
+## Phase 10: Test Coverage
+
+_Goal: 100% test coverage across all non-stub classes._
 
 - [ ] Configure JaCoCo in `build.gradle.kts` to measure and enforce coverage
 - [ ] Reach 100% coverage on all `model/` classes (Team, Player, Coach, Owner, Location, Stadium, College)
@@ -80,12 +116,29 @@
 
 ---
 
-## Phase 8: Multiplayer (Stretch Goal)
-*Goal: Two players can play head-to-head over a network.*
+## Phase 11: Multiplayer (Stretch Goal)
+
+_Goal: Two players can play head-to-head over a network._
 
 - [ ] Design the client/server protocol (turn-based message passing)
 - [ ] Implement `MultiplayerServer` — hosts a game session, syncs state
 - [ ] Implement `MultiplayerClient` — connects to a session, sends play calls, receives results
+
+---
+
+## Phase 12: Isometric View with LibGDX (Stretch Goal)
+
+_Goal: Replace the top-down JavaFX renderer with a Diablo/RTS-style isometric view using LibGDX._
+
+**Prerequisite:** Nothing in `model/`, `data/`, or `logic/` imports any JavaFX or LibGDX class — the simulation engine must be renderer-agnostic before this phase begins.
+
+- [ ] Evaluate whether the project warrants the upgrade; only proceed if the top-down JavaFX view feels limiting
+- [ ] Add LibGDX dependencies to `build.gradle.kts`; verify the app still launches
+- [ ] Implement the isometric coordinate transform — convert game-world `(col, row)` to screen `(x, y)` using `screenX = (col - row) * tileWidthHalf` and `screenY = (col + row) * tileHeightHalf`
+- [ ] Replace `GridironView` with a LibGDX `IsometricGridironView` — draw field tiles as diamonds, maintain back-to-front draw order (painter's algorithm) so near objects paint over far ones
+- [ ] Port player token rendering — map each player's `(fieldX, fieldY)` through the iso transform; add a vertical pixel offset for the ball's `z` height during pass arcs
+- [ ] Replace JavaFX menu/UI screens with LibGDX `Scene2D` equivalents
+- [ ] Remove JavaFX dependencies once LibGDX rendering is fully verified
 
 ---
 

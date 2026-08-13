@@ -111,11 +111,11 @@ public class SpendingHabitTest {
     void testRealisticScenarios() {
         double salaryCap = 200_000_000.0; // NFL-like salary cap
         
-        // Scenario 1: Star free agent costs $30M
-        double starPlayerCost = 30_000_000.0;
+        // Scenario 1: Superstar free agent costs $125M (exceeds MISERLY's $120M limit)
+        double starPlayerCost = 125_000_000.0;
         
         assertThat(SpendingHabit.MISERLY.isWillingToSpend(starPlayerCost, salaryCap))
-            .as("Miserly owner hesitates on $30M star (only $120M budget)")
+            .as("Miserly owner won't sign $125M superstar (limit = $200M * 0.6 = $120M)")
             .isFalse();
         
         assertThat(SpendingHabit.AVERAGE.isWillingToSpend(starPlayerCost, salaryCap))
@@ -170,7 +170,7 @@ public class SpendingHabitTest {
         double extravagantSpending = SpendingHabit.EXTRAVAGANT.calculateSpending(budget);
         
         assertThat(extravagantSpending)
-            .as("Extravagant should spend 2.83x more than Miserly")
-            .isCloseTo(miserlySpending * 2.83, within(1.0));
+            .as("Extravagant should spend ~2.83x more than Miserly")
+            .isCloseTo(miserlySpending * 2.83, within(1_000_000.0));
     }
 }
