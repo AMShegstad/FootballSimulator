@@ -144,12 +144,21 @@ _Goal: Replace the top-down JavaFX renderer with a Diablo/RTS-style isometric vi
 
 ## Suggested Order of Attack
 
-If returning to the project fresh, the highest-leverage starting point is **Phase 1**
-(uncomment and test the generators), followed immediately by **Phase 2** (roster queries
-and team display). That gets you to a point where you can print a fully-generated team
-to the console — a satisfying milestone that validates the whole data layer before game
-logic begins.
+If returning to the project fresh, the immediate priority is fixing the 7 failing tests in
+`NameGeneratorTest` — the first and last name JSON files share overlapping entries that
+the tests expect to be disjoint. Remove the duplicates from `firstNames.json` and
+`lastNames.json` until all tests are green.
 
-Test coverage (Phase 7) is listed as its own phase but should be treated as an ongoing
+From there, the highest-leverage next step is **Phase 1**: write unit tests for the three
+active generators (`NameGenerator`, `CollegeGenerator`, `RosterGenerator`). The four
+commented-out generators (`LocationGenerator`, `OwnerGenerator`, `ColorSchemeGenerator`,
+`TeamGenerator`) are no longer needed — their responsibilities were absorbed by the Builder
+patterns inside the model classes — and can be deleted.
+
+Then move to **Phase 2** (roster query methods and the `DataExporter`). That gets you to a
+point where you can generate a team and read a human-readable summary of it — a satisfying
+milestone that validates the whole data layer before game logic begins.
+
+Test coverage (Phase 10) is listed as its own phase but should be treated as an ongoing
 habit throughout all phases — write tests alongside each new class rather than saving
-them all for the end. Phase 7 then becomes a final audit and enforcement step.
+them all for the end. Phase 10 then becomes a final audit and enforcement step.
