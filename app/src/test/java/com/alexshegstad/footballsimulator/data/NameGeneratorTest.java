@@ -40,14 +40,14 @@ class NameGeneratorTest {
     @DisplayName("getRandomFirstName() never returns a null or empty value")
     void randomFirstName_should_not_be_null_or_empty() {
         String firstName = nameGenerator.getRandomFirstName();
-        assertThat(firstName).isNotNull().isNotEmpty();
+        assertThat(firstName).isNotEmpty();
     }
 
     @RepeatedTest(100)
     @DisplayName("getRandomLastName() never returns a null or empty value")
     void randomLastName_should_not_be_null_or_empty() {
         String lastName = nameGenerator.getRandomLastName();
-        assertThat(lastName).isNotNull().isNotEmpty();
+        assertThat(lastName).isNotEmpty();
     }
 
     @RepeatedTest(10)
