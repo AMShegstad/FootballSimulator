@@ -1,0 +1,1381 @@
+Reusing configuration cache.
+> Task :app:processTestResources UP-TO-DATE
+> Task :app:processResources UP-TO-DATE
+> Task :app:compileJava UP-TO-DATE
+> Task :app:classes UP-TO-DATE
+> Task :app:compileTestJava UP-TO-DATE
+> Task :app:testClasses UP-TO-DATE
+
+> Task :app:test
+
+HelloWorldTest > testHelloWorld() STARTED
+
+HelloWorldTest > testHelloWorld() PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 1 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 1 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 2 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 2 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 3 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 3 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 4 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 4 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 5 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 5 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 6 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 6 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 7 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 7 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 8 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 8 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 9 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 9 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 10 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 10 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 11 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 11 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 12 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 12 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 13 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 13 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 14 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 14 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 15 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 15 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 16 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 16 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 17 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 17 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 18 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 18 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 19 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 19 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 20 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 20 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 21 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 21 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 22 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 22 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 23 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 23 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 24 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 24 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 25 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 25 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 26 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 26 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 27 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 27 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 28 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 28 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 29 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 29 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 30 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 30 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 31 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 31 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 32 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 32 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 33 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 33 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 34 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 34 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 35 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 35 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 36 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 36 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 37 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 37 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 38 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 38 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 39 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 39 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 40 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 40 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 41 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 41 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 42 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 42 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 43 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 43 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 44 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 44 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 45 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 45 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 46 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 46 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 47 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 47 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 48 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 48 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 49 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 49 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 50 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 50 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 51 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 51 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 52 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 52 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 53 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 53 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 54 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 54 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 55 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 55 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 56 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 56 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 57 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 57 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 58 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 58 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 59 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 59 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 60 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 60 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 61 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 61 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 62 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 62 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 63 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 63 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 64 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 64 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 65 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 65 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 66 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 66 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 67 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 67 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 68 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 68 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 69 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 69 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 70 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 70 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 71 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 71 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 72 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 72 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 73 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 73 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 74 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 74 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 75 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 75 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 76 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 76 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 77 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 77 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 78 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 78 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 79 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 79 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 80 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 80 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 81 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 81 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 82 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 82 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 83 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 83 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 84 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 84 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 85 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 85 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 86 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 86 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 87 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 87 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 88 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 88 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 89 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 89 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 90 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 90 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 91 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 91 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 92 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 92 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 93 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 93 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 94 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 94 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 95 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 95 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 96 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 96 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 97 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 97 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 98 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 98 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 99 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 99 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 100 of 100 STARTED
+
+NameGeneratorTest > getRandomFirstName() never returns a null or empty value > repetition 100 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 1 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 1 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 2 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 2 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 3 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 3 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 4 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 4 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 5 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 5 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 6 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 6 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 7 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 7 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 8 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 8 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 9 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 9 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 10 of 10 STARTED
+
+NameGeneratorTest > getRandomLastName() always returns a name from the last name list > repetition 10 of 10 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 1 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 1 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 2 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 2 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 3 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 3 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 4 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 4 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 5 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 5 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 6 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 6 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 7 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 7 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 8 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 8 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 9 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 9 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 10 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 10 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 11 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 11 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 12 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 12 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 13 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 13 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 14 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 14 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 15 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 15 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 16 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 16 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 17 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 17 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 18 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 18 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 19 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 19 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 20 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 20 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 21 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 21 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 22 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 22 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 23 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 23 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 24 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 24 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 25 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 25 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 26 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 26 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 27 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 27 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 28 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 28 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 29 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 29 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 30 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 30 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 31 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 31 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 32 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 32 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 33 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 33 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 34 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 34 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 35 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 35 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 36 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 36 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 37 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 37 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 38 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 38 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 39 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 39 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 40 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 40 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 41 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 41 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 42 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 42 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 43 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 43 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 44 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 44 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 45 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 45 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 46 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 46 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 47 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 47 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 48 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 48 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 49 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 49 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 50 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 50 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 51 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 51 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 52 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 52 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 53 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 53 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 54 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 54 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 55 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 55 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 56 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 56 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 57 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 57 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 58 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 58 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 59 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 59 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 60 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 60 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 61 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 61 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 62 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 62 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 63 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 63 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 64 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 64 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 65 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 65 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 66 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 66 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 67 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 67 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 68 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 68 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 69 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 69 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 70 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 70 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 71 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 71 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 72 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 72 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 73 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 73 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 74 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 74 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 75 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 75 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 76 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 76 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 77 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 77 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 78 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 78 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 79 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 79 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 80 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 80 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 81 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 81 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 82 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 82 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 83 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 83 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 84 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 84 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 85 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 85 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 86 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 86 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 87 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 87 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 88 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 88 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 89 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 89 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 90 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 90 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 91 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 91 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 92 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 92 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 93 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 93 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 94 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 94 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 95 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 95 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 96 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 96 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 97 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 97 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 98 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 98 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 99 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 99 of 100 PASSED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 100 of 100 STARTED
+
+NameGeneratorTest > getRandomLastName() never returns a null or empty value > repetition 100 of 100 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 1 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 1 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 2 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 2 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 3 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 3 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 4 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 4 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 5 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 5 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 6 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 6 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 7 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 7 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 8 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 8 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 9 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 9 of 10 PASSED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 10 of 10 STARTED
+
+NameGeneratorTest > getRandomFirstName() always returns a name from the first name list > repetition 10 of 10 PASSED
+
+DataPersistenceIntegrationTest > A saved team should be loadable and equal to the original STARTED
+
+DataPersistenceIntegrationTest > A saved team should be loadable and equal to the original SKIPPED
+
+DataPersistenceIntegrationTest > Saving and loading player stats should preserve all values STARTED
+
+DataPersistenceIntegrationTest > Saving and loading player stats should preserve all values SKIPPED
+
+DataPersistenceIntegrationTest > NameGenerator should load last names from JSON resource STARTED
+
+DataPersistenceIntegrationTest > NameGenerator should load last names from JSON resource PASSED
+
+DataPersistenceIntegrationTest > NameGenerator should load first names from JSON resource STARTED
+
+DataPersistenceIntegrationTest > NameGenerator should load first names from JSON resource PASSED
+
+GameSimulationIntegrationTest > A full game between two teams should produce a winner STARTED
+
+GameSimulationIntegrationTest > A full game between two teams should produce a winner SKIPPED
+
+GameSimulationIntegrationTest > Gridiron should initialize with correct field dimensions STARTED
+
+GameSimulationIntegrationTest > Gridiron should initialize with correct field dimensions PASSED
+
+GameSimulationIntegrationTest > Gridiron should be instantiable STARTED
+
+GameSimulationIntegrationTest > Gridiron should be instantiable PASSED
+
+GameSimulationIntegrationTest > Scores should be non-negative after game simulation STARTED
+
+GameSimulationIntegrationTest > Scores should be non-negative after game simulation SKIPPED
+
+TeamGenerationIntegrationTest > All players in the roster should have a position and a name STARTED
+
+TeamGenerationIntegrationTest > All players in the roster should have a position and a name PASSED
+
+TeamGenerationIntegrationTest > Color scheme should be a valid ColorSchemes enum value STARTED
+
+TeamGenerationIntegrationTest > Color scheme should be a valid ColorSchemes enum value PASSED
+
+TeamGenerationIntegrationTest > Generated team owner should have a name and net worth STARTED
+
+TeamGenerationIntegrationTest > Generated team owner should have a name and net worth PASSED
+
+TeamGenerationIntegrationTest > Two independently generated teams should usually have different mascots STARTED
+
+TeamGenerationIntegrationTest > Two independently generated teams should usually have different mascots PASSED
+
+TeamGenerationIntegrationTest > Generated team coach should have a name, offense, and defense STARTED
+
+TeamGenerationIntegrationTest > Generated team coach should have a name, offense, and defense PASSED
+
+TeamGenerationIntegrationTest > A fully generated team should have all components non-null STARTED
+
+TeamGenerationIntegrationTest > A fully generated team should have all components non-null PASSED
+
+TeamGenerationIntegrationTest > Generated team location should have a city and state STARTED
+
+TeamGenerationIntegrationTest > Generated team location should have a city and state PASSED
+
+ColorSchemesTest > Does ColorCode3 hexcode have the'#'? STARTED
+
+ColorSchemesTest > Does ColorCode3 hexcode have the'#'? PASSED
+
+ColorSchemesTest > Does ColorCode2 hexcode have the '#'? STARTED
+
+ColorSchemesTest > Does ColorCode2 hexcode have the '#'? PASSED
+
+ColorSchemesTest > Do ColorSchemes all have a name and three color codes? STARTED
+
+ColorSchemesTest > Do ColorSchemes all have a name and three color codes? PASSED
+
+ColorSchemesTest > Does ColorCode1 hexcode have the '#'? STARTED
+
+ColorSchemesTest > Does ColorCode1 hexcode have the '#'? PASSED
+
+DefenseTest > Defenses all have a name and description STARTED
+
+DefenseTest > Defenses all have a name and description PASSED
+
+DefensivePlaycallingTendenciesTest > DefensivePlaycallingTendencies class should be instantiable STARTED
+
+DefensivePlaycallingTendenciesTest > DefensivePlaycallingTendencies class should be instantiable PASSED
+
+DefensivePlaycallingTendenciesTest > Should have BALANCED, BLITZ_HEAVY, ZONE_FOCUSED, MAN_FOCUSED, BEND_DONT_BREAK tendencies STARTED
+
+DefensivePlaycallingTendenciesTest > Should have BALANCED, BLITZ_HEAVY, ZONE_FOCUSED, MAN_FOCUSED, BEND_DONT_BREAK tendencies SKIPPED
+
+LeadershipStyleTest > Should be able to look up leadership style by name STARTED
+
+LeadershipStyleTest > Should be able to look up leadership style by name PASSED
+
+LeadershipStyleTest > Should contain all expected leadership style values STARTED
+
+LeadershipStyleTest > Should contain all expected leadership style values PASSED
+
+LeadershipStyleTest > Should have exactly 7 leadership style types STARTED
+
+LeadershipStyleTest > Should have exactly 7 leadership style types PASSED
+
+LeadershipStyleTest > Leadership style ordinals should be sequential STARTED
+
+LeadershipStyleTest > Leadership style ordinals should be sequential PASSED
+
+LeadershipStyleTest > Leadership style names should not be blank STARTED
+
+LeadershipStyleTest > Leadership style names should not be blank PASSED
+
+OffenseTest > Should be able to look up offense by name STARTED
+
+OffenseTest > Should be able to look up offense by name PASSED
+
+OffenseTest > Should have exactly 4 offensive scheme types STARTED
+
+OffenseTest > Should have exactly 4 offensive scheme types PASSED
+
+OffenseTest > Should contain all expected offensive scheme values STARTED
+
+OffenseTest > Should contain all expected offensive scheme values PASSED
+
+OffenseTest > Offense ordinals should be sequential STARTED
+
+OffenseTest > Offense ordinals should be sequential PASSED
+
+OffensivePlayCallingTendenciesTest > Does the OffensivePlaycallingTendencies object contain all three values (String displayNAme, String description, int riskLevel)? STARTED
+
+OffensivePlayCallingTendenciesTest > Does the OffensivePlaycallingTendencies object contain all three values (String displayNAme, String description, int riskLevel)? PASSED
+
+SpendingHabitTest > 💰 Should have correct spending multipliers STARTED
+
+SpendingHabitTest > 💰 Should have correct spending multipliers PASSED
+
+SpendingHabitTest > 📝 Should have non-empty names and descriptions STARTED
+
+SpendingHabitTest > 📝 Should have non-empty names and descriptions PASSED
+
+SpendingHabitTest > 🔤 Should have proper toString formatting STARTED
+
+SpendingHabitTest > 🔤 Should have proper toString formatting PASSED
+
+SpendingHabitTest > 💵 Should calculate spending correctly STARTED
+
+SpendingHabitTest > 💵 Should calculate spending correctly PASSED
+
+SpendingHabitTest > 📈 Should show spending differences between habits STARTED
+
+SpendingHabitTest > 📈 Should show spending differences between habits PASSED
+
+SpendingHabitTest > 🎯 Should demonstrate realistic spending scenarios STARTED
+
+SpendingHabitTest > 🎯 Should demonstrate realistic spending scenarios PASSED
+
+SpendingHabitTest > 🤔 Should determine willingness to spend STARTED
+
+SpendingHabitTest > 🤔 Should determine willingness to spend PASSED
+
+SpendingHabitTest > 📊 Should have multipliers in ascending order STARTED
+
+SpendingHabitTest > 📊 Should have multipliers in ascending order PASSED
+
+SpendingHabitTest > ✅ Should have all 5 spending habit types STARTED
+
+SpendingHabitTest > ✅ Should have all 5 spending habit types PASSED
+
+WeatherTest > Weather enum names should match their declared names STARTED
+
+WeatherTest > Weather enum names should match their declared names PASSED
+
+WeatherTest > Should be able to look up weather by name STARTED
+
+WeatherTest > Should be able to look up weather by name PASSED
+
+WeatherTest > Should contain all expected weather values STARTED
+
+WeatherTest > Should contain all expected weather values PASSED
+
+WeatherTest > Should have exactly 6 weather types STARTED
+
+WeatherTest > Should have exactly 6 weather types PASSED
+
+WeatherTest > Weather ordinals should be sequential starting at 0 STARTED
+
+WeatherTest > Weather ordinals should be sequential starting at 0 PASSED
+
+CoachTest > testRandomAge() STARTED
+
+CoachTest > testRandomAge() PASSED
+
+CoachTest > testRandomAge() > repetition 1 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 1 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 2 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 2 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 3 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 3 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 4 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 4 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 5 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 5 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 6 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 6 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 7 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 7 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 8 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 8 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 9 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 9 of 10 PASSED
+
+CoachTest > testRandomAge() > repetition 10 of 10 STARTED
+
+CoachTest > testRandomAge() > repetition 10 of 10 PASSED
+
+CoachTest > testVariableGeneration() STARTED
+
+CoachTest > testVariableGeneration() PASSED
+
+CoachTest > testVariableGeneration() > repetition 1 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 1 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 2 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 2 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 3 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 3 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 4 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 4 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 5 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 5 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 6 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 6 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 7 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 7 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 8 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 8 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 9 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 9 of 10 PASSED
+
+CoachTest > testVariableGeneration() > repetition 10 of 10 STARTED
+
+CoachTest > testVariableGeneration() > repetition 10 of 10 PASSED
+
+LocationTest > Should create Location object with builder pattern STARTED
+
+LocationTest > Should create Location object with builder pattern PASSED
+
+OwnerTest > Should create Owner object using supplied fields STARTED
+
+OwnerTest > Should create Owner object using supplied fields PASSED
+
+OwnerTest > Should create Owner object with builder pattern STARTED
+
+OwnerTest > Should create Owner object with builder pattern PASSED
+
+PlayerTest > Hometown and college should not be null on default build STARTED
+
+PlayerTest > Hometown and college should not be null on default build PASSED
+
+PlayerTest > Position should be preserved when set via builder STARTED
+
+PlayerTest > Position should be preserved when set via builder PASSED
+
+PlayerTest > No null values on default QB build STARTED
+
+PlayerTest > No null values on default QB build PASSED
+
+PlayerTest > Handedness should not be null STARTED
+
+PlayerTest > Handedness should not be null PASSED
+
+PlayerTest > Preferred leadership style should not be null STARTED
+
+PlayerTest > Preferred leadership style should not be null PASSED
+
+PlayerTest > addStart() should increment starts STARTED
+
+PlayerTest > addStart() should increment starts PASSED
+
+PlayerTest > addWins() and addLosses() should increment independently STARTED
+
+PlayerTest > addWins() and addLosses() should increment independently PASSED
+
+PlayerTest > getFullName() should combine first and last name STARTED
+
+PlayerTest > getFullName() should combine first and last name PASSED
+
+PlayerTest > toString() should not return null or empty STARTED
+
+PlayerTest > toString() should not return null or empty PASSED
+
+PlayerTest > Tracked stats should start at zero for a new player STARTED
+
+PlayerTest > Tracked stats should start at zero for a new player PASSED
+
+StadiumTest > 🏗️ Should handle missing JSON gracefully STARTED
+
+StadiumTest > 🏗️ Should handle missing JSON gracefully PASSED
+
+StadiumTest > 📊 Should generate different stadium names STARTED
+
+StadiumTest > 📊 Should generate different stadium names PASSED
+
+StadiumTest > 🏟️ Should create custom stadium with builder STARTED
+
+StadiumTest > 🏟️ Should create custom stadium with builder PASSED
+
+StadiumTest > ✅ Should create stadium with builder pattern STARTED
+
+StadiumTest > ✅ Should create stadium with builder pattern PASSED
+
+TeamTest > CreateTeam() > repetition 1 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 1 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 2 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 2 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 3 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 3 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 4 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 4 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 5 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 5 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 6 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 6 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 7 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 7 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 8 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 8 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 9 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 9 of 10 PASSED
+
+TeamTest > CreateTeam() > repetition 10 of 10 STARTED
+
+TeamTest > CreateTeam() > repetition 10 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 1 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 1 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 2 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 2 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 3 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 3 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 4 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 4 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 5 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 5 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 6 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 6 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 7 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 7 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 8 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 8 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 9 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 9 of 10 PASSED
+
+TeamTest > testMascotCreation() > repetition 10 of 10 STARTED
+
+TeamTest > testMascotCreation() > repetition 10 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 1 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 1 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 2 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 2 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 3 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 3 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 4 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 4 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 5 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 5 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 6 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 6 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 7 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 7 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 8 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 8 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 9 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 9 of 10 PASSED
+
+TeamTest > testVariableGeneration() > repetition 10 of 10 STARTED
+
+TeamTest > testVariableGeneration() > repetition 10 of 10 PASSED
+
+MultiplayerClientTest > Client should connect to a running server STARTED
+
+MultiplayerClientTest > Client should connect to a running server SKIPPED
+
+MultiplayerClientTest > MultiplayerClient class should be instantiable STARTED
+
+MultiplayerClientTest > MultiplayerClient class should be instantiable PASSED
+
+MultiplayerClientTest > Client should receive and apply game state updates STARTED
+
+MultiplayerClientTest > Client should receive and apply game state updates SKIPPED
+
+MultiplayerServerTest > Server should accept client connections STARTED
+
+MultiplayerServerTest > Server should accept client connections SKIPPED
+
+MultiplayerServerTest > Server should broadcast game state to connected clients STARTED
+
+MultiplayerServerTest > Server should broadcast game state to connected clients SKIPPED
+
+MultiplayerServerTest > MultiplayerServer class should be instantiable STARTED
+
+MultiplayerServerTest > MultiplayerServer class should be instantiable PASSED
+
+BUILD SUCCESSFUL in 5s
+5 actionable tasks: 1 executed, 4 up-to-date
+Configuration cache entry reused.

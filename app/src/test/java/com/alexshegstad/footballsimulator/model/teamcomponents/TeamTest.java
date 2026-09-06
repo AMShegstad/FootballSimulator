@@ -1,5 +1,6 @@
 package com.alexshegstad.footballsimulator.model.teamcomponents;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.alexshegstad.footballsimulator.model.enumerations.ColorSchemes;
@@ -7,21 +8,21 @@ import java.util.*;
 
 public class TeamTest {
 
-    @Test
-    void CreateTeam() { 
+    @RepeatedTest(10)
+    void CreateTeam() {
         Team a = new Team.Builder().build();
         assertTrue(a != null);
     }
 
-    @Test 
+    @RepeatedTest(10)
     void testMascotCreation() {
         Team b = new Team.Builder().build();
         String mascot = b.getMascot();
         assertTrue(mascot != null);
         System.out.println("Mascot is " + mascot);
     }
-    
-    @Test
+
+    @RepeatedTest(10)
     void testVariableGeneration() {
         Team t = new Team.Builder().build();
         String mascot = t.getMascot();

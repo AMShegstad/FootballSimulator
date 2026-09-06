@@ -8,7 +8,7 @@ import com.alexshegstad.footballsimulator.model.teamcomponents.Location;
 import com.alexshegstad.footballsimulator.data.CollegeGenerator;
 import com.alexshegstad.footballsimulator.data.NameGenerator;
 import com.alexshegstad.footballsimulator.model.teamcomponents.College; // ADDED: Missing import
-  
+
 public class RosterGenerator {
 
     private static final Random rand = new Random();
@@ -45,7 +45,7 @@ public class RosterGenerator {
         List<Player> players = new ArrayList<>();
         NameGenerator nameGen = new NameGenerator();
         Set<Integer> usedNumbers = new HashSet<>();
-        //LocationGenerator locationGen = new LocationGenerator();
+        // LocationGenerator locationGen = new LocationGenerator();
         CollegeGenerator collegeGen = new CollegeGenerator();
 
         for (Map.Entry<Position, Integer> entry : rosterComposition.entrySet()) {
@@ -77,7 +77,7 @@ public class RosterGenerator {
         int deepAccuracy, playAction, throwOnTheRun, tackle, playRecognition;
         int blockShedding, powerMoves, finesseMoves, zoneCoverage, manCoverage;
         int pursuit, hitPower, press, injuryResistance, kickAccuracy, kickPower;
-        
+
         injuryResistance = randBetween(50, 99);
         experience = randBetween(0, 20);
         age = experience + randBetween(20, 23);
@@ -1090,29 +1090,67 @@ public class RosterGenerator {
                 kickPower = 0;
                 break;
         }
-        
-    //     return new Player(firstName, lastName, hometown, college, position, number,
-    //             experience, age, height, weight,
-    //             awareness, strength, speed, acceleration, injuryResistance,
-    //             passBlock, runBlock, impactBlock, carrying, catching,
-    //             routeRunning, ballCarrierVision, trucking, elusiveness,
-    //             catchInTraffic, spectacularCatch, release, stiffArm, juke, jumping,
-    //             throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
-    //             playAction, throwOnTheRun, tackle, playRecognition,
-    //             blockShedding, powerMoves, finesseMoves, zoneCoverage,
-    //             manCoverage, pursuit, hitPower, press, kickAccuracy, kickPower);
+
         return new com.alexshegstad.footballsimulator.model.teamcomponents.Player.Builder(position)
                 .firstName(firstName)
                 .lastName(lastName)
+                .hometown(hometown)
+                .college(college)
                 .number(number)
+                .age(age)
+                .experience(experience)
                 .height(height)
                 .weight(weight)
                 .awareness(awareness)
+                .strength(strength)
                 .speed(speed)
+                .acceleration(acceleration)
+                .injuryResistance(injuryResistance)
+                .passBlock(passBlock)
+                .runBlock(runBlock)
+                .impactBlock(impactBlock)
+                .carrying(carrying)
                 .catching(catching)
+                .routeRunning(routeRunning)
+                .ballCarrierVision(ballCarrierVision)
+                .trucking(trucking)
+                .elusiveness(elusiveness)
+                .catchInTraffic(catchInTraffic)
+                .spectacularCatch(spectacularCatch)
+                .release(release)
+                .stiffArm(stiffArm)
+                .juke(juke)
+                .jumping(jumping)
                 .throwPower(throwPower)
+                .shortAccuracy(shortAccuracy)
+                .mediumAccuracy(mediumAccuracy)
+                .deepAccuracy(deepAccuracy)
+                .playAction(playAction)
+                .throwOnTheRun(throwOnTheRun)
+                .tackle(tackle)
+                .playRecognition(playRecognition)
+                .blockShedding(blockShedding)
+                .powerMoves(powerMoves)
+                .finesseMoves(finesseMoves)
+                .zoneCoverage(zoneCoverage)
+                .manCoverage(manCoverage)
+                .pursuit(pursuit)
+                .hitPower(hitPower)
+                .press(press)
+                .kickAccuracy(kickAccuracy)
+                .kickPower(kickPower)
                 .build();
     }
+    // Declare all variables
+    // int age, experience;
+    // int number, height, weight, awareness, strength, speed, acceleration;
+    // int passBlock, runBlock, impactBlock, carrying, catching, routeRunning;
+    // int ballCarrierVision, trucking, elusiveness, catchInTraffic,
+    // spectacularCatch, release;
+    // int stiffArm, juke, jumping, throwPower, shortAccuracy, mediumAccuracy;
+    // int deepAccuracy, playAction, throwOnTheRun, tackle, playRecognition;
+    // int blockShedding, powerMoves, finesseMoves, zoneCoverage, manCoverage;
+    // int pursuit, hitPower, press, injuryResistance, kickAccuracy, kickPower;
 
     // Helper methods
     private static int randBetween(int min, int max) {

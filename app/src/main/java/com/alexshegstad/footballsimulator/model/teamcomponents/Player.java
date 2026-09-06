@@ -8,21 +8,25 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Player {
-    
+
     // Position is predetermined, to control roster makeup and size.
     private Position position;
     // number is taken from a list to ensure that no numbers are repeated on a team.
     private int number;
-    // NameGenerator is used to pull names, both first and last, from a predetermined list.
+    // NameGenerator is used to pull names, both first and last, from a
+    // predetermined list.
     private String firstName;
     private String lastName;
-    // LocationGenerator will pull in a Location object, including both a city and state.
+    // LocationGenerator will pull in a Location object, including both a city and
+    // state.
     private Location hometown;
-    // The College object utilizes a list pulled from a third party, so it contains several data points that will nott necessarily be used.
+    // The College object utilizes a list pulled from a third party, so it contains
+    // several data points that will nott necessarily be used.
     private College college;
     private int height;
     private int weight;
-    // The following fields are going to be changing regularly. Setters and Getters are non-negotiable.
+    // The following fields are going to be changing regularly. Setters and Getters
+    // are non-negotiable.
     private int experience;
     private int age;
     private int awareness;
@@ -63,9 +67,11 @@ public class Player {
     private int press;
     private int kickAccuracy;
     private int kickPower;
-    // If LeadershipStyle matches that of the coach, certain attributes will be boosted.
+    // If LeadershipStyle matches that of the coach, certain attributes will be
+    // boosted.
     private LeadershipStyle preferredLeadershipStyle;
-    // Matchup outcomes can be affected by a combination of handedness and player position.
+    // Matchup outcomes can be affected by a combination of handedness and player
+    // position.
     private Handedness handedness;
 
     // Stats tracking
@@ -354,7 +360,7 @@ public class Player {
 
     public void setJumping(int i) {
         jumping = i;
-    } 
+    }
 
     public int getThrowPower() {
         return throwPower;
@@ -392,7 +398,7 @@ public class Player {
         return playAction;
     }
 
-    public void setPlayAction(int i){
+    public void setPlayAction(int i) {
         playAction = i;
     }
 
@@ -572,7 +578,7 @@ public class Player {
     public void addDownsPlayed(int i) {
         downsPlayed = downsPlayed + i;
     }
- 
+
     // Methods for filling data fields
     private static int randomAge() {
         return (int) (30 + Math.random() * 35);
@@ -629,7 +635,6 @@ public class Player {
         }
     }
 
-
     // Code for progression and regression of players in-game;
     public static int raiseStat(int stat, int change) {
         if (stat < (99 - change)) {
@@ -650,15 +655,19 @@ public class Player {
     }
 
     /*
-    Usage:
-
-    player.setStrength(lowerStat(player.getStrength(), 3));
-    */
+     * Usage:
+     * 
+     * player.setStrength(lowerStat(player.getStrength(), 3));
+     */
 
     @Override
     public String toString() {
-        return String.format("%s %s #%d - %s (Age: %d, Exp: %d)",
-                firstName, lastName, number, position, age, experience);
+        return String.format(
+                "%s %s #%d - %s | Age: %d, Exp: %d | Spd: %d, Str: %d, Awr: %d | Pow: %d, ShtAcc: %d, MedAcc: %d, DpAcc: %d | Tck: %d, Ctch: %d",
+                firstName, lastName, number, position, age, experience,
+                speed, strength, awareness,
+                throwPower, shortAccuracy, mediumAccuracy, deepAccuracy,
+                tackle, catching);
     }
 
     // Builder Pattern
@@ -866,7 +875,190 @@ public class Player {
             return this;
         }
 
-        // Add more setters for other stats as needed...
+        public Builder experience(int experience) {
+            this.experience = experience;
+            return this;
+        }
+
+        public Builder age(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public Builder hometown(Location hometown) {
+            this.hometown = hometown;
+            return this;
+        }
+
+        public Builder strength(int strength) {
+            this.strength = strength;
+            return this;
+        }
+
+        public Builder acceleration(int acceleration) {
+            this.acceleration = acceleration;
+            return this;
+        }
+
+        public Builder injuryResistance(int injuryResistance) {
+            this.injuryResistance = injuryResistance;
+            return this;
+        }
+
+        public Builder passBlock(int passBlock) {
+            this.passBlock = passBlock;
+            return this;
+        }
+
+        public Builder runBlock(int runBlock) {
+            this.runBlock = runBlock;
+            return this;
+        }
+
+        public Builder impactBlock(int impactBlock) {
+            this.impactBlock = impactBlock;
+            return this;
+        }
+
+        public Builder carrying(int carrying) {
+            this.carrying = carrying;
+            return this;
+        }
+
+        public Builder routeRunning(int routeRunning) {
+            this.routeRunning = routeRunning;
+            return this;
+        }
+
+        public Builder ballCarrierVision(int ballCarrierVision) {
+            this.ballCarrierVision = ballCarrierVision;
+            return this;
+        }
+
+        public Builder trucking(int trucking) {
+            this.trucking = trucking;
+            return this;
+        }
+
+        public Builder elusiveness(int elusiveness) {
+            this.elusiveness = elusiveness;
+            return this;
+        }
+
+        public Builder catchInTraffic(int catchInTraffic) {
+            this.catchInTraffic = catchInTraffic;
+            return this;
+        }
+
+        public Builder spectacularCatch(int spectacularCatch) {
+            this.spectacularCatch = spectacularCatch;
+            return this;
+        }
+
+        public Builder release(int release) {
+            this.release = release;
+            return this;
+        }
+
+        public Builder stiffArm(int stiffArm) {
+            this.stiffArm = stiffArm;
+            return this;
+        }
+
+        public Builder juke(int juke) {
+            this.juke = juke;
+            return this;
+        }
+
+        public Builder jumping(int jumping) {
+            this.jumping = jumping;
+            return this;
+        }
+
+        public Builder shortAccuracy(int shortAccuracy) {
+            this.shortAccuracy = shortAccuracy;
+            return this;
+        }
+
+        public Builder mediumAccuracy(int mediumAccuracy) {
+            this.mediumAccuracy = mediumAccuracy;
+            return this;
+        }
+
+        public Builder deepAccuracy(int deepAccuracy) {
+            this.deepAccuracy = deepAccuracy;
+            return this;
+        }
+
+        public Builder playAction(int playAction) {
+            this.playAction = playAction;
+            return this;
+        }
+
+        public Builder throwOnTheRun(int throwOnTheRun) {
+            this.throwOnTheRun = throwOnTheRun;
+            return this;
+        }
+
+        public Builder tackle(int tackle) {
+            this.tackle = tackle;
+            return this;
+        }
+
+        public Builder playRecognition(int playRecognition) {
+            this.playRecognition = playRecognition;
+            return this;
+        }
+
+        public Builder blockShedding(int blockShedding) {
+            this.blockShedding = blockShedding;
+            return this;
+        }
+
+        public Builder powerMoves(int powerMoves) {
+            this.powerMoves = powerMoves;
+            return this;
+        }
+
+        public Builder finesseMoves(int finesseMoves) {
+            this.finesseMoves = finesseMoves;
+            return this;
+        }
+
+        public Builder zoneCoverage(int zoneCoverage) {
+            this.zoneCoverage = zoneCoverage;
+            return this;
+        }
+
+        public Builder manCoverage(int manCoverage) {
+            this.manCoverage = manCoverage;
+            return this;
+        }
+
+        public Builder pursuit(int pursuit) {
+            this.pursuit = pursuit;
+            return this;
+        }
+
+        public Builder hitPower(int hitPower) {
+            this.hitPower = hitPower;
+            return this;
+        }
+
+        public Builder press(int press) {
+            this.press = press;
+            return this;
+        }
+
+        public Builder kickAccuracy(int kickAccuracy) {
+            this.kickAccuracy = kickAccuracy;
+            return this;
+        }
+
+        public Builder kickPower(int kickPower) {
+            this.kickPower = kickPower;
+            return this;
+        }
 
         public Player build() {
             return new Player(this);
